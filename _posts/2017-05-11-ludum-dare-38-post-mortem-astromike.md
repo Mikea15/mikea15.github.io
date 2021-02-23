@@ -1,0 +1,77 @@
+---
+id: 460
+title: 'Ludum Dare 38 Post Mortem : Astromike'
+date: 2017-05-11T23:45:31+01:00
+author: Michael Adaixo
+layout: post
+guid: http://mikeadev.net/?p=460
+permalink: /2017/05/ludum-dare-38-post-mortem-astromike/
+mixpanel_event_label:
+  - ""
+dsq_thread_id:
+  - "5808757433"
+image: /wp-content/uploads/astromike_icon_cropped.png
+categories:
+  - General
+tags:
+  - development
+  - ludum dare
+  - unity3d
+---
+Ready, set, GO!
+
+* * *
+
+TL;DR; <a href="https://twitter.com/MarcoValeKaz" target="_blank" rel="noopener noreferrer">Marco Vale</a> and I made a game for Ludum Dare 38 in 72h that <a href="https://mikea15.itch.io/astromike" target="_blank" rel="noopener noreferrer">you can play here</a>. What follows is a small post mortem.
+
+* * *
+
+I was awake at 3 am to know the theme for Ludum Dare 38. I still hadn&#8217;t made my mind if I was going to participate, it would depend on the theme and if I could come up with something. The theme was released, &#8216;A Small World&#8217;, and I immediately went to bed. There&#8217;s nothing like a good night sleep, and letting my brain think about the theme.
+
+So in the morning, I started researching the theme, I had micro-organisms in mind, micro and macro ecosystems but nothing really that would stand out. I thought about how Small World could lead to having a simple set of rules in a small constrained world, and with the micro-organisms idea, I shifted towards a space exploration game, heavily inspired by Hitman GO and Lara Croft GO games.
+
+<img loading="lazy" class="alignleft size-medium wp-image-480" src="http://mikeadev.net/wp-content/uploads/Pasted-image-at-2017_04_22-01_33-PM-300x182.png" alt="" width="300" height="182" srcset="http://mikeadev.net/wp-content/uploads/Pasted-image-at-2017_04_22-01_33-PM-300x182.png 300w, http://mikeadev.net/wp-content/uploads/Pasted-image-at-2017_04_22-01_33-PM-768x466.png 768w, http://mikeadev.net/wp-content/uploads/Pasted-image-at-2017_04_22-01_33-PM-1024x621.png 1024w, http://mikeadev.net/wp-content/uploads/Pasted-image-at-2017_04_22-01_33-PM-800x485.png 800w, http://mikeadev.net/wp-content/uploads/Pasted-image-at-2017_04_22-01_33-PM.png 1077w" sizes="(max-width: 300px) 100vw, 300px" /> Initially, the idea would be to have your main character cleanup each level from organisms there but quickly shifted to a puzzle-solver sci-fi game. Having Hitman GO in mind, I prototyped a level and started to create what would become the node-based navigation system. A collection of nodes that the main character and enemies could travel to, based on their distances.
+
+<img loading="lazy" class="alignleft size-medium wp-image-463" src="http://mikeadev.net/wp-content/uploads/intro_level-300x168.png" alt="" width="300" height="168" srcset="http://mikeadev.net/wp-content/uploads/intro_level-300x168.png 300w, http://mikeadev.net/wp-content/uploads/intro_level-768x429.png 768w, http://mikeadev.net/wp-content/uploads/intro_level-1024x572.png 1024w, http://mikeadev.net/wp-content/uploads/intro_level-800x447.png 800w, http://mikeadev.net/wp-content/uploads/intro_level.png 1099w" sizes="(max-width: 300px) 100vw, 300px" /> At this point, I had a friend of mine, <a href="https://twitter.com/MarcoValeKaz" target="_blank" rel="noopener noreferrer">Marco Vale</a>, asking if I needed an artist, so we teamed-up and he started to create assets for the game&#8217;s environment, as well as a character, gun, jetpack and a crashed ship, while I was developing game mechanics. Soon after that, I had a node-based navigation working, and something a lot prettier than cubes to show.
+
+At the end of day 1, we had a placeholder character moving around a map, an exit to finish the level, an enemy that would follow and kill the player, items to pick up, a simple inventory system, and trigger objects that would fire events, either to open or close passages and activate traps.
+
+On day 2, Marco started with the main character, gun, and jetpack. Meanwhile, I was working on creating more levels, introducing new components to the game and building up from the previous levels. For instance, on level 2 you grab the gun, therefore level 3 has enemies that you&#8217;re now able to shoot at in order to solve the puzzle and go on. The jetpack is unlocked further and will allow the player to jump across gaps.
+
+[<img loading="lazy" src="http://mikeadev.net/wp-content/uploads/jump_-300x194.png" alt="" width="300" height="194" class="aligncenter size-medium wp-image-466" srcset="http://mikeadev.net/wp-content/uploads/jump_-300x194.png 300w, http://mikeadev.net/wp-content/uploads/jump_-768x496.png 768w, http://mikeadev.net/wp-content/uploads/jump_-800x517.png 800w, http://mikeadev.net/wp-content/uploads/jump_.png 902w" sizes="(max-width: 300px) 100vw, 300px" />](http://mikeadev.net/wp-content/uploads/jump_.png)
+
+At this point, I was still implementing a Hitman GO movement style, because I thought that we wouldn&#8217;t have time to make animations. Ultimately we had, so we threw that away, and gladly because it looks and feels much better.
+
+<blockquote class="twitter-tweet" data-width="525" data-dnt="true">
+  <p lang="en" dir="ltr">
+    walk animation Hitman GO style! hi <a href="https://twitter.com/SquareEnixMtl?ref_src=twsrc%5Etfw">@SquareEnixMtl</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/ldjam?src=hash&ref_src=twsrc%5Etfw">#ldjam</a> <a href="https://twitter.com/hashtag/ld38?src=hash&ref_src=twsrc%5Etfw">#ld38</a> <a href="https://t.co/qWM3WTZkxf">pic.twitter.com/qWM3WTZkxf</a>
+  </p>
+  
+  <p>
+    &mdash; Michael Adaixo (@MichaelAdaixo) <a href="https://twitter.com/MichaelAdaixo/status/856193366006038530?ref_src=twsrc%5Etfw">April 23, 2017</a>
+  </p>
+</blockquote>
+
+
+
+The last couple of hours before the compo deadline, I swapped all placeholders for the gun and jetpack, integrated the animations for the main character, made some quick particle effects, created a teleport mechanic and added sound.
+
+<img loading="lazy" class="aligncenter size-medium wp-image-473" src="http://mikeadev.net/wp-content/uploads/screen_3-300x169.png" alt="" width="300" height="169" srcset="http://mikeadev.net/wp-content/uploads/screen_3-300x169.png 300w, http://mikeadev.net/wp-content/uploads/screen_3-768x432.png 768w, http://mikeadev.net/wp-content/uploads/screen_3-1024x576.png 1024w, http://mikeadev.net/wp-content/uploads/screen_3-800x450.png 800w, http://mikeadev.net/wp-content/uploads/screen_3.png 1920w" sizes="(max-width: 300px) 100vw, 300px" /> 
+
+On day 3, we focused on making it look better and fixing a few issues that were making the game difficult to play. We also added the crash site with the spaceship, decorations, particle effects and camera post processing.
+
+<blockquote class="twitter-tweet" data-width="525" data-dnt="true">
+  <p lang="en" dir="ltr">
+    new menu scene for Astromike <a href="https://twitter.com/hashtag/ldjam?src=hash&ref_src=twsrc%5Etfw">#ldjam</a> <a href="https://twitter.com/hashtag/ld38?src=hash&ref_src=twsrc%5Etfw">#ld38</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/madewithunity?src=hash&ref_src=twsrc%5Etfw">#madewithunity</a> <a href="https://t.co/HzMzvJQnwL">pic.twitter.com/HzMzvJQnwL</a>
+  </p>
+  
+  <p>
+    &mdash; Michael Adaixo (@MichaelAdaixo) <a href="https://twitter.com/MichaelAdaixo/status/856553416260280321?ref_src=twsrc%5Etfw">April 24, 2017</a>
+  </p>
+</blockquote>
+
+
+
+I started the Ludum Dare alone, with a faint idea of what to do, and with <a href="https://twitter.com/MarcoValeKaz" target="_blank" rel="noopener noreferrer">Marco</a>&#8216;s amazing help, we were able to make something really nice, and learn a lot in the process. I think this is the most fun I&#8217;ve had making games in quite a while, and definitely my best LD entry so far. 72h later, I&#8217;m proud of the game we&#8217;ve created. <a href="https://mikea15.itch.io/astromike" target="_blank" rel="noopener noreferrer">Feel free to try it out</a>, and leave a comment if you like.
+
+See you next Ludum Dare.

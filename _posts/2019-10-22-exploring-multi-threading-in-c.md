@@ -1,0 +1,404 @@
+---
+id: 593
+title: Exploring Multi-Threading in C++
+date: 2019-10-22T00:12:53+01:00
+author: Michael Adaixo
+layout: post
+guid: http://mikeadev.net/?p=593
+permalink: /2019/10/exploring-multi-threading-in-c/
+mixpanel_event_label:
+  - ""
+spay_email:
+  - ""
+categories:
+  - General
+tags:
+  - CodeProject
+  - concurrency
+  - cpp
+  - multithreading
+  - parallel
+  - programming
+  - threading
+---
+The pursuit of performance is something that interests me as a developer, so as a learning exercise I decided to experiment and consolidate my knowledge about multi-threading. Nowadays it&#8217;s becoming even more important since our CPUs get more and more cores. Modern game engines and applications use multiple CPU cores to stay fast and responsive.
+
+## Index
+
+  * **[Part 1: Exploring Multi-Threading in C++](http://mikeadev.net/2019/10/exploring-multi-threading-in-c/)**
+  * [Part 2: Exploring Multi-Threading in C++ Cont.](http://mikeadev.net/2019/10/exploring-multi-threading-in-c-part-2/)
+  * [Part 3: Exploring Multi-Threading in C++: Loading Textures](http://mikeadev.net/2019/11/exploring-multi-threading-in-c-loading-textures/)
+  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](http://mikeadev.net/2019/11/parallelizing-ray-tracing/)
+
+## Setup and Baseline Result
+
+As a test case, I decided to create a series of tasks, ones small and other big, to simulate different workload types. As an easy test case, I grabbed a method to calculate Pi, and run that method multiple times, depending on how heavy I want the workload to be. 
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">double CalcPi(int n)
+{
+	double sum = 0.0;
+	int sign = 1;
+	for (int i = 0; i &lt; n; ++i)
+	{
+		sum += sign / (2.0 * i + 1.0);
+		sign *= -1;
+	}
+	return 4.0 * sum;
+}</pre>
+
+Now I create a couple of different Jobs running **CalcPi** and add them into a vector or a queue ( depending on the test I&#8217;m running ). My **CalcPiJob** class looks something like this.
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">class CalcPiJob
+{
+public:
+	CalcPiJob(int iterations)
+		: m_iterations(iterations)
+	{ }
+
+	void DoWork()
+	{
+		float p = 0.0f;
+		for (int i = 0; i &lt; m_iterations; ++i) {
+			p += CalcPi(m_iterations);
+		}
+
+		p /= m_iterations;
+		std::this_thread::sleep_for(std::chrono::milliseconds(Settings::ThreadPause));
+	}
+
+private:
+	int m_iterations;
+};</pre>
+
+Creating a series of different workload types looks something like:
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">std::queue&lt;CalcPiJob*> GetJobsQ()
+{
+	std::queue&lt;CalcPiJob*> jobQ;
+	for (int i = 0; i &lt; Settings::JobCountHigh; ++i)
+	{
+		jobQ.emplace(new CalcPiJob(Settings::IterationCountHigh));
+	}
+
+	for (int i = 0; i &lt; Settings::JobCountMedium; ++i)
+	{
+		jobQ.emplace(new CalcPiJob(Settings::IterationCountMedium));
+	}
+
+	for (int i = 0; i &lt; Settings::JobCountLow; ++i)
+	{
+		jobQ.emplace(new CalcPiJob(Settings::IterationCountLow));
+	}
+	return jobQ;
+}
+
+std::vector&lt;CalcPiJob*> GetJobVector()
+{
+	std::vector&lt;CalcPiJob*> jobs;
+	for (int i = 0; i &lt; Settings::JobCountHigh; ++i)
+	{
+		jobs.push_back(new CalcPiJob(Settings::IterationCountHigh));
+	}
+
+	for (int i = 0; i &lt; Settings::JobCountMedium; ++i)
+	{
+		jobs.push_back(new CalcPiJob(Settings::IterationCountMedium));
+	}
+
+	for (int i = 0; i &lt; Settings::JobCountLow; ++i)
+	{
+		jobs.push_back(new CalcPiJob(Settings::IterationCountLow));
+	}
+	return jobs;
+}</pre>
+
+I have also defined a couple of constants to help out.
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">struct Settings
+{
+	enum class Priority : int {
+		Low = 0,
+		Medium,
+		High
+	};
+
+	static const int JobCountLow = 120;
+	static const int JobCountMedium = 60;
+	static const int JobCountHigh = 25;
+
+	static const int ThreadPause = 100;
+
+	static const int IterationCountLow = 5000;
+	static const int IterationCountMedium = 10000;
+	static const int IterationCountHigh = 20000;
+
+	static const int PrecisionHigh = 100;
+	static const int PrecisionMedium = 100;
+	static const int PrecisionLow = 100;
+};</pre>
+
+Now for baseline, I go through all Jobs and execute **DoWork** sequentially. 
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void RunSequential()
+{
+	std::queue&lt;CalcPiJob*> jobQ = GetJobsQ();
+	while (!jobQ.empty())
+	{
+		CalcPiJob* job = jobQ.front();
+		jobQ.pop();
+
+		job->DoWork();
+		delete job;
+	}
+}</pre>
+
+I&#8217;m running all my tests on a i7 4770K, that has 4 cores and 8 threads. All timings where taken from a release build, and all profile images from debug builds ( for illustration of workload purposes ).
+
+Sequential run time: _20692_ ms<figure class="wp-block-image size-large">
+
+<img loading="lazy" width="758" height="84" src="http://mikeadev.net/wp-content/uploads/image-2.png" alt="" class="wp-image-609" /> </figure> 
+
+## First Worker Thread
+
+Let the interesting part begin. As an easy step towards a multi-threading application, I&#8217;m going to create only one thread, to share the workload with the main thread. 
+
+This already brings a few new concepts to be aware of such as sharing data across multiple threads. We protect our data access with a [std::mutex](https://en.cppreference.com/w/cpp/thread/mutex), and lock it with [std::scoped_lock](https://en.cppreference.com/w/cpp/thread/scoped_lock) ( introduced in C++17. Use similar [std::lock_guard](https://en.cppreference.com/w/cpp/thread/lock_guard) if your compiler doesn&#8217;t support it ).
+
+You&#8217;ll need a few includes first.
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">// you should already have these.
+#include &lt;vector>
+#include &lt;queue>
+
+#include &lt;thread> // thread support
+#include &lt;mutex>  // mutex support
+#include &lt;atomic> // atomic variables
+#include &lt;future> // later on for std::async</pre>
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">CalcPiJob* GetAndPopJob(std::queue&lt;CalcPiJob*>& jobQ, std::mutex& mutex)
+{
+	std::scoped_lock&lt;std::mutex> lock(mutex);
+	if (!jobQ.empty())
+	{
+		CalcPiJob* job = jobQ.front();
+		jobQ.pop();
+
+		return job;
+	}
+	return nullptr;
+}</pre>
+
+**GetAndPopJob** does exactly what is says, it will get a job if one exists and pop it from the queue. _empty()_, _front()_ and _pop()_ are protected inside this method with the use of the _std::scoped_lock_.
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void ExecuteJobsQ(std::atomic&lt;bool>& hasWork, 
+	std::queue&lt;CalcPiJob*>& jobQ, 
+	std::mutex& mutex)
+{
+	while (hasWork)
+	{
+		CalcPiJob* currentJob = GetAndPopJob(jobQ, mutex);
+		if (currentJob)
+		{
+			currentJob->DoWork();
+			delete currentJob;
+		}
+		else
+		{
+			hasWork = false;
+		}
+	}
+}</pre>
+
+**ExecuteJobsQ** will run in the main thread and the worker thread. It gets a job, execute it, and continue until there is no more work to do.
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">// global mutex for read/write access to Job Queue
+static std::mutex g_mutexJobQ;
+
+void RunOneThread()
+{
+	std::queue&lt;CalcPiJob*> jobQ = GetJobsQ();
+
+	std::atomic&lt;bool> jobsPending = true;
+
+	// Starting new thread
+	std::thread t([&]() {
+		ExecuteJobsQ(jobsPending, jobQ, g_mutexJobQ);
+	});
+
+	// main thread, also does the same.
+	ExecuteJobsQ(jobsPending, jobQ, g_mutexJobQ);
+
+	t.join();
+}</pre>
+
+One worker thread run time: 10396 ms <figure class="wp-block-image size-large is-resized">
+
+[<img loading="lazy" src="http://mikeadev.net/wp-content/uploads/onethread-1024x67.jpg" alt="" class="wp-image-680" width="642" height="43" srcset="http://mikeadev.net/wp-content/uploads/onethread-1024x67.jpg 1024w, http://mikeadev.net/wp-content/uploads/onethread-300x20.jpg 300w, http://mikeadev.net/wp-content/uploads/onethread-768x50.jpg 768w, http://mikeadev.net/wp-content/uploads/onethread.jpg 1917w" sizes="(max-width: 642px) 100vw, 642px" />](http://mikeadev.net/wp-content/uploads/onethread.jpg)<figcaption>(click to expand)</figcaption></figure> 
+
+The image above show the execution of the jobs, the larger ones first, then the medium sized ones and lastly the smaller ones. This was the order at which the tasks where added into the queue.
+
+## More Worker Threads
+
+Now this is nice, so lets add more threads! How many? Well, I know my CPU has 8 thread, but nothing guarantees they will only run for my program tho. Operating system time slice program execution across multiple cores/threads, so even if you create more threads than your max CPU threads, there&#8217;s no &#8220;problem&#8221; because the operating system will switch execution time for them on its own. 
+
+C++ provides us a way of determining how many concurrent threads our system supports, so lets just use that: `std::thread::hardware_concurrency()` 
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void RunThreaded()
+{
+	// -1 to make space for main thread
+	int nThreads = std::thread::hardware_concurrency() - 1;
+	std::vector&lt;std::thread> threads;
+
+	std::queue&lt;CalcPiJob*> jobQ = GetJobsQ();
+
+	std::atomic&lt;bool> hasJobsLeft = true;
+	for (int i = 0; i &lt; nThreads; ++i)
+	{
+		std::thread t([&]() {
+			ExecuteJobsQ(hasJobsLeft, jobQ, g_mutexJobQ);
+		});
+		threads.push_back(std::move(t));
+	}
+
+	// main thread
+	ExecuteJobsQ(hasJobsLeft, jobQ, g_mutexJobQ);
+
+	for (int i = 0; i &lt; nThreads; ++i)
+	{
+		threads[i].join();
+	}
+}</pre>
+
+Run time with 8 threads: 2625 ms.<figure class="wp-block-image size-large">
+
+[<img loading="lazy" width="1024" height="135" src="http://mikeadev.net/wp-content/uploads/threaded_7-1024x135.jpg" alt="" class="wp-image-686" srcset="http://mikeadev.net/wp-content/uploads/threaded_7-1024x135.jpg 1024w, http://mikeadev.net/wp-content/uploads/threaded_7-300x40.jpg 300w, http://mikeadev.net/wp-content/uploads/threaded_7-768x101.jpg 768w, http://mikeadev.net/wp-content/uploads/threaded_7.jpg 1916w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />](http://mikeadev.net/wp-content/uploads/threaded_7.jpg)<figcaption>8 threads ( click to expand )</figcaption></figure> 
+
+Now this is a nicer view. 7 worker threads working with the main thread to process all jobs. Again, first we see the bigger jobs, then medium, then smaller ones being processed. This is being processed in the order they were added.
+
+## Async Tasks
+
+When spawning tasks with [std::async](https://en.cppreference.com/w/cpp/thread/async), we don&#8217;t manually create threads, they are spawned from a thread pool. 
+
+<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void RunJobsOnAsync()
+{
+	std::vector&lt;CalcPiJob*> jobs = GetJobVector();
+
+	std::vector&lt;std::future&lt;void>> futures;
+	for (int i = 0; i &lt; jobs.size(); ++i)
+	{
+		auto j = std::async([&jobs, i]() {
+			jobs[i]->DoWork();
+			});
+		futures.push_back(std::move(j));
+	}
+
+	// Wait for Jobs to finish, .get() is a blocking operation.
+	for (int i = 0; i &lt; futures.size(); ++i)
+	{
+		futures[i].get();
+	}
+
+	for (int i = 0; i &lt; jobs.size(); ++i)
+	{
+		delete jobs[i];
+	}
+}</pre>
+
+Run time: 2220 ms<figure class="wp-block-image size-large">
+
+[<img loading="lazy" width="1024" height="217" src="http://mikeadev.net/wp-content/uploads/async-1024x217.jpg" alt="" class="wp-image-702" srcset="http://mikeadev.net/wp-content/uploads/async-1024x217.jpg 1024w, http://mikeadev.net/wp-content/uploads/async-300x64.jpg 300w, http://mikeadev.net/wp-content/uploads/async-768x163.jpg 768w, http://mikeadev.net/wp-content/uploads/async.jpg 1912w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />](http://mikeadev.net/wp-content/uploads/async.jpg)<figcaption>(click to expand)</figcaption></figure> 
+
+## Overview
+
+This time table only serves as an overview for this particular case. Of course, in real applications, results vary.<figure class="wp-block-table">
+
+<table class="">
+  <tr>
+    <td>
+      <strong>Test Run</strong>
+    </td>
+    
+    <td>
+      <strong>Time</strong> (ms)
+    </td>
+    
+    <td>
+      <strong>Improvement</strong>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Sequential
+    </td>
+    
+    <td>
+      <em>20692</em>
+    </td>
+    
+    <td>
+      1.x
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      One Thread
+    </td>
+    
+    <td>
+      10396
+    </td>
+    
+    <td>
+      1.99x
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Threaded
+    </td>
+    
+    <td>
+      2625
+    </td>
+    
+    <td>
+      7.88x
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Async Tasks (1)
+    </td>
+    
+    <td>
+      2220
+    </td>
+    
+    <td>
+      9.3x
+    </td>
+  </tr>
+</table></figure> 
+
+The sample codes are my exploration of this specific case and by no means is free of bugs. But it is interesting to see how the code would run across multiple thread, how to synchronize and make the most of my system.
+
+All screenshots are taken with the debug version of the program, so we could clearly see the workload in the profiler. For that I used [Superluminal Profiler](https://www.superluminal.eu/). I found out that it is an amazing, lightweight profiler. You can also use [Intel&#8217;s VTune](https://software.intel.com/en-us/vtune) for free.
+
+[Download code from GitHub](https://gist.github.com/Mikea15/aca94cfd4aacd1ee0e120ab03b99d1b7)
+
+## Continue Reading
+
+  * **[Part 1: Exploring Multi-Threading in C++](http://mikeadev.net/2019/10/exploring-multi-threading-in-c/)**
+  * [Part 2: Exploring Multi-Threading in C++ Cont.](http://mikeadev.net/2019/10/exploring-multi-threading-in-c-part-2/)
+  * [Part 3: Exploring Multi-Threading in C++: Loading Textures](http://mikeadev.net/2019/11/exploring-multi-threading-in-c-loading-textures/)
+  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](http://mikeadev.net/2019/11/parallelizing-ray-tracing/) 
+
+<a href="https://www.codeproject.com/script/Articles/BlogArticleList.aspx?amid=7793424" rel="tag" style="display:none">CodeProject</a> 
+
+### Note
+
+(1) I&#8217;ve revisited Async Tasks to make sure all tasks where fully complete before exiting the function call. I managed to get worse performance than the baseline test. Upon inspection with vTune, I found out, that it doesn&#8217;t launch new threads. This change happens from Debug/Release builds. I believe there is some optimization that makes it be that fast, even more so because most of the time spent on each jobs is an artificial wait. In any case, read those values with a grain of salt. Do your own tests and make your own conclusions.
