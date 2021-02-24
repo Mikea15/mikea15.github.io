@@ -46,11 +46,9 @@ permalink: /timeline/
 
 ## 2017
 - 3 Months, 7 Project Demos @BLKO // Unity, Unreal Engine, VR ( HTC Vive )
-
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=L94QWk_mtVQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L94QWk_mtVQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Udemy Course: The Unreal Engine Developer Course ( C++ )
 
 - Astromike entry for Ludum Dare #38 ( 72h Game Competition ). Overal #88, with over 1900 entries. [Check the Projects page]({{ '../projects' | relative_path }})
-
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=b30id6bcWQk" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b30id6bcWQk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
