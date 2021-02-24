@@ -36,9 +36,10 @@ Have a Task, create the Working Task, and Wait for it to finish. So you'll have 
 
 Another way of doing this is going Async/Await on the methods.
 
-For a method that don't return any value. We just have to change our code to break out of our loop when the cancellation is requested, instead of calling ThrowIfCancelledRequired(), we just check if the Cancellation is requested and just break out. As we're not waiting for any result, we just let the task finish.&nbsp;Using this idea, we could even remove the need of the cancellation token. We could use a volatile bool variable to control our cancellation for us. But I find it more &#8216;good practice' to use the cancellation token. I don't really know how the volatile access performs between multiple tasks, so I'm keeping the Cancellation Token. Here's a sample code:
+For a method that don't return any value. We just have to change our code to break out of our loop when the cancellation is requested, instead of calling ThrowIfCancelledRequired(), we just check if the Cancellation is requested and just break out. As we're not waiting for any result, we just let the task finish.&nbsp;Using this idea, we could even remove the need of the cancellation token. We could use a volatile bool variable to control our cancellation for us. But I find it more 'good practice' to use the cancellation token. I don't really know how the volatile access performs between multiple tasks, so I'm keeping the Cancellation Token. Here's a sample code:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">CancellationTokenSource _cts;
+```cpp
+CancellationTokenSource _cts;
 volatile bool _run = true;
 
 public void Start( )
@@ -80,7 +81,8 @@ void Main( )
 	Console.ReadLine();
 	Cancel();
 }
-</pre>
+
+```
 
 This will output something like this after pressing Enter after 4 seconds:
 
@@ -90,7 +92,8 @@ This will output something like this after pressing Enter after 4 seconds:
 .
 .
 Cancel
-Break</pre>
+Break
+```
 
 Note that __cts_ is a member variable of the class where **Start** is being called so it can be accessed in the **Cancel** method. Back to our first solution, if we were to declare a _volatile bool _run_ variable as commented on the **Cancel** method, we would have to, firstly, uncomment that line to change the value to _false_, and change the&nbsp;_true&nbsp;_on the Start's method while loop.
 

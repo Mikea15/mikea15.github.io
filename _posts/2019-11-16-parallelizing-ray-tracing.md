@@ -54,17 +54,18 @@ In order to have an idea of different approaches to make this run faster, I deci
 
 Once again, I've made a new branch for the Jobs version of the Ray Tracer, feel free to download that and experiment with it. The main changes include creating a std::async job for each pixel, saving the std::future<ResultJob> in a vector, and using a std::condition_variable to wait until all jobs are complete.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">std::mutex mutex;
+```cpp
+std::mutex mutex;
 std::condition_variable cvResults;
-std::vector&lt;std::future&lt;RayResult>> m_futures;
+std::vector<std::future<RayResult>> m_futures;
 
-for (int j = 0; j &lt; ny; ++j) {
-	for (int i = 0; i &lt; nx; ++i) {
+for (int j = 0; j < ny; ++j) {
+	for (int i = 0; i < nx; ++i) {
 		auto future = std::async(std::launch::async | std::launch::deferred, 
 		[&cam, &world, &ns, i, j, nx, ny, &cvResults]() -> RayResult {
 			const unsigned int index = j * nx + i;
 			vec3 col(0, 0, 0);
-			for (int s = 0; s &lt; ns; ++s) {
+			for (int s = 0; s < ns; ++s) {
 				float u = float(i + random_double()) / float(nx);
 				float v = float(j + random_double()) / float(ny);
 
@@ -80,29 +81,32 @@ for (int j = 0; j &lt; ny; ++j) {
 		});
 
 		{
-			std::lock_guard&lt;std::mutex> lock(mutex);
+			std::lock_guard<std::mutex> lock(mutex);
 			m_futures.push_back(std::move(future));
 		}
 	}
-}</pre>
+}
+```
 
 This is what the main loop now looks like. RayResult is a simple struct containing the image index and resulting color value. After this, I wait for `m_futures` to be the same value as the number of pixels in the image, and then build the image before writing it to a file.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">// launched jobs. need to build image.
+```cpp
+// launched jobs. need to build image.
 // wait for number of jobs = pixel count
 {
-	std::unique_lock&lt;std::mutex> lock(mutex);
+	std::unique_lock<std::mutex> lock(mutex);
 	cvResults.wait(lock, [&m_futures, &pixelCount] {
 		return m_futures.size() == pixelCount;
 	});
 }
 
 // reconstruct image.
-for (std::future&lt;RayResult>& rr : m_futures)
+for (std::future<RayResult>& rr : m_futures)
 {
 	RayResult result = rr.get();
 	image[result.index] = result.col;
-}</pre>
+}
+```
 
 <div class="wp-block-image">
   <figure class="aligncenter size-large"><img src="http://mikeadev.net/wp-content/uploads/image-8-1024x683.png" alt="" /><figcaption> <em>1 Job per Pixel, 1200&#215;800, 10spp, 23 seconds.</em> </figcaption></figure>
@@ -136,10 +140,12 @@ If we have less jobs than CPU cores, some of them become idle and have no more j
 
 In both branches, you can edit `nRowsPerJob` to test different job sizes.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">const int nThreads = std::thread::hardware_concurrency();
+```cpp
+const int nThreads = std::thread::hardware_concurrency();
 int nRowsPerJob = 10; // play with amount of rows for each job
 int nJobs = ny / nRowsPerJob;
-int leftOver = ny % nThreads;</pre>
+int leftOver = ny % nThreads;
+```
 
 I managed to get the same results on both methods. I no longer get a gigantic 1Gb memory usage with _std::async_, but now using a reasonable amount of pixels to generate, instead of one. There is no visible benefit in terms of performance from _threads_ vs _std::async_ that I could see. On both versions, with various block sizes, I had the same results: around 24 seconds per image and 30Mb of memory usage. By keeping the number of images rows per block low, more jobs will be created and this is ideal to split jobs evenly across CPU cores.
 

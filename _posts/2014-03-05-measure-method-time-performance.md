@@ -22,7 +22,8 @@ tags:
 ---
 Quick snippet to let you check the time used by any method you have.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public static void CalculateTime( Action method )
+```cpp
+public static void CalculateTime( Action method )
 {
     Stopwatch chrono = new Stopwatch();
     chrono.Start();
@@ -31,11 +32,14 @@ Quick snippet to let you check the time used by any method you have.
             
     chrono.Stop();
     Console.WriteLine("Method : " + method.Method.Name + ", Time: " + chrono.ElapsedMilliseconds + " (ms)");
-}</pre>
+}
+```
 
 This will write to the console the time spent on the method.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">DiagnosticStaticClass.CalculateTime( MyExpensiveMethod );</pre>
+```cpp
+DiagnosticStaticClass.CalculateTime( MyExpensiveMethod );
+```
 
 Just remember to use _System.Diagnostics_.  
 More info on <a title="MSDN Stopwatch" href="http://msdn.microsoft.com/en-us/library/system.diagnostics.stopwatch(v=vs.110).aspx" target="_blank" rel="noopener noreferrer">Stopwatch</a>.

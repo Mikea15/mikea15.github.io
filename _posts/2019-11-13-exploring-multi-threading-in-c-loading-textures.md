@@ -40,7 +40,8 @@ Loading is going to be done in worker threads, and generating textures will be d
 
 In our main thread we have a method that will check our processing textures queue for a job. If it finds one, Generates the OpengGL texture and assigns it back to the material.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void AssetManager::Update()
+```cpp
+void AssetManager::Update()
 {
 	if (!m_processingTexturesQueue.Empty())
 	{
@@ -53,11 +54,13 @@ In our main thread we have a method that will check our processing textures queu
 			assetJob.materialOwner->AddTexture(outputTexture);
 		}
 	}
-}</pre>
+}
+```
 
 The loader thread will continuously run and check the loading textures queue for jobs. In this case, I load the texture from a file path and assigning the result into the loaded data.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void AssetManager::LoaderThread()
+```cpp
+void AssetManager::LoaderThread()
 {
 	while (m_loadingThreadActive)
 	{
@@ -74,7 +77,8 @@ The loader thread will continuously run and check the loading textures queue for
 		}
 		// ....
 	}
-}</pre>
+}
+```
 
 <div class="wp-block-image">
   <figure class="aligncenter size-large is-resized"><img src="http://mikeadev.net/wp-content/uploads/image-5.png" alt="" /><figcaption>In game sponza scene.</figcaption></figure>

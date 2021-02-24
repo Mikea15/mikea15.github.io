@@ -94,7 +94,8 @@ class ImageCache {
         let imageData = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
         return imageData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.allZeros)
     }
-}</pre>
+}
+```
 
 I'm using a dictionary to keep track of the images, with their Base64 encoded urls as keys.
 
@@ -102,7 +103,8 @@ Example usage goes like:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="c" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">ImageCache.sharedInstance.findOrLoadAsync(imageUrl, completionHandler: { (image) -> Void in
 // do something with image (UIImage)
-})</pre>
+})
+```
 
 PS: Also, that UIImage().loadAsync is an UIImage Extension method I have lying around :)
 
@@ -129,4 +131,5 @@ func loadAsyncFromUrl( path: String, complete: (resultingImage: UIImage?) -> Voi
                 complete(resultingImage: image)
             }
     })
-}</pre>
+}
+```

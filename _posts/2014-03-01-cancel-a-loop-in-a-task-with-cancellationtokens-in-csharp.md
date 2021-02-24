@@ -49,7 +49,8 @@ I am creating a new Task using the Factory property of the Task class. I could h
 
 Here is a simple example on how to achieve this. You can run this code on [LinqPad](https://www.linqpad.net/) or create a new console project. Just remember to include the _System.Threading.Tasks_ namespace.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void Main()
+```cpp
+void Main()
 {
 	CancellationTokenSource cts = new CancellationTokenSource();
 	var token = cts.Token;
@@ -99,7 +100,8 @@ void MainLoop( CancellationToken token )
 		Console.Write(".");
 		Thread.Sleep(100);
 	}
-}</pre>
+}
+```
 
 After creating the Task, it will start automatically. All you have to do is to wait for the result, int this case there won't be any variable returned, but you have to do this so you can recover if you get an _AggretatedException_.
 

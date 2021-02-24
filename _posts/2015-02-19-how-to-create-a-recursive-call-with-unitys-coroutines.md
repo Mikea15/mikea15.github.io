@@ -23,7 +23,8 @@ Now comes the question. How do I handle recursion with Coroutines? After looking
 
 Here's a sample code on how to make it work.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public void StartBattle( )
+```cpp
+public void StartBattle( )
 {
 	StartCoroutine(BattleRecursive(0));
 }
@@ -41,7 +42,8 @@ public IEnumerator BattleRecursive( int depth )
 		yield return StartCoroutine( BattleRecursive(depth+1) );
 	
 	Debug.Log( "MyCoroutine is now finished at depth " + depth );
-}</pre>
+}
+```
 
 After calling the entry point to your recursive method **StartBattle**, inside, you have yield return a new Coroutine call to the recursive method. This way, the execution order will be correct. Try it out and see for yourself.
 
@@ -49,6 +51,7 @@ Output should be.
 
 <pre class="wp-block-preformatted">MyCoroutine is now finished at depth 2
 MyCoroutine is now finished at depth 1
-MyCoroutine is now finished at depth 0</pre>
+MyCoroutine is now finished at depth 0
+```
 
 Enjoy

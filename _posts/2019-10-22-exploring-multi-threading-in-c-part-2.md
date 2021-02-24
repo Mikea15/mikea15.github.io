@@ -30,14 +30,15 @@ tags:
 
 My next test case is to have different worker thread to run different kinds of tasks. The idea is to have a couple of threads for important jobs, others for less important jobs. I've split the tasks into different Job queues for simplicity. 
 
-<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">static std::mutex g_mutexLowJobQ;
+```cpp
+static std::mutex g_mutexLowJobQ;
 static std::mutex g_mutexMediumJobQ;
 static std::mutex g_mutexHighJobQ;
 
-std::queue&lt;CalcPiJob*> GetJobsOfType(int count, int iterations)
+std::queue<CalcPiJob*> GetJobsOfType(int count, int iterations)
 {
-	std::queue&lt;CalcPiJob*> jobQ;
-	for (int i = 0; i &lt; count; ++i)
+	std::queue<CalcPiJob*> jobQ;
+	for (int i = 0; i < count; ++i)
 	{
 		jobQ.emplace(new CalcPiJob(iterations));
 	}
@@ -50,14 +51,14 @@ void RunThreadedPriority()
 	int nMediumThreads = 2;
 	int nLowThreads = 2;
 	
-	std::queue&lt;CalcPiJob*> lowJobQ = GetJobsOfType(Settings::JobCountLow, Settings::IterationCountLow);
-	std::queue&lt;CalcPiJob*> mediumJobQ = GetJobsOfType(Settings::JobCountMedium, Settings::IterationCountMedium);
-	std::queue&lt;CalcPiJob*> highJobQ = GetJobsOfType(Settings::JobCountHigh, Settings::IterationCountHigh);
+	std::queue<CalcPiJob*> lowJobQ = GetJobsOfType(Settings::JobCountLow, Settings::IterationCountLow);
+	std::queue<CalcPiJob*> mediumJobQ = GetJobsOfType(Settings::JobCountMedium, Settings::IterationCountMedium);
+	std::queue<CalcPiJob*> highJobQ = GetJobsOfType(Settings::JobCountHigh, Settings::IterationCountHigh);
 
-	std::vector&lt;std::thread> threads;
+	std::vector<std::thread> threads;
 
-	std::atomic&lt;bool> hasHighJobsLeft = true;
-	for (int i = 0; i &lt; nHighThreads; ++i)
+	std::atomic<bool> hasHighJobsLeft = true;
+	for (int i = 0; i < nHighThreads; ++i)
 	{
 		std::thread t([&]() {
 			ExecuteJobsQ(hasHighJobsLeft, highJobQ, g_mutexHighJobQ);
@@ -65,8 +66,8 @@ void RunThreadedPriority()
 		threads.push_back(std::move(t));
 	}
 
-	std::atomic&lt;bool> hasMediumJobsLeft = true;
-	for (int i = 0; i &lt; nMediumThreads; ++i)
+	std::atomic<bool> hasMediumJobsLeft = true;
+	for (int i = 0; i < nMediumThreads; ++i)
 	{
 		std::thread t([&]() {
 			ExecuteJobsQ(hasMediumJobsLeft, mediumJobQ, g_mutexMediumJobQ);
@@ -74,8 +75,8 @@ void RunThreadedPriority()
 		threads.push_back(std::move(t));
 	}
 
-	std::atomic&lt;bool> hasLowJobsLeft = true;
-	for (int i = 0; i &lt; nLowThreads; ++i)
+	std::atomic<bool> hasLowJobsLeft = true;
+	for (int i = 0; i < nLowThreads; ++i)
 	{
 		std::thread t([&]() {
 			ExecuteJobsQ(hasLowJobsLeft, lowJobQ, g_mutexLowJobQ);
@@ -98,11 +99,12 @@ void RunThreadedPriority()
 	}
 
 	const int threadCount = threads.size();
-	for (int i = 0; i &lt; threadCount; ++i)
+	for (int i = 0; i < threadCount; ++i)
 	{
 		threads[i].join();
 	}
-}</pre>
+}
+```
 
 Run time with 8 threads: 6059 ms. ( 4 High Job threads, 2 medium and 2 low threads. )<figure class="wp-block-image size-large">
 
@@ -116,20 +118,21 @@ We can try to fix that by implementing some kind of work stealing. When a thread
 
 This next test is just that. Each thread type was setup to grab a job of less priority from their main one, once they run out of jobs. Hopefully we will prevent threads from going idle.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void RunThreadedPriorityWorkStealing()
+```cpp
+void RunThreadedPriorityWorkStealing()
 {
 	int nHighThreads = 5;
 	int nMediumThreads = 1;
 	int nLowThreads = 1;
 
-	std::queue&lt;CalcPiJob*> lowJobQ = GetJobsOfType(Settings::JobCountLow, Settings::IterationCountLow);
-	std::queue&lt;CalcPiJob*> mediumJobQ = GetJobsOfType(Settings::JobCountMedium, Settings::IterationCountMedium);
-	std::queue&lt;CalcPiJob*> highJobQ = GetJobsOfType(Settings::JobCountHigh, Settings::IterationCountHigh);
+	std::queue<CalcPiJob*> lowJobQ = GetJobsOfType(Settings::JobCountLow, Settings::IterationCountLow);
+	std::queue<CalcPiJob*> mediumJobQ = GetJobsOfType(Settings::JobCountMedium, Settings::IterationCountMedium);
+	std::queue<CalcPiJob*> highJobQ = GetJobsOfType(Settings::JobCountHigh, Settings::IterationCountHigh);
 
-	std::vector&lt;std::thread> threads;
+	std::vector<std::thread> threads;
 
-	std::atomic&lt;bool> isHighPriorityThreadsActive = true;
-	for (int i = 0; i &lt; nHighThreads; ++i)
+	std::atomic<bool> isHighPriorityThreadsActive = true;
+	for (int i = 0; i < nHighThreads; ++i)
 	{
 		std::thread t([&]() {
 			
@@ -163,8 +166,8 @@ This next test is just that. Each thread type was setup to grab a job of less pr
 		threads.push_back(std::move(t));
 	}
 
-	std::atomic&lt;bool> isMediumThreadsActive = true;
-	for (int i = 0; i &lt; nMediumThreads; ++i)
+	std::atomic<bool> isMediumThreadsActive = true;
+	for (int i = 0; i < nMediumThreads; ++i)
 	{
 		std::thread t([&]() {
 			while (isMediumThreadsActive)
@@ -191,8 +194,8 @@ This next test is just that. Each thread type was setup to grab a job of less pr
 		threads.push_back(std::move(t));
 	}
 
-	std::atomic&lt;bool> isLowThreadsActive = true;
-	for (int i = 0; i &lt; nLowThreads; ++i)
+	std::atomic<bool> isLowThreadsActive = true;
+	for (int i = 0; i < nLowThreads; ++i)
 	{
 		std::thread t([&]() {
 			while (isLowThreadsActive)
@@ -250,11 +253,12 @@ This next test is just that. Each thread type was setup to grab a job of less pr
 	}
 
 	const int threadCount = threads.size();
-	for (int i = 0; i &lt; threadCount; ++i)
+	for (int i = 0; i < threadCount; ++i)
 	{
 		threads[i].join();
 	}
-}</pre>
+}
+```
 
 Run time with 8 threads: 2625 ms.<figure class="wp-block-image size-large">
 
@@ -266,26 +270,27 @@ Now we can see that the high priority worker threads started to take on medium s
 
 Now lets say I'm processing data and I need to start Jobs in sync in between multiple threads, or maybe I'm building a game engine and my main update loop needs to start at the same time as the physics loop in some other thread. Whichever the case, I tough looking up synchronization mechanisms was worth doing as well. 
 
-<pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">std::mutex g_syncMutex;
+```cpp
+std::mutex g_syncMutex;
 std::condition_variable g_conditionVariable;
 
 void RunSynchronizedThreads()
 {
 	int nThreads = std::thread::hardware_concurrency() - 1;
-	std::vector&lt;std::thread> threads;
+	std::vector<std::thread> threads;
 
-	std::queue&lt;CalcPiJob*> jobQ = GetJobsQ();
+	std::queue<CalcPiJob*> jobQ = GetJobsQ();
 
-	std::atomic&lt;bool> signal = false;
-	std::atomic&lt;bool> threadsActive = true;
-	for (int i = 0; i &lt; nThreads; ++i)
+	std::atomic<bool> signal = false;
+	std::atomic<bool> threadsActive = true;
+	for (int i = 0; i < nThreads; ++i)
 	{
 		std::thread t([&]() {
 			while (threadsActive)
 			{
 				// Tell main thread, worker is available for work
 				{
-					std::unique_lock&lt;std::mutex> lk(g_syncMutex);
+					std::unique_lock<std::mutex> lk(g_syncMutex);
 					g_conditionVariable.wait(lk, [&] { return signal == true; });
 				}
 
@@ -306,12 +311,12 @@ void RunSynchronizedThreads()
 	}
 
 	// main thread
-	std::atomic&lt;bool> mainThreadActive = true;
+	std::atomic<bool> mainThreadActive = true;
 	while (mainThreadActive && threadsActive)
 	{
 		// send signal to worker threads, they can start work.
 		{
-			std::lock_guard&lt;std::mutex> lk(g_syncMutex);
+			std::lock_guard<std::mutex> lk(g_syncMutex);
 			signal = true;
 		}
 		g_conditionVariable.notify_all();
@@ -319,7 +324,7 @@ void RunSynchronizedThreads()
 		// send signal to worker threads, so they have to wait for their next update.
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		{
-			std::lock_guard&lt;std::mutex> lk(g_syncMutex);
+			std::lock_guard<std::mutex> lk(g_syncMutex);
 			signal = false;
 		}
 		g_conditionVariable.notify_all();
@@ -338,11 +343,12 @@ void RunSynchronizedThreads()
 		}
 	}
 
-	for (int i = 0; i &lt; nThreads; ++i)
+	for (int i = 0; i < nThreads; ++i)
 	{
 		threads[i].join();
 	}
-}</pre>
+}
+```
 
 Run time: 2674 ms<figure class="wp-block-image size-large">
 

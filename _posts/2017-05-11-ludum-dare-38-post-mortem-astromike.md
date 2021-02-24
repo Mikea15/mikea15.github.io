@@ -26,7 +26,7 @@ TL;DR; <a href="https://twitter.com/MarcoValeKaz" target="_blank" rel="noopener 
 
 * * *
 
-I was awake at 3 am to know the theme for Ludum Dare 38. I still hadn't made my mind if I was going to participate, it would depend on the theme and if I could come up with something. The theme was released, &#8216;A Small World', and I immediately went to bed. There's nothing like a good night sleep, and letting my brain think about the theme.
+I was awake at 3 am to know the theme for Ludum Dare 38. I still hadn't made my mind if I was going to participate, it would depend on the theme and if I could come up with something. The theme was released, 'A Small World', and I immediately went to bed. There's nothing like a good night sleep, and letting my brain think about the theme.
 
 So in the morning, I started researching the theme, I had micro-organisms in mind, micro and macro ecosystems but nothing really that would stand out. I thought about how Small World could lead to having a simple set of rules in a small constrained world, and with the micro-organisms idea, I shifted towards a space exploration game, heavily inspired by Hitman GO and Lara Croft GO games.
 
@@ -72,6 +72,6 @@ On day 3, we focused on making it look better and fixing a few issues that were 
 
 
 
-I started the Ludum Dare alone, with a faint idea of what to do, and with <a href="https://twitter.com/MarcoValeKaz" target="_blank" rel="noopener noreferrer">Marco</a>&#8216;s amazing help, we were able to make something really nice, and learn a lot in the process. I think this is the most fun I've had making games in quite a while, and definitely my best LD entry so far. 72h later, I'm proud of the game we've created. <a href="https://mikea15.itch.io/astromike" target="_blank" rel="noopener noreferrer">Feel free to try it out</a>, and leave a comment if you like.
+I started the Ludum Dare alone, with a faint idea of what to do, and with <a href="https://twitter.com/MarcoValeKaz" target="_blank" rel="noopener noreferrer">Marco</a>'s amazing help, we were able to make something really nice, and learn a lot in the process. I think this is the most fun I've had making games in quite a while, and definitely my best LD entry so far. 72h later, I'm proud of the game we've created. <a href="https://mikea15.itch.io/astromike" target="_blank" rel="noopener noreferrer">Feel free to try it out</a>, and leave a comment if you like.
 
 See you next Ludum Dare.

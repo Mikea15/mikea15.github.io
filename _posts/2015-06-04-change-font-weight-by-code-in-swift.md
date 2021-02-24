@@ -16,11 +16,16 @@ tags:
   - iOS
   - Swift
 ---
-<pre class="EnlighterJSRAW" data-enlighter-language="c" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">let currentFont = label.font
+
+
+
+This snippet changes the current font of a label to a Light version of it ( in case it exists ). Font names are ( in this case, it was '.HelveticaNeue-Regular' ) appended with their weight. So I get the font name, split it by '-', and take the first part of the split, ending with '.HelveticaNeue'. Now I just create a new font with the light appended to it, with the same size.
+
+```switf
+let currentFont = label.font
 let fontName = currentFont.fontName.componentsSeparatedByString("-").first
 let newFont = UIFont(name: "\(fontName!)-Light", size: currentFont.pointSize)
-label.font = newFont</pre>
-
-This snippet changes the current font of a label to a Light version of it ( in case it exists ). Font names are ( in this case, it was &#8216;.HelveticaNeue-Regular' ) appended with their weight. So I get the font name, split it by &#8216;-&#8216;, and take the first part of the split, ending with &#8216;.HelveticaNeue'. Now I just create a new font with the light appended to it, with the same size.
+label.font = newFont
+```
 
 Lastly, I switch the font, and there you go.

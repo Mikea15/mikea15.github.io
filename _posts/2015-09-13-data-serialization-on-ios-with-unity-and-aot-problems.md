@@ -26,7 +26,8 @@ There are some answers on Unity Ansers, but [this forum post](http://forum.unity
 
 So, yup, my solution was to add that same piece of code on the file where I am invoking the code. 
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void Awake( )
+```cpp
+void Awake( )
     {
     #if UNITY_IOS
         // Forces a different code path in the BinaryFormatter that doesn't rely on run-time code generation (which would break on iOS).
@@ -34,6 +35,7 @@ So, yup, my solution was to add that same piece of code on the file where I am i
     #endif
         // ...
         LoadData();
-    }</pre>
+    }
+```
 
 So just in case, I'll leave this here for future reference. ;)

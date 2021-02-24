@@ -30,45 +30,54 @@ The main idea behind this achievement system is to count how many occurrences a 
 
 I'm going to create a simple data structure to hold the **achievement data**:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public class Achievement
+```cpp
+public class Achievement
 {
     public int countToUnlock { get; set; }
     public bool isUnlocked { get; set; }
     public string Message { get; set; }
-}</pre>
+}
+```
 
 For the sake of simplicity, I'm not declaring private variables, nor constructors. This will do just fine for the purpose of this article. Might as well have declared that as a structure. Oh well.
 
 I'll have an **achievement type** enumerator and a **achievement argument** for the events.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public enum AchievementType
+```cpp
+public enum AchievementType
 {
     Tap,
     Score,
     Die,
     Start
-};</pre>
+};
+```
 
 This is not the most elegant way to creating Achievement Types. I could have set them dynamically as Strings, but then I would have to search the dictionary against strings which is less efficient as this. For the simplicity of this system, I'll be using "hard coded" achievement types.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public class AchievementEventArg : EventArgs
+```cpp
+public class AchievementEventArg : EventArgs
 {
 	public Achievement Data;
 	public AchievementEventArg( Achievement e )
 	{
 		Data = e;
 	}
-}</pre>
+}
+```
 
 With this, we can start to think about our **AchievementManager** class. But first, how do we want to handle the actions made by the user. I think one easy enough method would be to call the **AchivementManager** class, and **Register** a particular action occurrence, as such:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">_achievementManager.RegisterEvent(AchievementType.Die);</pre>
+```cpp
+_achievementManager.RegisterEvent(AchievementType.Die);
+```
 
 So whenever my player dies, I'll call the _RegisterEvent_ on **AchievementManager** and chose the _Die_ **achievement type**.
 
 The code behind **RegisterEvent** would look like this:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public void RegisterEvent( AchievementType type )
+```cpp
+public void RegisterEvent( AchievementType type )
 {
 	if( !_achievementKeeper.ContainsKey(type) )
 	    return;
@@ -89,11 +98,14 @@ The code behind **RegisterEvent** would look like this:
 		break;
 	}
 	ParseAchievements(type);
-}</pre>
+}
+```
 
 **RegisterEvent** will check the **achievement type** and increment it on the __achievementkeeper_ data structure. This __achievementkeeper_&nbsp; is a simple Dictionary declared as such:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">private Dictionary&lt;AchievementType> _achievementKeeper;</pre>
+```cpp
+private Dictionary<AchievementType> _achievementKeeper;
+```
 
 Since our achievement keeper is a dictionary with the key being the Achievement type, we just have to increment the dictionary's value at that key.&nbsp;As you can see, I switch over&nbsp;all Achievement types, and increment the occurrences of the achievements. I also check whether the achievement type is present in the dictionary. Should the dictionary have to key, it would return a exception, which I am not handling in a try catch, again for the sake of simplicity.
 
@@ -101,7 +113,8 @@ At the end of the **RegisterEvent** method, I call **ParseAchievements** of that
 
 Here's the code for **ParseAchievement**:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public void ParseAchievements( AchievementType type )
+```cpp
+public void ParseAchievements( AchievementType type )
 {
 	foreach( var kvp in _achievements.Where( a =&gt; a.Key == type ) ) // use System.Linq.
 	{
@@ -117,28 +130,34 @@ Here's the code for **ParseAchievement**:
 			}
 		}
 	}
-}</pre>
+}
+```
 
 As mentioned, the second loop will go through all the achievements of that type.&nbsp;They are stored in another dictionary declared as such:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">private Dictionary&lt;AchievementType, List&lt;Achievement>> _achievements;</pre>
+```cpp
+private Dictionary<AchievementType, List<Achievement>> _achievements;
+```
 
 As you can see, I have all achievements per type linked to lists of achievements of that type. You could do it in other ways, but I found this one to work pretty nicely. This is how I load all achievements:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">var listStart = new List();
+```cpp
+var listStart = new List();
 listStart.Add(new Achievement() { countToUnlock = 1, isUnlocked = false, Message = "First Time Playing!" });
 listStart.Add(new Achievement() { countToUnlock = 5, isUnlocked = false, Message = "Fifth Time is the Charm?" });
 listStart.Add(new Achievement() { countToUnlock = 19, isUnlocked = false, Message = "Hello and Welcome Back!" });
 listStart.Add(new Achievement() { countToUnlock = 25, isUnlocked = false, Message = "Tapping Time!!" });
 listStart.Add(new Achievement() { countToUnlock = 50, isUnlocked = false, Message = "Perseverance Lvl 1!" });
 
-_achievements.Add(AchievementType.Start, listStart );</pre>
+_achievements.Add(AchievementType.Start, listStart );
+```
 
 First, I create a list of **Achievements**, where I manually create them ( they should be loaded from a file or database ). Then, I add them into the __achievements_ dictionary and set all the achievements in the list of type **Start** ( to be used when the player starts the game ).
 
 And finally the **RaiseAchievementUnlocked** _event handler_ and _event raiser_:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public event EventHandler AchievementUnlocked;
+```cpp
+public event EventHandler AchievementUnlocked;
 protected virtual void RaiseAchievementUnlocked( Achievement ach )
 {
     // unlock the event
@@ -149,16 +168,18 @@ protected virtual void RaiseAchievementUnlocked( Achievement ach )
     {
         del( this, new AchievementEventArg(ach) );
     }
-}</pre>
+}
+```
 
 The **EventHandler** only declares a public event, so another class, say the **GameManager** class, can register this event, and when a event is fired, get the info on the achievement. The **RaiseAchievementUnlocked** method accepts the **Achievement** as parameter to be sent through the delegate, wrapped in a **AchievementEventArgs** class, only after setting the **Achievement** as unlocked. &nbsp;When the **GameManager** class, received the event, it will get the data available from the **Achievement**, namely, _countToUnlock_, _isUnlocked_, and in this case, the only useful one for the player, _Message_. Then its up to the **GameManager** to show a message to the user letting him know he/she has unlocked the **Achievement**.
 
 Here's the full code for the AchievementManager.cs class:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public class AchievementsManager
+```cpp
+public class AchievementsManager
 {
-    private Dictionary&lt;AchievementType, List&lt;Achievement>> _achievements;
-    private Dictionary&lt;AchievementType> _achievementKeeper;
+    private Dictionary<AchievementType, List<Achievement>> _achievements;
+    private Dictionary<AchievementType> _achievementKeeper;
 
 	public event EventHandler AchievementUnlocked;
 	protected virtual void RaiseAchievementUnlocked( Achievement ach )
@@ -175,14 +196,14 @@ Here's the full code for the AchievementManager.cs class:
 
     public AchievementsManager( )
     {
-		_achievementKeeper = new Dictionary&lt;AchievementType>();
+		_achievementKeeper = new Dictionary<AchievementType>();
 		// ideally, load here previous, saved values.
 		// tap = 0
 		// die = 1
 		// start = 12
 		// score = 1231
 
-		_achievements = new Dictionary&lt;AchievementType>();
+		_achievements = new Dictionary<AchievementType>();
 
 		var listStart = new List();
 		listStart.Add(new Achievement() { countToUnlock = 3, isUnlocked = false, Message = "First Time Playing!" });
@@ -235,20 +256,25 @@ Here's the full code for the AchievementManager.cs class:
 			}
 		}
 	}
-}</pre>
+}
+```
 
 Here is an example usage of the **AchievementManager** class. Declaration is trivial:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">private AchievementsManager _achievementManager;</pre>
+```cpp
+private AchievementsManager _achievementManager;
+```
 
 In the constructor or initialization method for the **GameManager** class, I instantiate the **AchievementManager**, register to the **AchievementUnlocked event** and specify I want to call a method to show the achievement, which is defined as a lambda expression ( That I will talk about in the second part of this tutorial ). Finally, as I am starting the game, I call the register event method on the **AchievementManager** and register a _Start_ **Achievement Type**.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">_achievementManager = new AchievementsManager();
+```cpp
+_achievementManager = new AchievementsManager();
 _achievementManager.AchievementUnlocked += (sender, e) =&gt;
 { 
 	ShowAchievement(e.Data); 
 };
 _achievementManager.RegisterEvent(AchievementType.Start);
-</pre>
+
+```
 
 That pretty much covers this simple achievement system that can be used in any game. I hoped you enjoyed this tutorial, feel free to use this, add to it, comment and give suggestions. Part 2 will cover how to effectively use this in Unity3D engine. To make your life easier, <a title="AchievementManager.cs Gist" href="https://gist.github.com/Mikea15/deff4f794e4963b07ae2" target="_blank" rel="noopener noreferrer">here the gist of the whole file</a>. Enjoy.

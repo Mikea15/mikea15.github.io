@@ -30,15 +30,19 @@ So, using Unity's physics engine, how can we make our player jump? By looking at
 
 In order to control how much I want my player to jump I need to setup some variables first, namely, I will need a _jumpVelocityChange_ and _isJumping_ variable. I will also store the reference to the rigidbody, that I will get in the Awake method.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">[SerializeField] private float _jumpVelocityChange;
+```cpp
+[SerializeField] private float _jumpVelocityChange;
 [SerializeField] private bool _isJumping;
 
-private Rigidbody _rigidBody;</pre>
+private Rigidbody _rigidBody;
+```
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void Awake( )
+```cpp
+void Awake( )
 {
 	_rigidBody = this.GetComponent();
-}</pre>
+}
+```
 
 **Quick Tip:** _[[SerializeField](http://docs.unity3d.com/ScriptReference/SerializeField.html)]_ is used in unity, not only but also, to expose _private_ variables in the Inspector. Why don't I just make it public you ask? Because I don't want other classes to access those variables, they are meant to be private.
 
@@ -46,27 +50,34 @@ So now that I have those setup, I'll set them on the Inspector. I chose to set _
 
 Now, to make the actual jump. In our Update function, I'm going to check if I click the left mouse button. If the left mouse button is pressed and I am not currently jumping, I'll set the _isJumping variable to true, and add a vertical force to the _player's rigidbody_.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">if ( Input.GetMouseButtonDown(0) && !_isJumping ) {
+```cpp
+if ( Input.GetMouseButtonDown(0) && !_isJumping ) {
 	_isJumping = true;
 	_rigidBody.AddForce(this.transform.up * _jumpVelocityChange, ForceMode.VelocityChange);
-}</pre>
+}
+```
 
 This only will make the player jump when you click the left mouse button. But now when it falls down, you can't jump again. Care to guess why? Because we haven't set our _isJumping variable to false. So when should we do that? I'm going to go pretty simple with this, since both the ground and the player have colliders and rigidbodies, I can call the OnCollisionEnter method from my player, and when it's called, switch the variable to false. I'm not going to add anything else now, and leave it like this, but ideally, you'll want to check with whom the collision was made, if indeed it was the floor, for instance.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void OnCollisionEnter( Collision collision )
+```cpp
+void OnCollisionEnter( Collision collision )
 {
 	_isJumping = false;
-}</pre>
+}
+```
 
 Now everything seems to work fine. You can jump, fall down, and then jump again. But what about the SuperMario style jump? You know, the more you press, the longer you remain in the air? For this, I need to setup three new variables, \_startJumpTime, \_maxJumpTime and _jumpAcceleration, so I can control air time and the acceleration force added during the jump.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">[SerializeField] private float _startJumpTime;
+```cpp
+[SerializeField] private float _startJumpTime;
 [SerializeField] private float _maxJumpTime;
-[SerializeField] private float _jumpAcceleration;</pre>
+[SerializeField] private float _jumpAcceleration;
+```
 
 I've changed the update method to include the "hold-to-jump-higher-and-for-more-time" behaviour, and updated the first impulse to add the start jump time. So your FixedUpdate method should look something like this:
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">if ( Input.GetMouseButtonDown(0) && !_isJumping ) {
+```cpp
+if ( Input.GetMouseButtonDown(0) && !_isJumping ) {
 	_isJumping = true;
     _startJumpTime = Time.time;
 	_maxJumpTime = _startJumpTime + _airJumpTime;
@@ -75,13 +86,15 @@ I've changed the update method to include the "hold-to-jump-higher-and-for-more-
 else if ( Input.GetMouseButton(0) && _isJumping && ( _startJumpTime + _maxJumpTime > Time.time ) ) 
 {
 	_rigidBody.AddForce(Vector3.up * _jumpAcceleration, ForceMode.Acceleration);
-}</pre>
+}
+```
 
 This checks for a different Input method, _GetMouseButton_ instead of _GetMouseButtonDown_. The first one is called whenever the button is down, and the later is called once, when the button was pressed. So we capture the long button press, check if we are indeed already jumping, and check the amount of time we have to allow this long jump. If all those conditions are met, we keep on jumping, giving a continuous acceleration. This time we use an acceleration instead of velocity change, so the effects is a lot smaller.
 
 So now you should be able to have your awesome "Super Mario style Jump":
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">[RequireComponent (typeof(Rigidbody))]
+```cpp
+[RequireComponent (typeof(Rigidbody))]
 public class Character : MonoBehaviour 
 {
 	[SerializeField] private float _jumpVelocityChange;
@@ -117,7 +130,8 @@ public class Character : MonoBehaviour
 	{
 		_isJumping = false;
 	}
-}</pre>
+}
+```
 
 **Quick Tip:** Notice the [[RequireComponent](http://docs.unity3d.com/ScriptReference/RequireComponent.html) (typeof(RigidBody))] on the top of the class. What this does is automatically add the RigidBody component to the object you are adding this class to. So if there is no rigidbody, it will automatically add it. This makes sure that whenever I call the component in the Awake method, I always get a rigidbody, thus avoiding future errors.
 

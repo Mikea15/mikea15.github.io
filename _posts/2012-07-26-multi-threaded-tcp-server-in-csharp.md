@@ -26,7 +26,7 @@ This tutorial introduces the concept of using threads to handle multiple clients
 
 **The Client Class**.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">class ClientDemo
+class ClientDemo
 {
     private TcpClient _client;
 
@@ -65,7 +65,8 @@ This tutorial introduces the concept of using threads to handle multiple clients
             // String sDataIncomming = _sReader.ReadLine();
         }
     }
-}</pre>
+}
+```
 
 In this class we're going to need to a instantiate a [TcpClient](http://msdn.microsoft.com/en-us/library/system.net.sockets.tcpclient.aspx "TcpClient MSDN") so we can have a connection with the server.
 
@@ -77,7 +78,8 @@ After that, I just ask for input and send it to the server. From there you can d
 
 **The Server Class**
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">class TcpServer
+```cpp
+class TcpServer
 {
     private TcpListener _server;
     private Boolean _isRunning;
@@ -133,7 +135,8 @@ After that, I just ask for input and send it to the server. From there you can d
             // sWriter.Flush();
         }
     }
-}</pre>
+}
+```
 
 In this class, you'll have to have a [TcpListener](http://msdn.microsoft.com/en-us/library/system.net.sockets.tcplistener.aspx "TcpListener MSDN") Class. When you start your Server class, you'll be opening a port on the machine and will be waiting for clients to connect.
 
@@ -145,7 +148,8 @@ After that, you can do what you want, send and receive data :)
 
 **Client Main Class**
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="git" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">namespace Client
+```cpp
+namespace Client
 {
     class Program
     {
@@ -161,11 +165,13 @@ After that, you can do what you want, send and receive data :)
             ClientDemo client = new ClientDemo(ip, port);
         }
     }
-}</pre>
+}
+```
 
 **Server Main Class**
 
-<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">namespace Multi_Threaded_TCP
+```cpp
+namespace Multi_Threaded_TCP
 {
     class Program
     {
@@ -175,7 +181,8 @@ After that, you can do what you want, send and receive data :)
             TcpServer server = new TcpServer(5555);
         }
     }
-}</pre>
+}
+```
 
 _Note: Just change the "5555" to whatever you want. That's the port the server will be listening to. Or even better, ask for it when launching the application or store it in a configuration file. ;)_
 

@@ -130,7 +130,7 @@ Here's the trailer for the final version:
 <span class="embed-youtube" style="text-align:center; display: block;"></span>
 
 In conclusion.  
-The bad: No planning whatsoever. I didn't think ahead and plan the game through. I also probably should have got in contact with the community sooner, to ask for help or get feedback for the game. The lack of planning, made is easy to make &#8216;just one more feature', that in the end, either didn't make it to the final build or took way too much effort for what its worth.
+The bad: No planning whatsoever. I didn't think ahead and plan the game through. I also probably should have got in contact with the community sooner, to ask for help or get feedback for the game. The lack of planning, made is easy to make 'just one more feature', that in the end, either didn't make it to the final build or took way too much effort for what its worth.
 
 The good: You always learn something, some new technology, new and better code practices, and most importantly, you ship a game! Jumpy Rope made me value planning, and careful consideration of features, what to kill and what to invest in. Get feedback early, get it out to the community as soon as possible. 
 
