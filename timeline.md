@@ -22,43 +22,35 @@ permalink: /timeline/
 - Worked on WiiGo, Interactive Applications, Games.
 - Imagine Cup Worldwide Finals ( Sydney, Australia ) – 3rd Place.
 
-
 <iframe width="420" height="315" src="https://www.youtube.com/watch?v=26DEnipERV8" frameborder="0" allowfullscreen></iframe>
 
-2013
+## 2013
+-Lead Software Engineer at Follow Inspiration
+-Worked on WiiGo, Interactive Applications, Games.
+-Memtiles Kids released on Android // Unity
 
-    Lead Software Engineer at Follow Inspiration
-        Worked on WiiGo, Interactive Applications, Games.
-    Memtiles Kids released on Android // Unity
+## 2014
+-Game Developer at BLKO
 
-2014
+## 2015
+-iOS App development for THU ( https://trojan-unicorn.com ) // Swift
+-Tech/Production Assistant at Trojan Horse was a Unicorn ( https://trojan-unicorn.com/ )
+-Sr Game Developer at BLKO
+-Super Stems released on iOS // Unity
 
-    Game Developer at BLKO
+## 2016
+-Jumpy Rope released on iOS and Android // Unity + Ruby on Rails Webservice.
+-Tech/Production Assistant at Trojan Horse was a Unicorn event. https://trojan-unicorn.com/
+-Udemy Course: Learn Advanced C++ Programming
+-VR Simulation for Lausanne Civil Protection 
 
-2015
+## 2017
+-3 Months, 7 Project Demos @BLKO // Unity, Unreal Engine, VR ( HTC Vive )
 
-    iOS App development for THU ( https://trojan-unicorn.com ) // Swift
-    Tech/Production Assistant at Trojan Horse was a Unicorn ( https://trojan-unicorn.com/ )
-    Sr Game Developer at BLKO
-    Super Stems released on iOS // Unity
+<iframe width="420" height="315" src="https://www.youtube.com/watch?v=L94QWk_mtVQ" frameborder="0" allowfullscreen></iframe>
 
+-Udemy Course: The Unreal Engine Developer Course ( C++ )
 
+-Astromike entry for Ludum Dare #38 ( 72h Game Competition ). Overal #88, with over 1900 entries. [Check the Projects page]({{ './projects' | relative_path }})
 
-
-2016
-
-    Jumpy Rope released on iOS and Android // Unity + Ruby on Rails Webservice.
-    Tech/Production Assistant at Trojan Horse was a Unicorn event. https://trojan-unicorn.com/
-    Udemy Course: Learn Advanced C++ Programming
-    VR Simulation for Lausanne Civil Protection 
-
-2017
-
-    3 Months, 7 Project Demos @BLKO // Unity, Unreal Engine, VR ( HTC Vive )
-
-    https://www.youtube.com/watch?v=L94QWk_mtVQ
-
-        Udemy Course: The Unreal Engine Developer Course ( C++ )
-    Astromike entry for Ludum Dare #38 ( 72h Game Competition ). Overal #88, with over 1900 entries.
-
-    https://www.youtube.com/watch?v=b30id6bcWQk
+<iframe width="420" height="315" src="https://www.youtube.com/watch?v=b30id6bcWQk" frameborder="0" allowfullscreen></iframe>
