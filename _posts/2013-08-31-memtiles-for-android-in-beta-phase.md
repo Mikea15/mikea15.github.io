@@ -18,7 +18,7 @@ tags:
 ---
 <img src="http://mikeadev.net/wp-content/uploads/header.png" alt="header"  />
 
-So I&#8217;m making a casual memory game for mobile platforms. Its a simple educational puzzle, where you need to retrieve the tile pairs on the grid.
+So I'm making a casual memory game for mobile platforms. Its a simple educational puzzle, where you need to retrieve the tile pairs on the grid.
 
 There is currently only one mode and one theme, but more will be added this month. There will be 3 more themes and a new game mode (maybe). There is also the educational part to do :)
 

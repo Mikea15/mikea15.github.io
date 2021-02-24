@@ -24,7 +24,7 @@ As for visual style, Crossy Road, Monument Valley where all people talked about,
 
 I started to work as I always do, gameplay first, so I focused on the jumping mechanism, which is the most important part of the game, [making a tutorial at the same time for that](http://mikeadev.net/2015/08/variable-jump-height-in-unity/) ( which as evolved from the tutorial, and is was not implemented in the game ).
 
-A week later I had a prototype which ugly models, art, and no polish, as prototypes should be. With a couple of polish here and there, and a couple of assets from Unity&#8217;s asset store, I tough I could make it, and release it. It wouldn&#8217;t be the best thing in the world, but having no team to work with, it was all I had. Luckily, I stumble upon this:
+A week later I had a prototype which ugly models, art, and no polish, as prototypes should be. With a couple of polish here and there, and a couple of assets from Unity's asset store, I tough I could make it, and release it. It wouldn't be the best thing in the world, but having no team to work with, it was all I had. Luckily, I stumble upon this:
 
 <blockquote class="twitter-tweet" data-width="525" data-dnt="true">
   <p lang="en" dir="ltr">
@@ -86,11 +86,11 @@ Couple of months later I was working on two player mode, while waiting for chara
 
 
 
-While waiting for assets from the team, I had made UI, a Replay System to save people&#8217;s games and replay them as ghosts ( never made it ), local two player mode ( was removed because people didn&#8217;t play it ), changed leaderboard system to be cross-platform and integrated with facebook, changed gameplay input based on player feedback ( twice ), and of course the api to handle all that stuff online. The UI took several iterations, I really think that at each step it got better, but at some point I had to close on a final version.
+While waiting for assets from the team, I had made UI, a Replay System to save people's games and replay them as ghosts ( never made it ), local two player mode ( was removed because people didn't play it ), changed leaderboard system to be cross-platform and integrated with facebook, changed gameplay input based on player feedback ( twice ), and of course the api to handle all that stuff online. The UI took several iterations, I really think that at each step it got better, but at some point I had to close on a final version.
 
 <blockquote class="twitter-tweet" data-width="525" data-dnt="true">
   <p lang="en" dir="ltr">
-    Last UI Redesign I hope&#8230; Made this 3 times already.. a <a href="https://twitter.com/hashtag/gamedev?src=hash&ref_src=twsrc%5Etfw">#gamedev</a> suffers.. :P How's my 'Programmer' art for ya? :P <a href="https://t.co/N45tvEaDOw">pic.twitter.com/N45tvEaDOw</a>
+    Last UI Redesign I hope... Made this 3 times already.. a <a href="https://twitter.com/hashtag/gamedev?src=hash&ref_src=twsrc%5Etfw">#gamedev</a> suffers.. :P How's my 'Programmer' art for ya? :P <a href="https://t.co/N45tvEaDOw">pic.twitter.com/N45tvEaDOw</a>
   </p>
   
   <p>
@@ -102,7 +102,7 @@ While waiting for assets from the team, I had made UI, a Replay System to save p
 
 <blockquote class="twitter-tweet" data-width="525" data-dnt="true">
   <p lang="en" dir="ltr">
-    <a href="https://twitter.com/hashtag/screenshotsaturday?src=hash&ref_src=twsrc%5Etfw">#screenshotsaturday</a> <a href="https://twitter.com/hashtag/jumpyrope?src=hash&ref_src=twsrc%5Etfw">#jumpyrope</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/lowpoly?src=hash&ref_src=twsrc%5Etfw">#lowpoly</a> Still working on this!! I'm almost there&#8230; I promisse! :) <a href="https://t.co/Owtcnb2v9x">pic.twitter.com/Owtcnb2v9x</a>
+    <a href="https://twitter.com/hashtag/screenshotsaturday?src=hash&ref_src=twsrc%5Etfw">#screenshotsaturday</a> <a href="https://twitter.com/hashtag/jumpyrope?src=hash&ref_src=twsrc%5Etfw">#jumpyrope</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/lowpoly?src=hash&ref_src=twsrc%5Etfw">#lowpoly</a> Still working on this!! I'm almost there... I promisse! :) <a href="https://t.co/Owtcnb2v9x">pic.twitter.com/Owtcnb2v9x</a>
   </p>
   
   <p>
@@ -114,7 +114,7 @@ While waiting for assets from the team, I had made UI, a Replay System to save p
 
 <blockquote class="twitter-tweet" data-width="525" data-dnt="true">
   <p lang="en" dir="ltr">
-    Once upon a time&#8230; a bunch-of-ropes! <a href="https://twitter.com/hashtag/gamedev?src=hash&ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/ropes?src=hash&ref_src=twsrc%5Etfw">#ropes</a> <a href="https://twitter.com/hashtag/jumpyrope?src=hash&ref_src=twsrc%5Etfw">#jumpyrope</a> <a href="https://t.co/oamNxGJEGj">pic.twitter.com/oamNxGJEGj</a>
+    Once upon a time... a bunch-of-ropes! <a href="https://twitter.com/hashtag/gamedev?src=hash&ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/ropes?src=hash&ref_src=twsrc%5Etfw">#ropes</a> <a href="https://twitter.com/hashtag/jumpyrope?src=hash&ref_src=twsrc%5Etfw">#jumpyrope</a> <a href="https://t.co/oamNxGJEGj">pic.twitter.com/oamNxGJEGj</a>
   </p>
   
   <p>
@@ -126,13 +126,13 @@ While waiting for assets from the team, I had made UI, a Replay System to save p
 
 In the later stages of development, [Pedro Costa](https://twitter.com/Dainomyte) came in to make the game stand out with audio, sound effects and music. Now the game is freely available on the [AppStore](http://bit.ly/sky_jrope_), and on [GooglePlay](http://bit.ly/sk_jrope_).
 
-Here&#8217;s the trailer for the final version:  
+Here's the trailer for the final version:  
 <span class="embed-youtube" style="text-align:center; display: block;"></span>
 
 In conclusion.  
-The bad: No planning whatsoever. I didn&#8217;t think ahead and plan the game through. I also probably should have got in contact with the community sooner, to ask for help or get feedback for the game. The lack of planning, made is easy to make &#8216;just one more feature&#8217;, that in the end, either didn&#8217;t make it to the final build or took way too much effort for what its worth.
+The bad: No planning whatsoever. I didn't think ahead and plan the game through. I also probably should have got in contact with the community sooner, to ask for help or get feedback for the game. The lack of planning, made is easy to make &#8216;just one more feature', that in the end, either didn't make it to the final build or took way too much effort for what its worth.
 
 The good: You always learn something, some new technology, new and better code practices, and most importantly, you ship a game! Jumpy Rope made me value planning, and careful consideration of features, what to kill and what to invest in. Get feedback early, get it out to the community as soon as possible. 
 
-That&#8217;s it for now.  
+That's it for now.  
 Cheers.

@@ -20,9 +20,9 @@ tags:
  
 
 **Super quick tip!**  
-I&#8217;ve come up with a problem when making a generic data serialization method in which I write my data to a binary file, which is an error that only occurs on iOS because it can&#8217;t run JIT ( Just-in-time ) compilation and/or AOT ( Ahead-of-time ) compilation because it doesn&#8217;t allow runtime code generation. 
+I've come up with a problem when making a generic data serialization method in which I write my data to a binary file, which is an error that only occurs on iOS because it can't run JIT ( Just-in-time ) compilation and/or AOT ( Ahead-of-time ) compilation because it doesn't allow runtime code generation. 
 
-There are some answers on Unity Ansers, but [this forum post](http://forum.unity3d.com/threads/persistent-data-storage-unity-serialization-error-on-ios.277989/) had the same problem as I was, and there is a fix that did it for me, that&#8217;s on [Unity Answers here](http://answers.unity3d.com/questions/30930/why-did-my-binaryserialzer-stop-working.html) with a pretty good explanation. 
+There are some answers on Unity Ansers, but [this forum post](http://forum.unity3d.com/threads/persistent-data-storage-unity-serialization-error-on-ios.277989/) had the same problem as I was, and there is a fix that did it for me, that's on [Unity Answers here](http://answers.unity3d.com/questions/30930/why-did-my-binaryserialzer-stop-working.html) with a pretty good explanation. 
 
 So, yup, my solution was to add that same piece of code on the file where I am invoking the code. 
 
@@ -36,4 +36,4 @@ So, yup, my solution was to add that same piece of code on the file where I am i
         LoadData();
     }</pre>
 
-So just in case, I&#8217;ll leave this here for future reference. ;)
+So just in case, I'll leave this here for future reference. ;)

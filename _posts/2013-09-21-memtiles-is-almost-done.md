@@ -15,9 +15,9 @@ tags:
   - programming
   - unity3d
 ---
-After nearly a month after the beta release of Memtiles, I&#8217;m nearly in the end of development. I&#8217;ve basically being updating and creating new assets, textures, checking for sound effects, hiring for music composition and graphics. So it has been pretty busy. Mainly because I&#8217;m working part-time on this project, only when I come home from work, and on weekends.
+After nearly a month after the beta release of Memtiles, I'm nearly in the end of development. I've basically being updating and creating new assets, textures, checking for sound effects, hiring for music composition and graphics. So it has been pretty busy. Mainly because I'm working part-time on this project, only when I come home from work, and on weekends.
 
-Today I lost all connections to my assets, prefabs, textures, everything.. I don&#8217;t know what happened to Unity3D, but that sure as hell cost me 3 hours rebuilding all prefabs. I guess I should back my things before opening a new branch.. or check what to ignore on bitbucket.. Anyway, I have my prefabs back.
+Today I lost all connections to my assets, prefabs, textures, everything.. I don't know what happened to Unity3D, but that sure as hell cost me 3 hours rebuilding all prefabs. I guess I should back my things before opening a new branch.. or check what to ignore on bitbucket.. Anyway, I have my prefabs back.
 
 <img src="http://mikeadev.net/wp-content/uploads/Screen-Shot-2013-09-21-at-1.35.38-AM.png" alt="Screen Shot 2013-09-21 at 1.35.38 AM"/> 
 

@@ -15,8 +15,8 @@ tags:
   - memtiles kids
   - updates
 ---
-So, I&#8217;m about to release Memtiles kids for Free. Why? Well, because no one is buying the game really. So I&#8217;m going to try another approach. I&#8217;m going to insert ads, one or two, and I&#8217;ll see whether that ends up creating revenue.
+So, I'm about to release Memtiles kids for Free. Why? Well, because no one is buying the game really. So I'm going to try another approach. I'm going to insert ads, one or two, and I'll see whether that ends up creating revenue.
 
-The objective here is to make some money in order to fund other games. I have some games in mind already and as soon as I get some time from my Msc Thesis, and occasional game jam participations ( #flappyjam, #candyjam ), I&#8217;ll work on two new titles I have been prototyping and playing with.
+The objective here is to make some money in order to fund other games. I have some games in mind already and as soon as I get some time from my Msc Thesis, and occasional game jam participations ( #flappyjam, #candyjam ), I'll work on two new titles I have been prototyping and playing with.
 
 One will be of the same style of Memtiles Kids, but with a new twist and for a broader audience. The other is completely different, and hopefully challenging.

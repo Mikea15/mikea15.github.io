@@ -28,7 +28,7 @@ tags:
 
 ## Specific Worker Threads for Specific Jobs 
 
-My next test case is to have different worker thread to run different kinds of tasks. The idea is to have a couple of threads for important jobs, others for less important jobs. I&#8217;ve split the tasks into different Job queues for simplicity. 
+My next test case is to have different worker thread to run different kinds of tasks. The idea is to have a couple of threads for important jobs, others for less important jobs. I've split the tasks into different Job queues for simplicity. 
 
 <pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">static std::mutex g_mutexLowJobQ;
 static std::mutex g_mutexMediumJobQ;
@@ -108,7 +108,7 @@ Run time with 8 threads: 6059 ms. ( 4 High Job threads, 2 medium and 2 low threa
 
 [<img src="http://mikeadev.net/wp-content/uploads/threads_p.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threads_p.jpg)<figcaption>( click to expand )</figcaption></figure> 
 
-The profile image show the 4 threads handling only big jobs, 2 threads handling medium jobs and the other 2 threads handling smaller jobs. As we can see, this won&#8217;t win us much time, since when some thread finish their work, they stand idle, not contributing to the bigger picture.
+The profile image show the 4 threads handling only big jobs, 2 threads handling medium jobs and the other 2 threads handling smaller jobs. As we can see, this won't win us much time, since when some thread finish their work, they stand idle, not contributing to the bigger picture.
 
 We can try to fix that by implementing some kind of work stealing. When a thread has no more jobs meant for them, they can steal jobs from other thread queues.
 
@@ -264,7 +264,7 @@ Now we can see that the high priority worker threads started to take on medium s
 
 ## Synchronizing Threads
 
-Now lets say I&#8217;m processing data and I need to start Jobs in sync in between multiple threads, or maybe I&#8217;m building a game engine and my main update loop needs to start at the same time as the physics loop in some other thread. Whichever the case, I tough looking up synchronization mechanisms was worth doing as well. 
+Now lets say I'm processing data and I need to start Jobs in sync in between multiple threads, or maybe I'm building a game engine and my main update loop needs to start at the same time as the physics loop in some other thread. Whichever the case, I tough looking up synchronization mechanisms was worth doing as well. 
 
 <pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">std::mutex g_syncMutex;
 std::condition_variable g_conditionVariable;
@@ -348,7 +348,7 @@ Run time: 2674 ms<figure class="wp-block-image size-large">
 
 [<img src="http://mikeadev.net/wp-content/uploads/threads_sync.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threads_sync.jpg)<figcaption>(click to expand)</figcaption></figure> 
 
-I&#8217;ve setup this one up so worker thread only start at the same frequency of the main thread. The goal here was to use condition variables to synchronize the threads, and hopefully confirm it with the profiler., which we can look at in the image above.<figure class="wp-block-table">
+I've setup this one up so worker thread only start at the same frequency of the main thread. The goal here was to use condition variables to synchronize the threads, and hopefully confirm it with the profiler., which we can look at in the image above.<figure class="wp-block-table">
 
 <table class="">
   <tr>

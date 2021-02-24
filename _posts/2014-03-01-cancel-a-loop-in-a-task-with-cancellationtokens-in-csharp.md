@@ -23,7 +23,7 @@ tags:
 ---
 This post explains the use of Cancellation Token in C# using Tasks, which are available since .Net Framework 4.
 
-Say you&#8217;ve created a asynchronous Task. The method you&#8217;re running inside your task contains a loop ( infinite or not ), and you want to break out of it peacefully. You would need to create a **CancellationTokenSource** and pass a&nbsp;**Cancellation Token** to the **Task** so it can be accessed in the main loop.
+Say you've created a asynchronous Task. The method you're running inside your task contains a loop ( infinite or not ), and you want to break out of it peacefully. You would need to create a **CancellationTokenSource** and pass a&nbsp;**Cancellation Token** to the **Task** so it can be accessed in the main loop.
 
 <!--more-->
 
@@ -101,12 +101,12 @@ void MainLoop( CancellationToken token )
 	}
 }</pre>
 
-After creating the Task, it will start automatically. All you have to do is to wait for the result, int this case there won&#8217;t be any variable returned, but you have to do this so you can recover if you get an _AggretatedException_.
+After creating the Task, it will start automatically. All you have to do is to wait for the result, int this case there won't be any variable returned, but you have to do this so you can recover if you get an _AggretatedException_.
 
 To cancel the Task, just call the method _Cancel_ from the **CancellationTokenSource**. Inside your method, the **IsCancellationRequested** property from the token will be true, giving you time to do some cleanup before throwing the cancellation request. You can put the if condition wherever you please. I prefer to put it on top of the loop, so no other procedures start before cancelling.
 
-That&#8217;s pretty much it.
+That's pretty much it.
 
 Get More info about : [C# Tasks](http://msdn.microsoft.com/en-us/library/system.threading.tasks.task(v=vs.110).aspx) and the [Task Parallelism Library](http://msdn.microsoft.com/en-us/library/dd537609(v=vs.110).aspx).
 
-I hope you enjoyed this little explanation. Tasks are way much more than this little code snippet, so If you&#8217;re interested, check back once in a while, I&#8217;ll put up more snippets.
+I hope you enjoyed this little explanation. Tasks are way much more than this little code snippet, so If you're interested, check back once in a while, I'll put up more snippets.

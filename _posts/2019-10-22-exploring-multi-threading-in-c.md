@@ -21,7 +21,7 @@ tags:
   - programming
   - threading
 ---
-The pursuit of performance is something that interests me as a developer, so as a learning exercise I decided to experiment and consolidate my knowledge about multi-threading. Nowadays it&#8217;s becoming even more important since our CPUs get more and more cores. Modern game engines and applications use multiple CPU cores to stay fast and responsive.
+The pursuit of performance is something that interests me as a developer, so as a learning exercise I decided to experiment and consolidate my knowledge about multi-threading. Nowadays it's becoming even more important since our CPUs get more and more cores. Modern game engines and applications use multiple CPU cores to stay fast and responsive.
 
 ## Index
 
@@ -46,7 +46,7 @@ As a test case, I decided to create a series of tasks, ones small and other big,
 	return 4.0 * sum;
 }</pre>
 
-Now I create a couple of different Jobs running **CalcPi** and add them into a vector or a queue ( depending on the test I&#8217;m running ). My **CalcPiJob** class looks something like this.
+Now I create a couple of different Jobs running **CalcPi** and add them into a vector or a queue ( depending on the test I'm running ). My **CalcPiJob** class looks something like this.
 
 <pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">class CalcPiJob
 {
@@ -152,7 +152,7 @@ Now for baseline, I go through all Jobs and execute **DoWork** sequentially.
 	}
 }</pre>
 
-I&#8217;m running all my tests on a i7 4770K, that has 4 cores and 8 threads. All timings where taken from a release build, and all profile images from debug builds ( for illustration of workload purposes ).
+I'm running all my tests on a i7 4770K, that has 4 cores and 8 threads. All timings where taken from a release build, and all profile images from debug builds ( for illustration of workload purposes ).
 
 Sequential run time: _20692_ ms<figure class="wp-block-image size-large">
 
@@ -160,11 +160,11 @@ Sequential run time: _20692_ ms<figure class="wp-block-image size-large">
 
 ## First Worker Thread
 
-Let the interesting part begin. As an easy step towards a multi-threading application, I&#8217;m going to create only one thread, to share the workload with the main thread. 
+Let the interesting part begin. As an easy step towards a multi-threading application, I'm going to create only one thread, to share the workload with the main thread. 
 
-This already brings a few new concepts to be aware of such as sharing data across multiple threads. We protect our data access with a [std::mutex](https://en.cppreference.com/w/cpp/thread/mutex), and lock it with [std::scoped_lock](https://en.cppreference.com/w/cpp/thread/scoped_lock) ( introduced in C++17. Use similar [std::lock_guard](https://en.cppreference.com/w/cpp/thread/lock_guard) if your compiler doesn&#8217;t support it ).
+This already brings a few new concepts to be aware of such as sharing data across multiple threads. We protect our data access with a [std::mutex](https://en.cppreference.com/w/cpp/thread/mutex), and lock it with [std::scoped_lock](https://en.cppreference.com/w/cpp/thread/scoped_lock) ( introduced in C++17. Use similar [std::lock_guard](https://en.cppreference.com/w/cpp/thread/lock_guard) if your compiler doesn't support it ).
 
-You&#8217;ll need a few includes first.
+You'll need a few includes first.
 
 <pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">// you should already have these.
 #include &lt;vector>
@@ -239,7 +239,7 @@ The image above show the execution of the jobs, the larger ones first, then the 
 
 ## More Worker Threads
 
-Now this is nice, so lets add more threads! How many? Well, I know my CPU has 8 thread, but nothing guarantees they will only run for my program tho. Operating system time slice program execution across multiple cores/threads, so even if you create more threads than your max CPU threads, there&#8217;s no &#8220;problem&#8221; because the operating system will switch execution time for them on its own. 
+Now this is nice, so lets add more threads! How many? Well, I know my CPU has 8 thread, but nothing guarantees they will only run for my program tho. Operating system time slice program execution across multiple cores/threads, so even if you create more threads than your max CPU threads, there's no "problem" because the operating system will switch execution time for them on its own. 
 
 C++ provides us a way of determining how many concurrent threads our system supports, so lets just use that: `std::thread::hardware_concurrency()` 
 
@@ -277,7 +277,7 @@ Now this is a nicer view. 7 worker threads working with the main thread to proce
 
 ## Async Tasks
 
-When spawning tasks with [std::async](https://en.cppreference.com/w/cpp/thread/async), we don&#8217;t manually create threads, they are spawned from a thread pool. 
+When spawning tasks with [std::async](https://en.cppreference.com/w/cpp/thread/async), we don't manually create threads, they are spawned from a thread pool. 
 
 <pre class="EnlighterJSRAW" data-enlighter-language="cpp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">void RunJobsOnAsync()
 {
@@ -386,7 +386,7 @@ This time table only serves as an overview for this particular case. Of course, 
 
 The sample codes are my exploration of this specific case and by no means is free of bugs. But it is interesting to see how the code would run across multiple thread, how to synchronize and make the most of my system.
 
-All screenshots are taken with the debug version of the program, so we could clearly see the workload in the profiler. For that I used [Superluminal Profiler](https://www.superluminal.eu/). I found out that it is an amazing, lightweight profiler. You can also use [Intel&#8217;s VTune](https://software.intel.com/en-us/vtune) for free.
+All screenshots are taken with the debug version of the program, so we could clearly see the workload in the profiler. For that I used [Superluminal Profiler](https://www.superluminal.eu/). I found out that it is an amazing, lightweight profiler. You can also use [Intel's VTune](https://software.intel.com/en-us/vtune) for free.
 
 [Download code from GitHub](https://gist.github.com/Mikea15/aca94cfd4aacd1ee0e120ab03b99d1b7)
 
@@ -401,4 +401,4 @@ All screenshots are taken with the debug version of the program, so we could cle
 
 ### Note
 
-(1) I&#8217;ve revisited Async Tasks to make sure all tasks where fully complete before exiting the function call. I managed to get worse performance than the baseline test. Upon inspection with vTune, I found out, that it doesn&#8217;t launch new threads. This change happens from Debug/Release builds. I believe there is some optimization that makes it be that fast, even more so because most of the time spent on each jobs is an artificial wait. In any case, read those values with a grain of salt. Do your own tests and make your own conclusions.
+(1) I've revisited Async Tasks to make sure all tasks where fully complete before exiting the function call. I managed to get worse performance than the baseline test. Upon inspection with vTune, I found out, that it doesn't launch new threads. This change happens from Debug/Release builds. I believe there is some optimization that makes it be that fast, even more so because most of the time spent on each jobs is an artificial wait. In any case, read those values with a grain of salt. Do your own tests and make your own conclusions.

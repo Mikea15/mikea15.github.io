@@ -20,7 +20,7 @@ tags:
   - tcp
   - threads
 ---
-This tutorial introduces the concept of using threads to handle multiple clients in a TCP server. A TCP server is created and set to listen to a specific port. When a client is connected, a new thread is created that will handle the client&#8217;s communication.
+This tutorial introduces the concept of using threads to handle multiple clients in a TCP server. A TCP server is created and set to listen to a specific port. When a client is connected, a new thread is created that will handle the client's communication.
 
 <!--more-->
 
@@ -67,11 +67,11 @@ This tutorial introduces the concept of using threads to handle multiple clients
     }
 }</pre>
 
-In this class we&#8217;re going to need to a instantiate a [TcpClient](http://msdn.microsoft.com/en-us/library/system.net.sockets.tcpclient.aspx "TcpClient MSDN") so we can have a connection with the server.
+In this class we're going to need to a instantiate a [TcpClient](http://msdn.microsoft.com/en-us/library/system.net.sockets.tcpclient.aspx "TcpClient MSDN") so we can have a connection with the server.
 
-To handle communication _to_ and _from_ the server, a [StreamReader](http://msdn.microsoft.com/en-us/library/system.io.streamreader.aspx "StreamReader MSDN") and [StreamWriter](http://msdn.microsoft.com/en-us/library/system.io.streamwriter.aspx "StreamWriter MSDN") are used so we can easily write and read data. We could use a [NetworkStream](http://msdn.microsoft.com/en-us/library/System.Net.Sockets.NetworkStream.aspx "NetworkStream MSDN") but you can&#8217;t force _flush_ so I find it better to use the _StreamReader/Writer_.
+To handle communication _to_ and _from_ the server, a [StreamReader](http://msdn.microsoft.com/en-us/library/system.io.streamreader.aspx "StreamReader MSDN") and [StreamWriter](http://msdn.microsoft.com/en-us/library/system.io.streamwriter.aspx "StreamWriter MSDN") are used so we can easily write and read data. We could use a [NetworkStream](http://msdn.microsoft.com/en-us/library/System.Net.Sockets.NetworkStream.aspx "NetworkStream MSDN") but you can't force _flush_ so I find it better to use the _StreamReader/Writer_.
 
-To instantiate them you just have to feed them the _stream_ from the client&#8217;s connection.
+To instantiate them you just have to feed them the _stream_ from the client's connection.
 
 After that, I just ask for input and send it to the server. From there you can do anything you want. Process the data you receive from the server to close the client or do other fun stuff.
 
@@ -135,11 +135,11 @@ After that, I just ask for input and send it to the server. From there you can d
     }
 }</pre>
 
-In this class, you&#8217;ll have to have a [TcpListener](http://msdn.microsoft.com/en-us/library/system.net.sockets.tcplistener.aspx "TcpListener MSDN") Class. When you start your Server class, you&#8217;ll be opening a port on the machine and will be waiting for clients to connect.
+In this class, you'll have to have a [TcpListener](http://msdn.microsoft.com/en-us/library/system.net.sockets.tcplistener.aspx "TcpListener MSDN") Class. When you start your Server class, you'll be opening a port on the machine and will be waiting for clients to connect.
 
-Once a client connects, a thread is fired and the client who got connected is passed to the thread as a parameter, so we don&#8217;t loose the connection.
+Once a client connects, a thread is fired and the client who got connected is passed to the thread as a parameter, so we don't loose the connection.
 
-The thread starts a function that will handle communication with clients. First, we recover the client from the object passed in the thread as parameter.&nbsp;Then we create our streams to write and read from the client&#8217;s stream. Each client has a two private streams, that is why they are created inside _HandleClient(object obj)_ method, so they don&#8217;t share the same streams.
+The thread starts a function that will handle communication with clients. First, we recover the client from the object passed in the thread as parameter.&nbsp;Then we create our streams to write and read from the client's stream. Each client has a two private streams, that is why they are created inside _HandleClient(object obj)_ method, so they don't share the same streams.
 
 After that, you can do what you want, send and receive data :)
 
@@ -177,6 +177,6 @@ After that, you can do what you want, send and receive data :)
     }
 }</pre>
 
-_Note: Just change the &#8220;5555&#8221; to whatever you want. That&#8217;s the port the server will be listening to. Or even better, ask for it when launching the application or store it in a configuration file. ;)_
+_Note: Just change the "5555" to whatever you want. That's the port the server will be listening to. Or even better, ask for it when launching the application or store it in a configuration file. ;)_
 
-**Note:** This is far from a optimal solution and shouldn&#8217;t be used in real life applications. This tutorial only introduces some concepts, namely, Threads, TCP listeners and TCP Clients. You should know that each thread created will use 1Mb of memory, so its easy to see where this approach is not good. If lots of client connections come in, you&#8217;ll quickly see the memory ramp up. A better way to manage this would be to create a limited amount of threads, and set the clients on queues, re-using threads as the jobs finish, and so on. A new, better way of creating a Multi-Threaded Server would be using Task, from the Task Parallel Library, but I&#8217;ll talk more on that later. :)
+**Note:** This is far from a optimal solution and shouldn't be used in real life applications. This tutorial only introduces some concepts, namely, Threads, TCP listeners and TCP Clients. You should know that each thread created will use 1Mb of memory, so its easy to see where this approach is not good. If lots of client connections come in, you'll quickly see the memory ramp up. A better way to manage this would be to create a limited amount of threads, and set the clients on queues, re-using threads as the jobs finish, and so on. A new, better way of creating a Multi-Threaded Server would be using Task, from the Task Parallel Library, but I'll talk more on that later. :)

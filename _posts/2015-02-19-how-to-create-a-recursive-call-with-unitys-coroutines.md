@@ -1,6 +1,6 @@
 ---
 id: 271
-title: 'How to create a recursive call with Unity&#8217;s Coroutines'
+title: How to create a recursive call with Unity's Coroutines
 date: 2015-02-19T22:26:39+00:00
 author: Michael Adaixo
 layout: post
@@ -17,11 +17,11 @@ tags:
   - gamedev
   - unity3d
 ---
-During the development of [Super Stems](http://mikeadev.net/2015/02/super-stems-post-mortem/ "Super Stems Post Mortem") I&#8217;ve had to deal with chain reaction. I started a battle with one tile, and if they win, the captured tile would start a battle, and this would happen recursively. For some reason, I have this battle method call on a different thread, in Unity&#8217;s terms, a Coroutine.
+During the development of [Super Stems](http://mikeadev.net/2015/02/super-stems-post-mortem/ "Super Stems Post Mortem") I've had to deal with chain reaction. I started a battle with one tile, and if they win, the captured tile would start a battle, and this would happen recursively. For some reason, I have this battle method call on a different thread, in Unity's terms, a Coroutine.
 
 Now comes the question. How do I handle recursion with Coroutines? After looking around the doc and experimenting, I found a solution.
 
-Here&#8217;s a sample code on how to make it work.
+Here's a sample code on how to make it work.
 
 <pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public void StartBattle( )
 {

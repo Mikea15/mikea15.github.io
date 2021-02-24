@@ -18,8 +18,8 @@ tags:
   - programming
   - snippet
 ---
-I&#8217;ve come up with a pretty neat solution to this:  
-If you don&#8217;t want to write the same method for different data types, you can use generics.
+I've come up with a pretty neat solution to this:  
+If you don't want to write the same method for different data types, you can use generics.
 
 <pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">///
 /// Math Class that helps
@@ -75,8 +75,8 @@ public static class MathHelper
     }
 }</pre>
 
-It&#8217;s pretty easy once you know what to look for :) Just search Generics c# and you&#8217;ll find a bunch of questions and answers on StackOverflow, msdn and CodeProject :)  
-Here&#8217;s the solution:
+It's pretty easy once you know what to look for :) Just search Generics c# and you'll find a bunch of questions and answers on StackOverflow, msdn and CodeProject :)  
+Here's the solution:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">///
 /// Math Class that helps

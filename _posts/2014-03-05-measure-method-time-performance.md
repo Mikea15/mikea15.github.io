@@ -40,4 +40,4 @@ This will write to the console the time spent on the method.
 Just remember to use _System.Diagnostics_.  
 More info on <a title="MSDN Stopwatch" href="http://msdn.microsoft.com/en-us/library/system.diagnostics.stopwatch(v=vs.110).aspx" target="_blank" rel="noopener noreferrer">Stopwatch</a>.
 
-That&#8217;s it. Enjoy.
+That's it. Enjoy.

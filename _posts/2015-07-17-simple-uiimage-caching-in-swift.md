@@ -96,7 +96,7 @@ class ImageCache {
     }
 }</pre>
 
-I&#8217;m using a dictionary to keep track of the images, with their Base64 encoded urls as keys.
+I'm using a dictionary to keep track of the images, with their Base64 encoded urls as keys.
 
 Example usage goes like:
 

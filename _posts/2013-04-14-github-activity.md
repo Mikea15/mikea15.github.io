@@ -12,6 +12,6 @@ tags:
   - github
   - programming
 ---
-So I&#8217;ve decided to put some of my work on github. I&#8217;ve been updating ChocoboHeaven.com yesterday and I might put it on github. I have a bunch of other little code snippets and projects that I&#8217;ll put there, so anyone can look at that.
+So I've decided to put some of my work on github. I've been updating ChocoboHeaven.com yesterday and I might put it on github. I have a bunch of other little code snippets and projects that I'll put there, so anyone can look at that.
 
 Going Open Source :)

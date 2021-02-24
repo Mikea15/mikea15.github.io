@@ -17,7 +17,7 @@ tags:
 ](https://play.google.com/store/apps/details?id=com.MichaelAdaixo.MemTilesKids)  
 Memtiles Kids has been released!
 
-We&#8217;ve finally packed the whole thing, polished the last details, and submitted the game to the Google Play Store. You can now [purchase and download Memtiles Kids for Android](https://play.google.com/store/apps/details?id=com.MichaelAdaixo.MemTilesKids).
+We've finally packed the whole thing, polished the last details, and submitted the game to the Google Play Store. You can now [purchase and download Memtiles Kids for Android](https://play.google.com/store/apps/details?id=com.MichaelAdaixo.MemTilesKids).
 
 It features four unique themes: Colors, Numbers, Shapes and Animals. Play through 180 different and randomly generated levels and challenge your memory!
 

@@ -18,7 +18,7 @@ tags:
 ---
 SuperStems is finally released on the [AppStore for iOS](http://bit.ly/sstems "SuperStems on the AppStore")! After 14 long days waiting for approval, it finally passed and it up for grabs for free! There are already over 400 downloads and counting, and players are rocking the leaderboard!
 
-I&#8217;ve setup a new website for [SkyBelow](http://skybelow.co "SkyBelow"), my new gaming studio.
+I've setup a new website for [SkyBelow](http://skybelow.co "SkyBelow"), my new gaming studio.
 
 <blockquote class="twitter-tweet" lang="en">
   <p>
@@ -32,4 +32,4 @@ I&#8217;ve setup a new website for [SkyBelow](http://skybelow.co "SkyBelow"), my
 
 
 
-Edit: I&#8217;ve been updating SuperStems since Unity5 was released, and all I can say is that it runs smoother and better looking with the new IL2CPP &#8211; converts C# to Cpp to increase performance -, which is awesome! So far I&#8217;m testing it on my device, but you should get the update in a couple of weeks. Just enough time to send the new build and get it approved again by Apple.
+Edit: I've been updating SuperStems since Unity5 was released, and all I can say is that it runs smoother and better looking with the new IL2CPP &#8211; converts C# to Cpp to increase performance -, which is awesome! So far I'm testing it on my device, but you should get the update in a couple of weeks. Just enough time to send the new build and get it approved again by Apple.
