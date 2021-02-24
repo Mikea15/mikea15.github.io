@@ -8,7 +8,7 @@ Couple of projects I’ve worked on my own or in collaboration, either on person
 
 # Astromike
 
-<img src='content/img/astromike_icon.png' alt='' height="150" />
+<img src='{{ './content/img/astromike_icon.png' | relative_path }}" alt='' height="150" />
 <img src='content/img/screen_1.png' alt='' height="150" />
 <img src='content/img/screen_2.png' alt='' height="150" />
 <img src='content/img/screen_3.png' alt='' height="150" />
