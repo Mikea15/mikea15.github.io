@@ -16,7 +16,7 @@ tags:
   - programming
   - unity3d
 ---
-<img loading="lazy" src="http://mikeadev.net/wp-content/uploads/header-300x168.png" alt="header" width="300" height="168" class="alignleft size-medium wp-image-91" srcset="http://mikeadev.net/wp-content/uploads/header-300x168.png 300w, http://mikeadev.net/wp-content/uploads/header-624x351.png 624w, http://mikeadev.net/wp-content/uploads/header.png 800w" sizes="(max-width: 300px) 100vw, 300px" />
+<img src="http://mikeadev.net/wp-content/uploads/header.png" alt="header"  />
 
 So I&#8217;m making a casual memory game for mobile platforms. Its a simple educational puzzle, where you need to retrieve the tile pairs on the grid.
 

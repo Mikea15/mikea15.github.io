@@ -36,7 +36,7 @@ Now as previously demonstrated, I could launch a new set of threads and have the
 
 Loading is going to be done in worker threads, and generating textures will be done in the main thread. The following diagram shows a simplified workflow of what we&#8217;ll achieve.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="602" height="523" src="http://mikeadev.net/wp-content/uploads/image-4.png" alt="" class="wp-image-751" srcset="http://mikeadev.net/wp-content/uploads/image-4.png 602w, http://mikeadev.net/wp-content/uploads/image-4-300x261.png 300w" sizes="(max-width: 602px) 100vw, 602px" /> <figcaption>Simplified execution of loading textures in worker threads, and processing them in the main thread.</figcaption></figure> 
+<img src="http://mikeadev.net/wp-content/uploads/image-4.png" alt="" /> <figcaption>Simplified execution of loading textures in worker threads, and processing them in the main thread.</figcaption></figure> 
 
 In our main thread we have a method that will check our processing textures queue for a job. If it finds one, Generates the OpengGL texture and assigns it back to the material.
 
@@ -77,7 +77,7 @@ The loader thread will continuously run and check the loading textures queue for
 }</pre>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" src="http://mikeadev.net/wp-content/uploads/image-5.png" alt="" class="wp-image-755" width="466" height="321" srcset="http://mikeadev.net/wp-content/uploads/image-5.png 799w, http://mikeadev.net/wp-content/uploads/image-5-300x207.png 300w, http://mikeadev.net/wp-content/uploads/image-5-768x530.png 768w" sizes="(max-width: 466px) 100vw, 466px" /><figcaption>In game sponza scene.</figcaption></figure>
+  <figure class="aligncenter size-large is-resized"><img src="http://mikeadev.net/wp-content/uploads/image-5.png" alt="" /><figcaption>In game sponza scene.</figcaption></figure>
 </div>
 
 This architecture allows me to load textures while the game is running without blocking the main thread. Its a bit pointless to compare times here since I&#8217;m using my own sandbox instead of a sample program to test only this matter. See [Part 1](http://mikeadev.net/2019/10/exploring-multi-threading-in-c/) and [Part 2](http://mikeadev.net/2019/10/exploring-multi-threading-in-c-part-2/) for more info and code you can follow along.

@@ -156,7 +156,7 @@ I&#8217;m running all my tests on a i7 4770K, that has 4 cores and 8 threads. Al
 
 Sequential run time: _20692_ ms<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="758" height="84" src="http://mikeadev.net/wp-content/uploads/image-2.png" alt="" class="wp-image-609" /> </figure> 
+<img src="http://mikeadev.net/wp-content/uploads/image-2.png" alt="" /> </figure> 
 
 ## First Worker Thread
 
@@ -233,7 +233,7 @@ void RunOneThread()
 
 One worker thread run time: 10396 ms <figure class="wp-block-image size-large is-resized">
 
-[<img loading="lazy" src="http://mikeadev.net/wp-content/uploads/onethread-1024x67.jpg" alt="" class="wp-image-680" width="642" height="43" srcset="http://mikeadev.net/wp-content/uploads/onethread-1024x67.jpg 1024w, http://mikeadev.net/wp-content/uploads/onethread-300x20.jpg 300w, http://mikeadev.net/wp-content/uploads/onethread-768x50.jpg 768w, http://mikeadev.net/wp-content/uploads/onethread.jpg 1917w" sizes="(max-width: 642px) 100vw, 642px" />](http://mikeadev.net/wp-content/uploads/onethread.jpg)<figcaption>(click to expand)</figcaption></figure> 
+[<img src="http://mikeadev.net/wp-content/uploads/onethread.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/onethread.jpg)<figcaption>(click to expand)</figcaption></figure> 
 
 The image above show the execution of the jobs, the larger ones first, then the medium sized ones and lastly the smaller ones. This was the order at which the tasks where added into the queue.
 
@@ -271,7 +271,7 @@ C++ provides us a way of determining how many concurrent threads our system supp
 
 Run time with 8 threads: 2625 ms.<figure class="wp-block-image size-large">
 
-[<img loading="lazy" width="1024" height="135" src="http://mikeadev.net/wp-content/uploads/threaded_7-1024x135.jpg" alt="" class="wp-image-686" srcset="http://mikeadev.net/wp-content/uploads/threaded_7-1024x135.jpg 1024w, http://mikeadev.net/wp-content/uploads/threaded_7-300x40.jpg 300w, http://mikeadev.net/wp-content/uploads/threaded_7-768x101.jpg 768w, http://mikeadev.net/wp-content/uploads/threaded_7.jpg 1916w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />](http://mikeadev.net/wp-content/uploads/threaded_7.jpg)<figcaption>8 threads ( click to expand )</figcaption></figure> 
+[<img src="http://mikeadev.net/wp-content/uploads/threaded_7.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threaded_7.jpg)<figcaption>8 threads ( click to expand )</figcaption></figure> 
 
 Now this is a nicer view. 7 worker threads working with the main thread to process all jobs. Again, first we see the bigger jobs, then medium, then smaller ones being processed. This is being processed in the order they were added.
 
@@ -306,7 +306,7 @@ When spawning tasks with [std::async](https://en.cppreference.com/w/cpp/thread/a
 
 Run time: 2220 ms<figure class="wp-block-image size-large">
 
-[<img loading="lazy" width="1024" height="217" src="http://mikeadev.net/wp-content/uploads/async-1024x217.jpg" alt="" class="wp-image-702" srcset="http://mikeadev.net/wp-content/uploads/async-1024x217.jpg 1024w, http://mikeadev.net/wp-content/uploads/async-300x64.jpg 300w, http://mikeadev.net/wp-content/uploads/async-768x163.jpg 768w, http://mikeadev.net/wp-content/uploads/async.jpg 1912w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />](http://mikeadev.net/wp-content/uploads/async.jpg)<figcaption>(click to expand)</figcaption></figure> 
+[<img src="http://mikeadev.net/wp-content/uploads/async.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/async.jpg)<figcaption>(click to expand)</figcaption></figure> 
 
 ## Overview
 

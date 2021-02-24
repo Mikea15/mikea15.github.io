@@ -106,7 +106,7 @@ void RunThreadedPriority()
 
 Run time with 8 threads: 6059 ms. ( 4 High Job threads, 2 medium and 2 low threads. )<figure class="wp-block-image size-large">
 
-[<img loading="lazy" width="1024" height="127" src="http://mikeadev.net/wp-content/uploads/threads_p-1024x127.jpg" alt="" class="wp-image-690" srcset="http://mikeadev.net/wp-content/uploads/threads_p-1024x127.jpg 1024w, http://mikeadev.net/wp-content/uploads/threads_p-300x37.jpg 300w, http://mikeadev.net/wp-content/uploads/threads_p-768x95.jpg 768w, http://mikeadev.net/wp-content/uploads/threads_p.jpg 1914w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />](http://mikeadev.net/wp-content/uploads/threads_p.jpg)<figcaption>( click to expand )</figcaption></figure> 
+[<img src="http://mikeadev.net/wp-content/uploads/threads_p.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threads_p.jpg)<figcaption>( click to expand )</figcaption></figure> 
 
 The profile image show the 4 threads handling only big jobs, 2 threads handling medium jobs and the other 2 threads handling smaller jobs. As we can see, this won&#8217;t win us much time, since when some thread finish their work, they stand idle, not contributing to the bigger picture.
 
@@ -258,7 +258,7 @@ This next test is just that. Each thread type was setup to grab a job of less pr
 
 Run time with 8 threads: 2625 ms.<figure class="wp-block-image size-large">
 
-[<img loading="lazy" width="1024" height="136" src="http://mikeadev.net/wp-content/uploads/threads_ws-1-1024x136.jpg" alt="" class="wp-image-696" srcset="http://mikeadev.net/wp-content/uploads/threads_ws-1-1024x136.jpg 1024w, http://mikeadev.net/wp-content/uploads/threads_ws-1-300x40.jpg 300w, http://mikeadev.net/wp-content/uploads/threads_ws-1-768x102.jpg 768w, http://mikeadev.net/wp-content/uploads/threads_ws-1.jpg 1914w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />](http://mikeadev.net/wp-content/uploads/threads_ws-1.jpg)<figcaption> (click to expand) </figcaption></figure> 
+[<img src="http://mikeadev.net/wp-content/uploads/threads_ws-1-1024x136.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threads_ws-1.jpg)<figcaption> (click to expand) </figcaption></figure> 
 
 Now we can see that the high priority worker threads started to take on medium sized jobs as soon as the higher ones depleted, and then the small jobs followed. 
 
@@ -346,7 +346,7 @@ void RunSynchronizedThreads()
 
 Run time: 2674 ms<figure class="wp-block-image size-large">
 
-[<img loading="lazy" width="1024" height="136" src="http://mikeadev.net/wp-content/uploads/threads_sync-1024x136.jpg" alt="" class="wp-image-699" srcset="http://mikeadev.net/wp-content/uploads/threads_sync-1024x136.jpg 1024w, http://mikeadev.net/wp-content/uploads/threads_sync-300x40.jpg 300w, http://mikeadev.net/wp-content/uploads/threads_sync-768x102.jpg 768w, http://mikeadev.net/wp-content/uploads/threads_sync.jpg 1873w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />](http://mikeadev.net/wp-content/uploads/threads_sync.jpg)<figcaption>(click to expand)</figcaption></figure> 
+[<img src="http://mikeadev.net/wp-content/uploads/threads_sync.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threads_sync.jpg)<figcaption>(click to expand)</figcaption></figure> 
 
 I&#8217;ve setup this one up so worker thread only start at the same frequency of the main thread. The goal here was to use condition variables to synchronize the threads, and hopefully confirm it with the profiler., which we can look at in the image above.<figure class="wp-block-table">
 

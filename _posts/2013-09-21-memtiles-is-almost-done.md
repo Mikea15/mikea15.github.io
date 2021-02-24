@@ -19,7 +19,7 @@ After nearly a month after the beta release of Memtiles, I&#8217;m nearly in the
 
 Today I lost all connections to my assets, prefabs, textures, everything.. I don&#8217;t know what happened to Unity3D, but that sure as hell cost me 3 hours rebuilding all prefabs. I guess I should back my things before opening a new branch.. or check what to ignore on bitbucket.. Anyway, I have my prefabs back.
 
-<img loading="lazy" src="http://mikeadev.net/wp-content/uploads/Screen-Shot-2013-09-21-at-1.35.38-AM-300x250.png" alt="Screen Shot 2013-09-21 at 1.35.38 AM" width="300" height="250" class="alignleft size-medium wp-image-95" srcset="http://mikeadev.net/wp-content/uploads/Screen-Shot-2013-09-21-at-1.35.38-AM-300x250.png 300w, http://mikeadev.net/wp-content/uploads/Screen-Shot-2013-09-21-at-1.35.38-AM.png 384w" sizes="(max-width: 300px) 100vw, 300px" /> 
+<img src="http://mikeadev.net/wp-content/uploads/Screen-Shot-2013-09-21-at-1.35.38-AM.png" alt="Screen Shot 2013-09-21 at 1.35.38 AM"/> 
 
 So now I can actually focus on progressing in the development. I still have game art and sound/music coming up.
 

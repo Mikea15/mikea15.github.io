@@ -13,7 +13,7 @@ tags:
   - memtiles kids
   - puzzle
 ---
-[<img loading="lazy" src="http://mikeadev.net/wp-content/uploads/bScreen4-300x175.png" alt="bScreen4" width="300" height="175" class="alignleft size-medium wp-image-120" srcset="http://mikeadev.net/wp-content/uploads/bScreen4-300x175.png 300w, http://mikeadev.net/wp-content/uploads/bScreen4-624x365.png 624w, http://mikeadev.net/wp-content/uploads/bScreen4.png 1024w" sizes="(max-width: 300px) 100vw, 300px" />](http://mikeadev.net/wp-content/uploads/bScreen4.png)  
+[<img src="http://mikeadev.net/wp-content/uploads/bScreen4.png" alt="bScreen4" />](http://mikeadev.net/wp-content/uploads/bScreen4.png)  
 So I&#8217;ve released Memtiles Kids on Google Play and sales have been like&#8230; zero!.. Well, not zero but, 6, but only because friends and family bought the game. The thing is, advertising. Its not easy to NOT be featured in the front page, not even in launch day!.. Seriously.. wtf?
 
 Anyway, I&#8217;m &#8220;Waiting for Review&#8221; on the iTunes Store, and hopefully that route will give me more sales. Either way, I&#8217;ll release a free version of Memtiles Kids with the first theme unlocked, on both stores and link back to the paid version when the demo completes. Hopefully I&#8217;ll have more downloads on that one, leading to an increase in sales.
