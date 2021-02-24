@@ -135,5 +135,3 @@ public class Character : MonoBehaviour
 
 **Quick Tip:** Notice the [[RequireComponent](http://docs.unity3d.com/ScriptReference/RequireComponent.html) (typeof(RigidBody))] on the top of the class. What this does is automatically add the RigidBody component to the object you are adding this class to. So if there is no rigidbody, it will automatically add it. This makes sure that whenever I call the component in the Awake method, I always get a rigidbody, thus avoiding future errors.
 
-Here's the final result for my game:  
-<figure></figure>

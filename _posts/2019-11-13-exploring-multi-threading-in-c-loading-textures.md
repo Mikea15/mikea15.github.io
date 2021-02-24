@@ -34,7 +34,9 @@ Let's say we have a game engine that uses OpenGL and we need to load textures as
 
 Now as previously demonstrated, I could launch a new set of threads and have them load up the textures ( I'm using [stb_image](https://github.com/nothings/stb) for that ) and generate textures with _glGenTextures_. The main issue here is that OpenGL context is only availabe in the main thread so if we want to take advantage of multi-threading texture loading we need to split the loading and generating for textures.
 
-Loading is going to be done in worker threads, and generating textures will be done in the main thread. The following diagram shows a simplified workflow of what we'll achieve.<figure class="wp-block-image size-large">
+Loading is going to be done in worker threads, and generating textures will be done in the main thread. The following diagram shows a simplified workflow of what we'll achieve.
+
+<figure class="wp-block-image size-large">
 
 <img src="http://mikeadev.net/wp-content/uploads/image-4.png" alt="" /> <figcaption>Simplified execution of loading textures in worker threads, and processing them in the main thread.</figcaption></figure> 
 

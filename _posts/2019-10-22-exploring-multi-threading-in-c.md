@@ -164,7 +164,8 @@ void RunSequential()
 
 I'm running all my tests on a i7 4770K, that has 4 cores and 8 threads. All timings where taken from a release build, and all profile images from debug builds ( for illustration of workload purposes ).
 
-Sequential run time: _20692_ ms<figure class="wp-block-image size-large">
+Sequential run time: _20692_ ms
+<figure class="wp-block-image size-large">
 
 <img src="http://mikeadev.net/wp-content/uploads/image-2.png" alt="" /> </figure> 
 
@@ -249,7 +250,8 @@ void RunOneThread()
 }
 ```
 
-One worker thread run time: 10396 ms <figure class="wp-block-image size-large is-resized">
+One worker thread run time: 10396 ms 
+ class="wp-block-image size-large is-resized">
 
 [<img src="http://mikeadev.net/wp-content/uploads/onethread.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/onethread.jpg)<figcaption>(click to expand)</figcaption></figure> 
 
@@ -289,7 +291,8 @@ void RunThreaded()
 }
 ```
 
-Run time with 8 threads: 2625 ms.<figure class="wp-block-image size-large">
+Run time with 8 threads: 2625 ms.
+<figure class="wp-block-image size-large">
 
 [<img src="http://mikeadev.net/wp-content/uploads/threaded_7.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threaded_7.jpg)<figcaption>8 threads ( click to expand )</figcaption></figure> 
 
@@ -326,13 +329,16 @@ void RunJobsOnAsync()
 }
 ```
 
-Run time: 2220 ms<figure class="wp-block-image size-large">
+Run time: 2220 ms
+<figure class="wp-block-image size-large">
 
 [<img src="http://mikeadev.net/wp-content/uploads/async.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/async.jpg)<figcaption>(click to expand)</figcaption></figure> 
 
 ## Overview
 
-This time table only serves as an overview for this particular case. Of course, in real applications, results vary.<figure class="wp-block-table">
+This time table only serves as an overview for this particular case. Of course, in real applications, results vary.
+
+<figure class="wp-block-table">
 
 <table class="">
   <tr>

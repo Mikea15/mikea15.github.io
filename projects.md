@@ -33,9 +33,9 @@ SuperStems was made under 48h for Ludum Dare 31. I continued to work on it for a
 
 # Jumpy Rope
 
-<img src='/wp-content/uploads/mainiPhone-4.7-Inch-Landscape.1334x750.png' alt='' height="150" />
-<img src='/wp-content/uploads/multiplayeriPhone-4.7-Inch-Landscape.1334x750.png' alt='' height="150" />
-<img src='/wp-content/uploads/in-gameiPhone-4.7-Inch-Landscape.1334x750.png' alt='' height="150" />
+<img src='/wp-content/uploads/mainiPhone-4.7-Inch-Landscape.png' alt='' height="150" />
+<img src='/wp-content/uploads/multiplayeriPhone-4.7-Inch-Landscape.png' alt='' height="150" />
+<img src='/wp-content/uploads/in-gameiPhone-4.7-Inch-Landscape.png' alt='' height="150" />
 
 
 Jumpy Rope is a casual jump the rope game I released for iOS and Android. Jump the rope as much as you can and unlock new clothes, power ups, and floating islands! No longer available on the AppStore.
@@ -46,7 +46,7 @@ Jumpy Rope is a casual jump the rope game I released for iOS and Android. Jump t
 
 # Memtile Kids
 
-<img src='\assets/img/img.png' alt='' height="150" />
+<img src='/assets/img/img.png' alt='' height="150" />
 
 Memtiles Kids is a memory matching game for kids with 4 different themes to unlock and over 100 levels. It was released on Android and iOS. No longer available on the AppStore. 
 

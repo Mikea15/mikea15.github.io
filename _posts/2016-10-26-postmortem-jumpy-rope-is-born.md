@@ -10,7 +10,7 @@ mixpanel_event_label:
   - ""
 dsq_thread_id:
   - "5255803995"
-image: /wp-content/uploads/MWU_Banner.1920x750.jpg
+image: /wp-content/uploads/MWU_Banner.jpg
 categories:
   - General
 ---
@@ -18,7 +18,7 @@ Jumpy Rope is an endless arcade jumper game for [iOS](http://bit.ly/sky_jrope_),
 
 Jumpy Rope was inspired from Final Fantasy IX mini jump rope game, which has Vivi play jump the rope. I thought it could be fun to have a small game that would bring back these memories. So from the beginning, this is what I wanted to game to play like.
 
-<figure id="attachment_421" aria-describedby="caption-attachment-421" style="width: 687px" class="wp-caption aligncenter"><img class="wp-image-421 size-large" src="http://mikeadev.net/wp-content/uploads/pmjr_3-1024x465.png" alt="pmjr_3" /><figcaption id="caption-attachment-421" class="wp-caption-text">Art Style orientation</figcaption></figure>
+<figure id="attachment_421" aria-describedby="caption-attachment-421" class="wp-caption aligncenter"><img class="wp-image-421 size-large" src="http://mikeadev.net/wp-content/uploads/pmjr_3.png" alt="pmjr_3" /><figcaption id="caption-attachment-421" class="wp-caption-text">Art Style orientation</figcaption></figure>
 
 As for visual style, Crossy Road, Monument Valley where all people talked about, and for good reason, they look very good, and they play very well. I decided to go for the same direction and aim for low poly flat shading. I was really fond of the idea to have a small, contained environment. After browsing for inspiration, I found a mix of floating islands like Captain Toad Treasure Tracker. By now, I had gameplay and art orientation, so I started to work on it.
 

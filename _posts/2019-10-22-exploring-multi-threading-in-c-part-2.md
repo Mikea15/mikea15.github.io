@@ -106,7 +106,8 @@ void RunThreadedPriority()
 }
 ```
 
-Run time with 8 threads: 6059 ms. ( 4 High Job threads, 2 medium and 2 low threads. )<figure class="wp-block-image size-large">
+Run time with 8 threads: 6059 ms. ( 4 High Job threads, 2 medium and 2 low threads. )
+<figure class="wp-block-image size-large">
 
 [<img src="http://mikeadev.net/wp-content/uploads/threads_p.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threads_p.jpg)<figcaption>( click to expand )</figcaption></figure> 
 
@@ -260,9 +261,10 @@ void RunThreadedPriorityWorkStealing()
 }
 ```
 
-Run time with 8 threads: 2625 ms.<figure class="wp-block-image size-large">
+Run time with 8 threads: 2625 ms.
 
-[<img src="http://mikeadev.net/wp-content/uploads/threads_ws-1-1024x136.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threads_ws-1.jpg)<figcaption> (click to expand) </figcaption></figure> 
+<figure class="wp-block-image size-large">
+[<img src="http://mikeadev.net/wp-content/uploads/threads_ws-1.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threads_ws-1.jpg)<figcaption> (click to expand) </figcaption></figure> 
 
 Now we can see that the high priority worker threads started to take on medium sized jobs as soon as the higher ones depleted, and then the small jobs followed. 
 
@@ -350,11 +352,14 @@ void RunSynchronizedThreads()
 }
 ```
 
-Run time: 2674 ms<figure class="wp-block-image size-large">
+Run time: 2674 ms
+<figure class="wp-block-image size-large">
 
 [<img src="http://mikeadev.net/wp-content/uploads/threads_sync.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threads_sync.jpg)<figcaption>(click to expand)</figcaption></figure> 
 
-I've setup this one up so worker thread only start at the same frequency of the main thread. The goal here was to use condition variables to synchronize the threads, and hopefully confirm it with the profiler., which we can look at in the image above.<figure class="wp-block-table">
+I've setup this one up so worker thread only start at the same frequency of the main thread. The goal here was to use condition variables to synchronize the threads, and hopefully confirm it with the profiler., which we can look at in the image above.
+
+<figure class="wp-block-table">
 
 <table class="">
   <tr>
