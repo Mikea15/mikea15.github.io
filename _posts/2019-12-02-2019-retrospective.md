@@ -14,7 +14,7 @@ categories:
 With 2019 comming to a close I though it'd be nice to have a look back and see what I've been up to.
 
 <figure class="wp-block-image size-large">
-<img src="http://mikeadev.net/wp-content/uploads/image-6.png" alt="" /></figure> 
+<img src="http://mikeadev.net/content/img/image-6.png" alt="" /></figure> 
 
 The hot topic for this year was clearly **Ray Tracing**, which has been a goal of mine for quite some time. I've spent some time reading [Ray Tracing in One Weekend, The Next Weekend, and The Rest of Your Life](https://raytracing.github.io/) which are great resources and entry points to the subject. I created a few projects on the subject with an SDL2 base game where I added multi threading support and calculating ambient occlusion.
 

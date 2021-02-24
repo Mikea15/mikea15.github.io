@@ -37,14 +37,14 @@ I'm going to use Ray Tracing in one weekend as a basis for this article. I've im
 You can fork my version of RayTracingOneWeekend, I've added a CMakeFile and edited the project so it writes the resulting image into a file. I made a [baseline branch](https://github.com/Mikea15/raytracing.github.io/tree/baseline/src/InOneWeekend) for the default result for creating a 1200&#215;800 image with 10 samples per pixel.
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="http://mikeadev.net/wp-content/uploads/image-6.png" alt="" /><figcaption>Singlethreaded, 1200&#215;800, 10spp, 88 seconds.</figcaption></figure>
+  <figure class="aligncenter size-large"><img src="http://mikeadev.net/content/img/image-6.png" alt="" /><figcaption>Singlethreaded, 1200&#215;800, 10spp, 88 seconds.</figcaption></figure>
 </div>
 
 On my CPU this takes around 88 seconds, and overall uses only 13Mb of memory during runtime.
 
 <div class="wp-block-image">
   <figure class="aligncenter size-large">
-  <img src="http://mikeadev.net/wp-content/uploads/image-7.png" alt="" />
+  <img src="http://mikeadev.net/content/img/image-7.png" alt="" />
   </figure>
 </div>
 
@@ -109,13 +109,13 @@ for (std::future<RayResult>& rr : m_futures)
 ```
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="http://mikeadev.net/wp-content/uploads/image-8-1024x683.png" alt="" /><figcaption> <em>1 Job per Pixel, 1200&#215;800, 10spp, 23 seconds.</em> </figcaption></figure>
+  <figure class="aligncenter size-large"><img src="http://mikeadev.net/content/img/image-8-1024x683.png" alt="" /><figcaption> <em>1 Job per Pixel, 1200&#215;800, 10spp, 23 seconds.</em> </figcaption></figure>
 </div>
 
 The resulting image is the same. As expected this reduced execution time to around 23 seconds, 3.8x improvement. But not everything is looking good, on the contrary, we now started to use a lot more memory!
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="http://mikeadev.net/wp-content/uploads/image-9.png" alt="" /></figure>
+  <figure class="aligncenter size-large"><img src="http://mikeadev.net/content/img/image-9.png" alt="" /></figure>
 </div>
 
 Now this took almost 1 Gb of memory while running, compared to the 13Mb for the single threaded version! CPU usage is almost 100% across all the execution, meaning most cores where used, but that memory usage is way too high. I think we can do better!
@@ -125,7 +125,7 @@ Now this took almost 1 Gb of memory while running, compared to the 13Mb for the 
 The next implementation involves creating N-Threads, the number of threads my CPU can run concurrently, and splitting the image into N blocks of image rows. I'll be using a std::condition_variable to determine if each thread has finished as well, and we'll see if this improves our program.
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="http://mikeadev.net/wp-content/uploads/image-10.png" alt="" /></figure>
+  <figure class="aligncenter size-large"><img src="http://mikeadev.net/content/img/image-10.png" alt="" /></figure>
 </div>
 
 We do get around the same speed benefit and a small enough increase in memory consumption from the baseline test. std::async jobs still performs faster, but I suspect that is it because some of the blocks had less work to do than other, and therefor, finished first. This will make some of our CPU cores idle while the threads finish their blocks ( we can see that from the decrease CPU usage in the screenshot above ). The image is less computationally intensive in some areas than others, think about diffuse spheres versus refractive ones.

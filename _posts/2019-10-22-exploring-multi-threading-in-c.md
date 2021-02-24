@@ -167,7 +167,7 @@ I'm running all my tests on a i7 4770K, that has 4 cores and 8 threads. All timi
 Sequential run time: _20692_ ms
 <figure class="wp-block-image size-large">
 
-<img src="http://mikeadev.net/wp-content/uploads/image-2.png" alt="" /> </figure> 
+<img src="http://mikeadev.net/content/img/image-2.png" alt="" /> </figure> 
 
 ## First Worker Thread
 
@@ -253,7 +253,7 @@ void RunOneThread()
 One worker thread run time: 10396 ms 
  class="wp-block-image size-large is-resized">
 
-[<img src="http://mikeadev.net/wp-content/uploads/onethread.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/onethread.jpg)<figcaption>(click to expand)</figcaption></figure> 
+[<img src="http://mikeadev.net/content/img/onethread.jpg" alt="" />](http://mikeadev.net/content/img/onethread.jpg)<figcaption>(click to expand)</figcaption></figure> 
 
 The image above show the execution of the jobs, the larger ones first, then the medium sized ones and lastly the smaller ones. This was the order at which the tasks where added into the queue.
 
@@ -294,7 +294,7 @@ void RunThreaded()
 Run time with 8 threads: 2625 ms.
 <figure class="wp-block-image size-large">
 
-[<img src="http://mikeadev.net/wp-content/uploads/threaded_7.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/threaded_7.jpg)<figcaption>8 threads ( click to expand )</figcaption></figure> 
+[<img src="http://mikeadev.net/content/img/threaded_7.jpg" alt="" />](http://mikeadev.net/content/img/threaded_7.jpg)<figcaption>8 threads ( click to expand )</figcaption></figure> 
 
 Now this is a nicer view. 7 worker threads working with the main thread to process all jobs. Again, first we see the bigger jobs, then medium, then smaller ones being processed. This is being processed in the order they were added.
 
@@ -332,7 +332,7 @@ void RunJobsOnAsync()
 Run time: 2220 ms
 <figure class="wp-block-image size-large">
 
-[<img src="http://mikeadev.net/wp-content/uploads/async.jpg" alt="" />](http://mikeadev.net/wp-content/uploads/async.jpg)<figcaption>(click to expand)</figcaption></figure> 
+[<img src="http://mikeadev.net/content/img/async.jpg" alt="" />](http://mikeadev.net/content/img/async.jpg)<figcaption>(click to expand)</figcaption></figure> 
 
 ## Overview
 

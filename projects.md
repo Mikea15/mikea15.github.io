@@ -33,9 +33,9 @@ SuperStems was made under 48h for Ludum Dare 31. I continued to work on it for a
 
 # Jumpy Rope
 
-<img src='/wp-content/uploads/mainiPhone-4.7-Inch-Landscape.png' alt='' height="150" />
-<img src='/wp-content/uploads/multiplayeriPhone-4.7-Inch-Landscape.png' alt='' height="150" />
-<img src='/wp-content/uploads/in-gameiPhone-4.7-Inch-Landscape.png' alt='' height="150" />
+<img src='/content/img/mainiPhone-4.7-Inch-Landscape.png' alt='' height="150" />
+<img src='/content/img/multiplayeriPhone-4.7-Inch-Landscape.png' alt='' height="150" />
+<img src='/content/img/in-gameiPhone-4.7-Inch-Landscape.png' alt='' height="150" />
 
 
 Jumpy Rope is a casual jump the rope game I released for iOS and Android. Jump the rope as much as you can and unlock new clothes, power ups, and floating islands! No longer available on the AppStore.

@@ -23,7 +23,7 @@ You can begin by making a new project, or create a new scene from a project you 
 
 
 <div class="wp-block-image">
-  <figure class="aligncenter"><img src="http://mikeadev.net/wp-content/uploads/Screen-Shot-2015-07-23-at-21.29.55.png" alt="Screen Shot 2015-07-23 at 21.29.55" /></figure>
+  <figure class="aligncenter"><img src="http://mikeadev.net/content/img/Screen-Shot-2015-07-23-at-21.29.55.png" alt="Screen Shot 2015-07-23 at 21.29.55" /></figure>
 </div>
 
 So, using Unity's physics engine, how can we make our player jump? By looking at the [Rigidbody's documentation](http://docs.unity3d.com/ScriptReference/Rigidbody.html), we can see that we have many methods to add force, and we'll use the normal [AddForce](http://docs.unity3d.com/ScriptReference/Rigidbody.AddForce.html), which takes a directional vector and a force mode. As far as direction goes, we'll want the player to jump up, so we can use the local up vector from the [player's transform](http://docs.unity3d.com/ScriptReference/Transform.html). For the [ForceMode](http://docs.unity3d.com/ScriptReference/ForceMode.html), we have Force, Acceleration, Impulse, and VelocityChange, and I will use VelocityChange for now.
