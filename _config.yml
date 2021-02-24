@@ -31,8 +31,16 @@ github_username:  mikea15
 
 # Build settings
 theme: minima
+minima:
+  skin: dark
 plugins:
   - jekyll-feed
+
+header_pages:
+  - about.md
+  - projects.md
+
+show_excerpts: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
