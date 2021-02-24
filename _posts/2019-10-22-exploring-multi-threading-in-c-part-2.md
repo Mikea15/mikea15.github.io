@@ -19,6 +19,7 @@ tags:
   - programming
   - threading
 ---
+
 ## Index
 
   * [Part 1: Exploring Multi-Threading in C++](http://mikeadev.net/2019/10/exploring-multi-threading-in-c/)
@@ -107,9 +108,8 @@ void RunThreadedPriority()
 ```
 
 Run time with 8 threads: 6059 ms. ( 4 High Job threads, 2 medium and 2 low threads. )
-<figure class="wp-block-image size-large">
 
-[<img src="http://mikeadev.net/content/img/threads_p.jpg" alt="" />](http://mikeadev.net/content/img/threads_p.jpg)<figcaption>( click to expand )</figcaption></figure> 
+<img src="http://mikeadev.net/content/img/threads_p.jpg" alt="" />
 
 The profile image show the 4 threads handling only big jobs, 2 threads handling medium jobs and the other 2 threads handling smaller jobs. As we can see, this won't win us much time, since when some thread finish their work, they stand idle, not contributing to the bigger picture.
 
@@ -263,8 +263,7 @@ void RunThreadedPriorityWorkStealing()
 
 Run time with 8 threads: 2625 ms.
 
-<figure class="wp-block-image size-large">
-[<img src="http://mikeadev.net/content/img/threads_ws-1.jpg" alt="" />](http://mikeadev.net/content/img/threads_ws-1.jpg)<figcaption> (click to expand) </figcaption></figure> 
+<img src="http://mikeadev.net/content/img/threads_ws-1.jpg" alt="" />
 
 Now we can see that the high priority worker threads started to take on medium sized jobs as soon as the higher ones depleted, and then the small jobs followed. 
 
@@ -353,99 +352,18 @@ void RunSynchronizedThreads()
 ```
 
 Run time: 2674 ms
-<figure class="wp-block-image size-large">
 
-[<img src="http://mikeadev.net/content/img/threads_sync.jpg" alt="" />](http://mikeadev.net/content/img/threads_sync.jpg)<figcaption>(click to expand)</figcaption></figure> 
+<img src="http://mikeadev.net/content/img/threads_sync.jpg" alt="" />
 
 I've setup this one up so worker thread only start at the same frequency of the main thread. The goal here was to use condition variables to synchronize the threads, and hopefully confirm it with the profiler., which we can look at in the image above.
 
-<figure class="wp-block-table">
-
-<table class="">
-  <tr>
-    <td>
-      <strong>Test Run</strong>
-    </td>
-    
-    <td>
-      <strong>Time</strong> (ms)
-    </td>
-    
-    <td>
-      <strong>Improvement</strong>
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      One Thread
-    </td>
-    
-    <td>
-      10396
-    </td>
-    
-    <td>
-      1.99x
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Threaded
-    </td>
-    
-    <td>
-      2625
-    </td>
-    
-    <td>
-      7.88x
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Threaded with Priority
-    </td>
-    
-    <td>
-      6059
-    </td>
-    
-    <td>
-      3.4x
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Threaded with Work Stealing
-    </td>
-    
-    <td>
-      2625
-    </td>
-    
-    <td>
-      7.8x
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Synchronized Threads
-    </td>
-    
-    <td>
-      2674
-    </td>
-    
-    <td>
-      7.7x
-    </td>
-  </tr>
-</table></figure> 
+| Test Run | Time | Improvement |
+|--|--|--|
+| Single Thread + One Worker Thread | 10396 | 1.99x |
+| MT | 2625 | 7.88x |
+| MT w/ Priority | 6059 | 3.4x |
+| MT w/ Work Stealing | 2625 | 7.8x |
+| Synchronized Threads | 2674 | 7.7x |
 
 [Download code from GitHub](https://gist.github.com/Mikea15/aca94cfd4aacd1ee0e120ab03b99d1b7) 
 

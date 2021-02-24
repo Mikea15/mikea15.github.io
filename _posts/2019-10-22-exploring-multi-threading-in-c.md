@@ -164,10 +164,8 @@ void RunSequential()
 
 I'm running all my tests on a i7 4770K, that has 4 cores and 8 threads. All timings where taken from a release build, and all profile images from debug builds ( for illustration of workload purposes ).
 
-Sequential run time: _20692_ ms
-<figure class="wp-block-image size-large">
-
-<img src="http://mikeadev.net/content/img/image-2.png" alt="" /> </figure> 
+Sequential run time: 20692 ms
+<img src="http://mikeadev.net/content/img/image-2.png" alt="" />
 
 ## First Worker Thread
 
@@ -251,9 +249,8 @@ void RunOneThread()
 ```
 
 One worker thread run time: 10396 ms 
- class="wp-block-image size-large is-resized">
 
-[<img src="http://mikeadev.net/content/img/onethread.jpg" alt="" />](http://mikeadev.net/content/img/onethread.jpg)<figcaption>(click to expand)</figcaption></figure> 
+<img src="http://mikeadev.net/content/img/onethread.jpg" alt="" />
 
 The image above show the execution of the jobs, the larger ones first, then the medium sized ones and lastly the smaller ones. This was the order at which the tasks where added into the queue.
 
@@ -292,9 +289,8 @@ void RunThreaded()
 ```
 
 Run time with 8 threads: 2625 ms.
-<figure class="wp-block-image size-large">
 
-[<img src="http://mikeadev.net/content/img/threaded_7.jpg" alt="" />](http://mikeadev.net/content/img/threaded_7.jpg)<figcaption>8 threads ( click to expand )</figcaption></figure> 
+<img src="http://mikeadev.net/content/img/threaded_7.jpg" alt="" />
 
 Now this is a nicer view. 7 worker threads working with the main thread to process all jobs. Again, first we see the bigger jobs, then medium, then smaller ones being processed. This is being processed in the order they were added.
 
@@ -330,87 +326,20 @@ void RunJobsOnAsync()
 ```
 
 Run time: 2220 ms
-<figure class="wp-block-image size-large">
-
-[<img src="http://mikeadev.net/content/img/async.jpg" alt="" />](http://mikeadev.net/content/img/async.jpg)<figcaption>(click to expand)</figcaption></figure> 
+<img src="http://mikeadev.net/content/img/async.jpg" alt="" />
 
 ## Overview
 
 This time table only serves as an overview for this particular case. Of course, in real applications, results vary.
 
-<figure class="wp-block-table">
 
-<table class="">
-  <tr>
-    <td>
-      <strong>Test Run</strong>
-    </td>
-    
-    <td>
-      <strong>Time</strong> (ms)
-    </td>
-    
-    <td>
-      <strong>Improvement</strong>
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Sequential
-    </td>
-    
-    <td>
-      <em>20692</em>
-    </td>
-    
-    <td>
-      1.x
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      One Thread
-    </td>
-    
-    <td>
-      10396
-    </td>
-    
-    <td>
-      1.99x
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Threaded
-    </td>
-    
-    <td>
-      2625
-    </td>
-    
-    <td>
-      7.88x
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Async Tasks (1)
-    </td>
-    
-    <td>
-      2220
-    </td>
-    
-    <td>
-      9.3x
-    </td>
-  </tr>
-</table></figure> 
+| Test Run | Time (ms) | Improvement |
+|-|-|-|
+| Sequential | 20692 | 1.x |
+| One Thread | 10396 | 1.99x |
+| Threaded | 2625 | 7.88x |
+| Async Tasks <sup>*</sup> | 2220 | 9.3x |
+
 
 The sample codes are my exploration of this specific case and by no means is free of bugs. But it is interesting to see how the code would run across multiple thread, how to synchronize and make the most of my system.
 
@@ -429,4 +358,4 @@ All screenshots are taken with the debug version of the program, so we could cle
 
 ### Note
 
-(1) I've revisited Async Tasks to make sure all tasks where fully complete before exiting the function call. I managed to get worse performance than the baseline test. Upon inspection with vTune, I found out, that it doesn't launch new threads. This change happens from Debug/Release builds. I believe there is some optimization that makes it be that fast, even more so because most of the time spent on each jobs is an artificial wait. In any case, read those values with a grain of salt. Do your own tests and make your own conclusions.
+<sup>*</sup> I've revisited Async Tasks to make sure all tasks where fully complete before exiting the function call. I managed to get worse performance than the baseline test. Upon inspection with vTune, I found out, that it doesn't launch new threads. This change happens from Debug/Release builds. I believe there is some optimization that makes it be that fast, even more so because most of the time spent on each jobs is an artificial wait. In any case, read those values with a grain of salt. Do your own tests and make your own conclusions.
