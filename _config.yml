@@ -19,11 +19,11 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Mikea Dev
-subtitle: Thoughts and random bits of code.
+subtitle: Thoughts and random bits of code
 email: michael.adaixo@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi! Michael here! I'm a game programmer! I'm interested in many topic,
-  but I mostly write about game dev, programming, computer graphics!
+  Hi! Michael here! I'm a game programmer! I'm interested in many topics,
+  but I mostly write about game dev, programming and computer graphics!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mikeadev.net" # the base hostname & protocol for your site, e.g. http://example.com
 
