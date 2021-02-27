@@ -16,7 +16,7 @@ Couple of projects I’ve worked on my own or in collaboration, either on person
 
 Made under 72h for [Ludum Dare 38](https://ldjam.com/events/ludum-dare/38/astromike) with [Marco Vale](https://twitter.com/MarcoValeKaz) on 3D. Inspired by Monument Valley and Lara Croft GO.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b30id6bcWQk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{%- include youtube.html code="b30id6bcWQk" -%}
 
 \> *[Download on itch.io](https://mikea15.itch.io/astromike)*
 
@@ -36,6 +36,8 @@ SuperStems was made under 48h for Ludum Dare 31. I continued to work on it for a
 <img src="{{ '..//content/img/mainiPhone-4.7-Inch-Landscape.png' | relative_path }}" alt='' height="150" />
 <img src="{{ '..//content/img/multiplayeriPhone-4.7-Inch-Landscape.png' | relative_path }}" alt='' height="150" />
 <img src="{{ '..//content/img/in-gameiPhone-4.7-Inch-Landscape.png' | relative_path }}" alt='' height="150" />
+
+{%- include youtube.html code="1XBXY0OHPa8" -%}
 
 
 Jumpy Rope is a casual jump the rope game I released for iOS and Android. Jump the rope as much as you can and unlock new clothes, power ups, and floating islands! No longer available on the AppStore.

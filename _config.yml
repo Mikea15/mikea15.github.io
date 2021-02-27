@@ -18,6 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+author: Michael Adaixo
 title: Mikea Dev
 subtitle: Thoughts and random bits of code
 email: michael.adaixo@gmail.com
@@ -58,3 +59,17 @@ github_username:  mikea15
 linkedin_username: MichaelAdaixo
 
 rss: rss
+
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 5
+  offset: 0
+  permalink: '/page/:num/'
+  title: ':title - Page: :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail: 
+    before: 2 # The number of links before the current page
+    after: 2  # The number of links after the current page

@@ -13,27 +13,29 @@ I have experience in C++, C#, HLSL and Swift languages. Most of my time is spent
 
 I believe anyone can become or do anything, given time, motivation and passion. This is why I never stop learning and am always trying to solve challenging problems.
 
-Check out my [projects here]().
+Check out my [projects here]({{ '../projects' | relative_path }}).
 
-### Books I like: 
-- ssential C# 6.0 – Mark Michaelis
-- ode Complete 2 – Steve McConnell
-- he Design of Everyday Things – Donald A. Norman
-- ame Programming Patterns – Robert Nystrom
-- heory of Fun for Game Design – Raph Koster
-- ame Engine Architecture – Jason Gregory
-- ame Coding Complete, Fourth Ed. – Mike McShaffry
-- rogramming Game AI by Example – Mat Buckland
-- ffective C++ Third Ed. – Scott Meyers
+## Books I like: 
+- Essential C# 6.0 – Mark Michaelis
+- Code Complete 2 – Steve McConnell
+- The Design of Everyday Things – Donald A. Norman
+- Game Programming Patterns – Robert Nystrom
+- Theory of Fun for Game Design – Raph Koster
+- Game Engine Architecture – Jason Gregory
+- Game Coding Complete, Fourth Ed. – Mike McShaffry
+- Programming Game AI by Example – Mat Buckland
+- Effective C++ Third Ed. – Scott Meyers
 - More Effective C++ – Scott Meyers
+- AI for Games, Third ed. - Ian Millington
+- C++ Concurrency in Action - Anthony Williams
 
-### Udemy Courses Completed:
+## Udemy Courses Completed:
 - Unreal Engine 4 Mastery: Create Multiplayer Games
 - Learn Advanced C++ Programming
 - Learn Advanced Game Mechanics in Unity
 - The Unreal Engine Developer Course
 
-### PluralSight Courses Completed [[Public Profile]](https://app.pluralsight.com/profile/mikea15)
+## PluralSight Courses Completed [[Public Profile]](https://app.pluralsight.com/profile/mikea15)
 - WCF Fundamentals
 - Introduction to Async and Parallel Programming in .NET4
 - .NET Reflector by Example
