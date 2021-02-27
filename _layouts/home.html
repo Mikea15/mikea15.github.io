@@ -11,10 +11,10 @@ paginator:
 
   {{ content }}
 
-  {%- if paginator.posts.size > 0 -%}
+  {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list">
-      {%- for post in paginator.posts -%}
+      {%- for post in site.posts -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -34,7 +34,7 @@ paginator:
   {%- endif -%}
 
 
-  {% if paginator.page_trail %}
+  <!-- {% if paginator.page_trail %}
     <nav aria-label="Page navigation example">
       <h3>Page:</h3>
       <ul class="pagination">
@@ -47,6 +47,6 @@ paginator:
         {% endfor %}
       </ul>
     </nav>
-  {% endif %}
+  {% endif %} -->
 
 </div>

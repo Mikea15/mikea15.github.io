@@ -43,7 +43,7 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-paginate-v2
+# - jekyll-paginate-v2
 
 highlighter: rouge
 
@@ -62,15 +62,15 @@ linkedin_username: MichaelAdaixo
 rss: rss
 
 # Pagination Settings
-pagination:
-  enabled: true
-  per_page: 7
-  offset: 0
-  permalink: '/page/:num/'
-  title: ':title - Page: :num of :max'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-  trail: 
-    before: 3 # The number of links before the current page
-    after:  3 # The number of links after the current page
+# pagination:
+#   enabled: true
+#   per_page: 7
+#   offset: 0
+#   permalink: '/page/:num/'
+#   title: ':title - Page: :num of :max'
+#   limit: 0
+#   sort_field: 'date'
+#   sort_reverse: true
+#   trail: 
+#     before: 3 # The number of links before the current page
+#     after:  3 # The number of links after the current page
