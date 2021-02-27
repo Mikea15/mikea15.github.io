@@ -63,7 +63,7 @@ rss: rss
 # Pagination Settings
 pagination:
   enabled: true
-  per_page: 5
+  per_page: 7
   offset: 0
   permalink: '/page/:num/'
   title: ':title - Page: :num of :max'
@@ -71,5 +71,5 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
   trail: 
-    before: 2 # The number of links before the current page
-    after: 2  # The number of links after the current page
+    before: 3 # The number of links before the current page
+    after: 3  # The number of links after the current page
