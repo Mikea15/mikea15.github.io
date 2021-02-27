@@ -43,7 +43,7 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-paginator-v2
+  - jekyll-paginate-v2
 
 highlighter: rouge
 
