@@ -1,0 +1,8 @@
+{%- if include.post.tags.size > 0 -%}
+<div>
+    <span>Tags: </span>
+    {%- for tag in include.post.tags -%}
+        <a class="badge badge-dark text-uppercase" style="margin: 0px 4px" href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
+    {%- endfor -%}
+</div>
+{%- endif -%}

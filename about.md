@@ -9,7 +9,7 @@ This is a space where I write about game development, programming in general, co
 
 I once won awards for making [robot-shopping-carts follow you using a Microsoft Kinect and Motorized Wheels](https://www.youtube.com/watch?v=dhHXldpknC4). Working on image recognition and PID controllers, among other things.
 
-I have experience in C++, C#, HLSL and Swift languages. Most of my time is spent working in C# with Unity. I’m proficient with Unity and am learning Unreal Engine at full speed. I’ve released 3 mobile games at SkyBelow Studios.
+I have experience in C++, C#, HLSL and swift languages. Most of my time is spent working in C# with Unity. I’m proficient with Unity and am learning Unreal Engine at full speed. I’ve released 3 mobile games at SkyBelow Studios.
 
 I believe anyone can become or do anything, given time, motivation and passion. This is why I never stop learning and am always trying to solve challenging problems.
 

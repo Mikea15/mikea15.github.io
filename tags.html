@@ -14,25 +14,26 @@ title: 'Tag Index'
 
 
 {%- for tag in tags_list -%}
-<a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i> {{- tag -}} ({{site.tags[tag].size}})</a>
+<a class="badge badge-dark text-uppercase" style="margin: 0px 4px" href="#{{- tag -}}">
+    <i class="fas fa-tag" aria-hidden="true"></i> 
+    {{- tag -}}&NonBreakingSpace;({{site.tags[tag].size}})</a>
 {%- endfor -%}
 
 
 <div id="full-tags-list">
 {%- for tag in tags_list -%}
-    <h2 id="{{- tag -}}" class="linked-section">
+    <h2 id="{{- tag -}}" class="linked-section text-uppercase">
         <i class="fas fa-tag" aria-hidden="true"></i>
-        {{- tag -}}( {{site.tags[tag].size}} )
+        {{- tag -}}&NonBreakingSpace;({{site.tags[tag].size}})
     </h2>
     <div class="post-list">
+        <ul>
         {%- for post in site.tags[tag] -%}
-            <div class="tag-entry">
-                <a href="{{ post.url | relative_url }}">{{- post.title -}}</a>
-                <div class="entry-date">
-                    <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
-                </div>
-            </div>
+            <li class="tag-entry">
+                <a href="{{ post.url | relative_url }}">{{- post.title -}}</a> (<time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>)
+            </li>
         {%- endfor -%}
+        </ul>
     </div>
 {%- endfor -%}
 </div>
