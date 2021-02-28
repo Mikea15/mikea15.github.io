@@ -165,7 +165,7 @@ void RunSequential()
 I'm running all my tests on a i7 4770K, that has 4 cores and 8 threads. All timings where taken from a release build, and all profile images from debug builds ( for illustration of workload purposes ).
 
 Sequential run time: 20692 ms
-<img src="http://mikeadev.net/content/img/image-2.png" alt="" />
+<img class="img-fluid " src="http://mikeadev.net/content/img/image-2.png" alt="" />
 
 ## First Worker Thread
 
@@ -250,7 +250,7 @@ void RunOneThread()
 
 One worker thread run time: 10396 ms 
 
-<img src="http://mikeadev.net/content/img/onethread.jpg" alt="" />
+<img class="img-fluid " src="http://mikeadev.net/content/img/onethread.jpg" alt="" />
 
 The image above show the execution of the jobs, the larger ones first, then the medium sized ones and lastly the smaller ones. This was the order at which the tasks where added into the queue.
 
@@ -290,7 +290,7 @@ void RunThreaded()
 
 Run time with 8 threads: 2625 ms.
 
-<img src="http://mikeadev.net/content/img/threaded_7.jpg" alt="" />
+<img class="img-fluid " src="http://mikeadev.net/content/img/threaded_7.jpg" alt="" />
 
 Now this is a nicer view. 7 worker threads working with the main thread to process all jobs. Again, first we see the bigger jobs, then medium, then smaller ones being processed. This is being processed in the order they were added.
 
@@ -326,7 +326,7 @@ void RunJobsOnAsync()
 ```
 
 Run time: 2220 ms
-<img src="http://mikeadev.net/content/img/async.jpg" alt="" />
+<img class="img-fluid " src="http://mikeadev.net/content/img/async.jpg" alt="" />
 
 ## Overview
 

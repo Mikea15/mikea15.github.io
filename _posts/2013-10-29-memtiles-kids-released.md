@@ -13,7 +13,7 @@ tags:
   - memtiles kids
 ---
 [  
-<img alt="memtiles kids logo" src="https://lh3.ggpht.com/Dpu3Gw390-i7gpgLKnLfLebk2Ln_mB1IjzQhZ9rJBB1rWfqONDVrGce87mGJoCK9Plw=w300-rw" />  
+<img class="img-fluid " alt="memtiles kids logo" src="https://lh3.ggpht.com/Dpu3Gw390-i7gpgLKnLfLebk2Ln_mB1IjzQhZ9rJBB1rWfqONDVrGce87mGJoCK9Plw=w300-rw" />  
 ](https://play.google.com/store/apps/details?id=com.MichaelAdaixo.MemTilesKids)  
 Memtiles Kids has been released!
 

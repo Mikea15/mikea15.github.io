@@ -30,9 +30,9 @@ I was awake at 3 am to know the theme for Ludum Dare 38. I still hadn't made my 
 
 So in the morning, I started researching the theme, I had micro-organisms in mind, micro and macro ecosystems but nothing really that would stand out. I thought about how Small World could lead to having a simple set of rules in a small constrained world, and with the micro-organisms idea, I shifted towards a space exploration game, heavily inspired by Hitman GO and Lara Croft GO games.
 
-<img src="http://mikeadev.net/content/img/Pasted-image-at-2017_04_22-01_33-PM.png" /> Initially, the idea would be to have your main character cleanup each level from organisms there but quickly shifted to a puzzle-solver sci-fi game. Having Hitman GO in mind, I prototyped a level and started to create what would become the node-based navigation system. A collection of nodes that the main character and enemies could travel to, based on their distances.
+<img class="img-fluid " src="http://mikeadev.net/content/img/Pasted-image-at-2017_04_22-01_33-PM.png" /> Initially, the idea would be to have your main character cleanup each level from organisms there but quickly shifted to a puzzle-solver sci-fi game. Having Hitman GO in mind, I prototyped a level and started to create what would become the node-based navigation system. A collection of nodes that the main character and enemies could travel to, based on their distances.
 
-<img src="http://mikeadev.net/content/img/intro_level.png" alt="" /> 
+<img class="img-fluid " src="http://mikeadev.net/content/img/intro_level.png" alt="" /> 
 
 At this point, I had a friend of mine, <a href="https://twitter.com/MarcoValeKaz" target="_blank" rel="noopener noreferrer">Marco Vale</a>, asking if I needed an artist, so we teamed-up and he started to create assets for the game's environment, as well as a character, gun, jetpack and a crashed ship, while I was developing game mechanics. Soon after that, I had a node-based navigation working, and something a lot prettier than cubes to show.
 
@@ -40,7 +40,7 @@ At the end of day 1, we had a placeholder character moving around a map, an exit
 
 On day 2, Marco started with the main character, gun, and jetpack. Meanwhile, I was working on creating more levels, introducing new components to the game and building up from the previous levels. For instance, on level 2 you grab the gun, therefore level 3 has enemies that you're now able to shoot at in order to solve the puzzle and go on. The jetpack is unlocked further and will allow the player to jump across gaps.
 
-[<img src="http://mikeadev.net/content/img/jump_.png" alt="" />](http://mikeadev.net/content/img/jump_.png)
+[<img class="img-fluid " src="http://mikeadev.net/content/img/jump_.png" alt="" />](http://mikeadev.net/content/img/jump_.png)
 
 At this point, I was still implementing a Hitman GO movement style, because I thought that we wouldn't have time to make animations. Ultimately we had, so we threw that away, and gladly because it looks and feels much better.
 
@@ -58,7 +58,7 @@ At this point, I was still implementing a Hitman GO movement style, because I th
 
 The last couple of hours before the compo deadline, I swapped all placeholders for the gun and jetpack, integrated the animations for the main character, made some quick particle effects, created a teleport mechanic and added sound.
 
-<img class="aligncenter size-medium wp-image-473" src="http://mikeadev.net/content/img/screen_3.png" alt="" /> 
+<img class="img-fluid " class="aligncenter size-medium wp-image-473" src="http://mikeadev.net/content/img/screen_3.png" alt="" /> 
 
 On day 3, we focused on making it look better and fixing a few issues that were making the game difficult to play. We also added the crash site with the spaceship, decorations, particle effects and camera post processing.
 

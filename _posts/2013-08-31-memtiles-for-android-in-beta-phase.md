@@ -16,7 +16,7 @@ tags:
   - programming
   - unity3d
 ---
-<img src="http://mikeadev.net/content/img/header.png" alt="header"  />
+<img class="img-fluid " src="http://mikeadev.net/content/img/header.png" alt="header"  />
 
 So I'm making a casual memory game for mobile platforms. Its a simple educational puzzle, where you need to retrieve the tile pairs on the grid.
 

@@ -36,7 +36,7 @@ Now as previously demonstrated, I could launch a new set of threads and have the
 
 Loading is going to be done in worker threads, and generating textures will be done in the main thread. The following diagram shows a simplified workflow of what we'll achieve.
 
-<img src="http://mikeadev.net/content/img/image-4.png" alt="" />
+<img class="img-fluid " src="http://mikeadev.net/content/img/image-4.png" alt="" />
 
 In our main thread we have a method that will check our processing textures queue for a job. If it finds one, Generates the OpengGL texture and assigns it back to the material.
 
@@ -80,7 +80,7 @@ void AssetManager::LoaderThread()
 }
 ```
 
-<img src="http://mikeadev.net/content/img/image-5.png" alt="" />
+<img class="img-fluid " src="http://mikeadev.net/content/img/image-5.png" alt="" />
 
 This architecture allows me to load textures while the game is running without blocking the main thread. Its a bit pointless to compare times here since I'm using my own sandbox instead of a sample program to test only this matter. See [Part 1](http://mikeadev.net/2019/10/exploring-multi-threading-in-c/) and [Part 2](http://mikeadev.net/2019/10/exploring-multi-threading-in-c-part-2/) for more info and code you can follow along.
 
