@@ -12,7 +12,7 @@ dsq_thread_id:
   - "5255803995"
 image: /content/img/MWU_Banner.jpg
 categories:
-  - General
+  - general
 ---
 Jumpy Rope is an endless arcade jumper game for [iOS](http://bit.ly/sky_jrope_), and on [Android](http://bit.ly/sk_jrope_) platforms, featuring low poly graphic style, customizable characters and simple gameplay mechanics.
 

@@ -9,8 +9,8 @@ permalink: /2013/06/generic-method/
 mixpanel_event_label:
   - ""
 categories:
-  - Snippet
-  - Tutorials
+  - snippet
+  - tutorial
 tags:
   - csharp
   - dotnet
@@ -77,7 +77,7 @@ public static class MathHelper
 }
 ```
 
-It's pretty easy once you know what to look for :) Just search Generics c# and you'll find a bunch of questions and answers on StackOverflow, msdn and CodeProject :)  
+It's pretty easy once you know what to look for :) Just search Generics c# and you'll find a bunch of questions and answers on StackOverflow, msdn and codeproject :)  
 Here's the solution:
 
 ```cpp

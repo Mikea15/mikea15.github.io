@@ -1,6 +1,6 @@
 ---
 id: 332
-title: Simple UIImage Caching in Swift
+title: Simple UIImage Caching in swift
 date: 2015-07-17T09:32:05+01:00
 author: Michael Adaixo
 layout: post
@@ -11,11 +11,11 @@ dsq_thread_id:
 mixpanel_event_label:
   - ""
 categories:
-  - Snippet
+  - snippet
 tags:
   - development
   - iOS
-  - Swift
+  - swift
 ---
 This is a snippet of code that will cache images downloaded from an online source, and provide them when needed. I still have some work to do on it, but right now it works pretty fine.
 

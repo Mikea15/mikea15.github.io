@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=98
 permalink: /2013/10/october-challenge-again/
 categories:
-  - General
+  - general
 tags:
   - csharp
   - ludum dare

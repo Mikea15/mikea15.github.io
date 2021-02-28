@@ -11,10 +11,10 @@ dsq_thread_id:
 mixpanel_event_label:
   - ""
 categories:
-  - Snippet
-  - Tutorials
+  - snippet
+  - tutorial
 tags:
-  - CodeProject
+  - codeproject
   - csharp
   - dotnet
   - parallel

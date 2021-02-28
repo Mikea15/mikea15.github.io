@@ -12,7 +12,7 @@ dsq_thread_id:
   - "5808757433"
 image: /content/img/astromike_icon_cropped.png
 categories:
-  - General
+  - general
 tags:
   - development
   - ludum dare

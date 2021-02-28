@@ -9,7 +9,7 @@ permalink: /2015/03/superstems-is-out-for-ios/
 dsq_thread_id:
   - "3590670967"
 categories:
-  - General
+  - general
 tags:
   - development
   - iOS

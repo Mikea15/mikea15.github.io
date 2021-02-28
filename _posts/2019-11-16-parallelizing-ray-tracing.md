@@ -7,9 +7,9 @@ layout: post
 guid: http://mikeadev.net/?p=766
 permalink: /2019/11/parallelizing-ray-tracing/
 categories:
-  - General
+  - general
 tags:
-  - CodeProject
+  - codeproject
   - concurrency
   - cpp
   - load
@@ -143,4 +143,4 @@ I set out to expand and consolidate my knowledge on multi threading paradigms an
 
 I'm sure there's lot of room for improvement and provably made lots of mistakes, if I did, let me know. In any case I hope you can take your own conclusions and maybe learn something too.
 
-<a href="https://www.codeproject.com/script/Articles/BlogArticleList.aspx?amid=7793424" rel="tag" style="display:none">CodeProject</a>
+<a href="https://www.codeproject.com/script/Articles/BlogArticleList.aspx?amid=7793424" rel="tag" style="display:none">codeproject</a>

@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=49
 permalink: /2013/06/coursera-again/
 categories:
-  - General
+  - general
 tags:
   - coursera
   - engineering

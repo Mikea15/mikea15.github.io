@@ -11,9 +11,9 @@ dsq_thread_id:
 mixpanel_event_label:
   - ""
 categories:
-  - Snippet
+  - snippet
 tags:
-  - CodeProject
+  - codeproject
   - gamedev
   - unity3d
 ---

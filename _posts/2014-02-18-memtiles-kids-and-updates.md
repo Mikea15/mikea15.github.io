@@ -9,7 +9,7 @@ permalink: /2014/02/memtiles-kids-and-updates/
 dsq_thread_id:
   - "2283599021"
 categories:
-  - General
+  - general
 tags:
   - development
   - memtiles kids

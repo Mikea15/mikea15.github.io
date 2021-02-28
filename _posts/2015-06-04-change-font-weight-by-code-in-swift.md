@@ -1,6 +1,6 @@
 ---
 id: 320
-title: Change font weight by code in Swift
+title: Change font weight by code in swift
 date: 2015-06-04T12:30:41+01:00
 author: Michael Adaixo
 layout: post
@@ -11,10 +11,10 @@ dsq_thread_id:
 mixpanel_event_label:
   - ""
 categories:
-  - Snippet
+  - snippet
 tags:
   - iOS
-  - Swift
+  - swift
 ---
 
 

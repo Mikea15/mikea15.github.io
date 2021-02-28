@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=78
 permalink: /2013/07/the-elements-of-programming-style/
 categories:
-  - General
+  - general
 tags:
   - best practice
   - programming

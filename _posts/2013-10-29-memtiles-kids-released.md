@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=111
 permalink: /2013/10/memtiles-kids-released/
 categories:
-  - General
+  - general
 tags:
   - development
   - memtiles kids

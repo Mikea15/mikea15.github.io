@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=94
 permalink: /2013/09/memtiles-is-almost-done/
 categories:
-  - General
+  - general
 tags:
   - android
   - csharp

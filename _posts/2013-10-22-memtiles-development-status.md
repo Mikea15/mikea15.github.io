@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=104
 permalink: /2013/10/memtiles-development-status/
 categories:
-  - General
+  - general
 tags:
   - android
   - iOS

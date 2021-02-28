@@ -9,7 +9,7 @@ permalink: /2014/02/final-flapasy-on-android/
 dsq_thread_id:
   - "2307584297"
 categories:
-  - General
+  - general
 tags:
   - android
   - development

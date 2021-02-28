@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=119
 permalink: /2013/11/postmortem-memtiles-kids/
 categories:
-  - General
+  - general
 tags:
   - development
   - memtiles kids

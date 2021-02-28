@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=88
 permalink: /2013/08/memtiles-for-android-in-beta-phase/
 categories:
-  - General
+  - general
 tags:
   - android
   - beta

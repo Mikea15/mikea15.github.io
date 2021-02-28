@@ -11,7 +11,7 @@ mixpanel_event_label:
 dsq_thread_id:
   - "4124088219"
 categories:
-  - Snippet
+  - snippet
 tags:
   - iOS
   - snippet

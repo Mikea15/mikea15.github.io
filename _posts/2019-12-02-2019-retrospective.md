@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=796
 permalink: /2019/12/2019-retrospective/
 categories:
-  - General
+  - general
 ---
  
 

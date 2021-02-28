@@ -10,11 +10,11 @@ dsq_thread_id:
   - "3530719011"
 image: /content/img/B9Hq3-fIgAA0Kj.jpg
 categories:
-  - General
+  - general
 tags:
   - development
   - gamedev
-  - GameJam
+  - gamejam
   - iOS
   - ipad
   - iphone

@@ -11,10 +11,9 @@ dsq_thread_id:
 mixpanel_event_label:
   - ""
 categories:
-  - Game Articles
-  - Tutorials
+  - tutorial
 tags:
-  - CodeProject
+  - codeproject
   - csharp
   - development
   - gamedev

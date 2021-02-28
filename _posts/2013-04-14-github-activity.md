@@ -7,7 +7,7 @@ layout: post
 guid: http://mikeadev.net/?p=47
 permalink: /2013/04/github-activity/
 categories:
-  - General
+  - general
 tags:
   - github
   - programming

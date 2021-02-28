@@ -9,7 +9,7 @@ permalink: /2012/08/algorithms-course/
 dsq_thread_id:
   - "2224868081"
 categories:
-  - General
+  - general
 tags:
   - algorithms
   - coursera

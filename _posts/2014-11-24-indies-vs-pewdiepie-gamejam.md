@@ -9,10 +9,10 @@ permalink: /2014/11/indies-vs-pewdiepie-gamejam/
 dsq_thread_id:
   - "3257427430"
 categories:
-  - General
+  - general
 tags:
   - gamedev
-  - GameJam
+  - gamejam
 ---
 I've entered this week's 72 hour gamejam hosted by Gamejolt with PewDiePie in which the top 10 games would be played by the man himself and broadcasted to the internets and his endless number of fans. As if making games wasn't reason enough, having the chance to have your game broadcast to millions of his fans sure was another great one. 
 

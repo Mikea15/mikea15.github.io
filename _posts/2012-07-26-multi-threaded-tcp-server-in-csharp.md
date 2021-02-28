@@ -9,10 +9,10 @@ permalink: /2012/07/multi-threaded-tcp-server-in-csharp/
 dsq_thread_id:
   - "2067648359"
 categories:
-  - Tutorials
+  - tutorial
 tags:
   - client
-  - CodeProject
+  - codeproject
   - csharp
   - dotnet
   - programming

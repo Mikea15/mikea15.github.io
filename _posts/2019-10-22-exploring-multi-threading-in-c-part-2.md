@@ -9,9 +9,9 @@ permalink: /2019/10/exploring-multi-threading-in-c-part-2/
 spay_email:
   - ""
 categories:
-  - General
+  - general
 tags:
-  - CodeProject
+  - codeproject
   - concurrency
   - cpp
   - multithreading
@@ -374,4 +374,4 @@ I've setup this one up so worker thread only start at the same frequency of the 
   * [Part 3: Exploring Multi-Threading in C++: Loading Textures](http://mikeadev.net/2019/11/exploring-multi-threading-in-c-loading-textures/)
   * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](http://mikeadev.net/2019/11/parallelizing-ray-tracing/) 
 
-<a href="https://www.codeproject.com/script/Articles/BlogArticleList.aspx?amid=7793424" rel="tag" style="display:none">CodeProject</a>
+<a href="https://www.codeproject.com/script/Articles/BlogArticleList.aspx?amid=7793424" rel="tag" style="display:none">codeproject</a>
