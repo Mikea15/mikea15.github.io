@@ -15,16 +15,15 @@ title: 'Categories Index'
 
 {%- for cat in categories_list -%}
 <a class="badge badge-dark text-uppercase" style="margin: 0px 4px" href="#{{- cat -}}">
-    <i class="fas fa-tag" aria-hidden="true"></i> 
-    {{- cat -}}&NonBreakingSpace;({{site.categories[cat].size}})</a>
+    <i class="far fa-file" aria-hidden="true"></i> 
+    &nbsp;{{- cat -}}&nbsp;({{site.categories[cat].size}})</a>
 {%- endfor -%}
 
 
 <div id="full-cats-list">
 {%- for cat in categories_list -%}
     <h2 id="{{- cat -}}" class="linked-section text-uppercase">
-        <i class="fas fa-tag" aria-hidden="true"></i>
-        {{- cat -}}&NonBreakingSpace;({{site.categories[cat].size}})
+        {{- cat -}}&nbsp;({{site.categories[cat].size}})
     </h2>
     <div class="post-list">
         <ul>
