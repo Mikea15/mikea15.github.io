@@ -26,7 +26,7 @@ title: 'Categories Index'
         {{- cat -}}&nbsp;({{site.categories[cat].size}})
     </h2>
     <div class="post-list">
-        <ul>
+        <ul class="list-unstyled">
         {%- for post in site.categories[cat] -%}
             <li class="tag-entry">
                 <a href="{{ post.url | relative_url }}">{{- post.title -}}</a> ( <time class="small" datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time> )

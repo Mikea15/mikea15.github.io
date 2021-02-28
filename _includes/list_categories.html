@@ -1,9 +1,10 @@
 {%- if include.post.categories.size > 0 -%}
 <div>
-    <span>Categories: </span>
+    <small>Categories:</small>
     {%- for cat in include.post.categories -%}
-        <a class="badge badge-primary text-uppercase" style="margin: 0px 4px" href="{{ '/categories' | relative_url }}#{{- cat -}}">
-            <i class="far fa-file" aria-hidden="true"></i>&nbsp;{{- cat -}}</a>
+    <a class="badge badge-primary text-uppercase" style="margin: 0px 4px" href="{{ '/categories' | relative_url }}#{{- cat -}}">
+        <i class="far fa-file" aria-hidden="true"></i>&nbsp;{{- cat -}}
+    </a>
     {%- endfor -%}
 </div>
 {%- endif -%}

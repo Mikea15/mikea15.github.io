@@ -25,10 +25,11 @@ title: 'Tag Index'
     <h2 id="{{- tag -}}" class="linked-section text-uppercase">{{- tag -}}&nbsp;({{site.tags[tag].size}})
     </h2>
     <div class="post-list">
-        <ul>
+        <ul class="list-unstyled">
         {%- for post in site.tags[tag] -%}
             <li class="tag-entry">
-                <a href="{{ post.url | relative_url }}">{{- post.title -}}</a> (<time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>)
+                <a href="{{ post.url | relative_url }}">{{- post.title -}}</a>
+                <small class="text-muted">(<time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>)</small>
             </li>
         {%- endfor -%}
         </ul>

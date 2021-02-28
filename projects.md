@@ -8,11 +8,11 @@ Couple of projects I’ve worked on my own or in collaboration, either on person
 
 # Astromike
 
-<img src="{{ '../content/img/astromike_icon.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '../content/img/screen_1.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '../content/img/screen_2.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '../content/img/screen_3.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '../content/img/screen_4.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/astromike_icon.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/screen_1.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/screen_2.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/screen_3.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/screen_4.png' | relative_path }}" alt='' height="150" />
 
 Made under 72h for [Ludum Dare 38](https://ldjam.com/events/ludum-dare/38/astromike) with [Marco Vale](https://twitter.com/MarcoValeKaz) on 3D. Inspired by Monument Valley and Lara Croft GO.
 
@@ -22,20 +22,20 @@ Made under 72h for [Ludum Dare 38](https://ldjam.com/events/ludum-dare/38/astrom
 
 # SuperStems
 
-<img src="{{ '../content/img/superstems-icon.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '../content/img/ss-s2.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '../content/img/ss-s3.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '../content/img/ss-s4.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '../content/img/ss-s5.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '../content/img/ss-s6.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/superstems-icon.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/ss-s2.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/ss-s3.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/ss-s4.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/ss-s5.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '../content/img/ss-s6.png' | relative_path }}" alt='' height="150" />
 
 SuperStems was made under 48h for Ludum Dare 31. I continued to work on it for a while to release it for iOS. Super Stems is a board strategy dominion game where you place tiles to dominate the board. No longer available on the AppStore.
 
 # Jumpy Rope
 
-<img src="{{ '..//content/img/mainiPhone-4.7-Inch-Landscape.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '..//content/img/multiplayeriPhone-4.7-Inch-Landscape.png' | relative_path }}" alt='' height="150" />
-<img src="{{ '..//content/img/in-gameiPhone-4.7-Inch-Landscape.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '..//content/img/mainiPhone-4.7-Inch-Landscape.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '..//content/img/multiplayeriPhone-4.7-Inch-Landscape.png' | relative_path }}" alt='' height="150" />
+<img class="img-fluid " src="{{ '..//content/img/in-gameiPhone-4.7-Inch-Landscape.png' | relative_path }}" alt='' height="150" />
 
 {%- include youtube.html code="1XBXY0OHPa8" -%}
 
@@ -48,7 +48,7 @@ Jumpy Rope is a casual jump the rope game I released for iOS and Android. Jump t
 
 # Memtile Kids
 
-<img src='/assets/img/img.png' alt='' height="150" />
+<img class="img-fluid " src='/assets/img/img.png' alt='' height="150" />
 
 Memtiles Kids is a memory matching game for kids with 4 different themes to unlock and over 100 levels. It was released on Android and iOS. No longer available on the AppStore. 
 
