@@ -21,7 +21,7 @@ tags:
   - snippet
   - tpl
 ---
-In our previous sample snippet, [Cancel a Loop in a Task with CancellationTokens in c#](http://mikeadev.net/2014/03/cancel-a-loop-in-a-task-with-cancellationtokens-in-csharp/ "Cancel a Loop in a Task with CancellationTokens in C#")&nbsp;, I try to explain how we can get out of a looping c# task, but a problem may arise from that situation. If we were to wait for any result out of that Task, we would be blocking the calling thread until the task returned, which is not good if we are on the main thread. We would locking our UI and might crash our application.
+In our previous sample snippet, [Cancel a Loop in a Task with CancellationTokens in c#]( {{ '2014/03/cancel-a-loop-in-a-task-with-cancellationtokens-in-csharp/' | relative_url }} "Cancel a Loop in a Task with CancellationTokens in C#"), I try to explain how we can get out of a looping c# task, but a problem may arise from that situation. If we were to wait for any result out of that Task, we would be blocking the calling thread until the task returned, which is not good if we are on the main thread. We would locking our UI and might crash our application.
 
 So I've been testing different ways to&nbsp;get out of that loop without causing any trouble, and you can achieve what we want many different ways.
 
@@ -86,7 +86,8 @@ void Main( )
 
 This will output something like this after pressing Enter after 4 seconds:
 
-<pre class="wp-block-preformatted lang:c# decode:true">Start
+```cpp
+Start
 .
 .
 .
@@ -95,7 +96,7 @@ Cancel
 Break
 ```
 
-Note that __cts_ is a member variable of the class where **Start** is being called so it can be accessed in the **Cancel** method. Back to our first solution, if we were to declare a _volatile bool _run_ variable as commented on the **Cancel** method, we would have to, firstly, uncomment that line to change the value to _false_, and change the&nbsp;_true&nbsp;_on the Start's method while loop.
+Note that __cts_ is a member variable of the class where **Start** is being called so it can be accessed in the **Cancel** method. Back to our first solution, if we were to declare a _volatile bool _run_ variable as commented on the **Cancel** method, we would have to, firstly, uncomment that line to change the value to _false_, and change the "true" on the Start's method while loop.
 
 Remember that I only break out of the loop with break because the method does not return any value to the calling thread. Otherwise I would have to try/catch that value.
 

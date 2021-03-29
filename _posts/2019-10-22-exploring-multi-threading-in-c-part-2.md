@@ -22,10 +22,10 @@ tags:
 
 ## Index
 
-  * [Part 1: Exploring Multi-Threading in C++](http://mikeadev.net/2019/10/exploring-multi-threading-in-c/)
-  * **[Part 2: Exploring Multi-Threading in C++ Cont.](http://mikeadev.net/2019/10/exploring-multi-threading-in-c-part-2/)**
-  * [Part 3: Exploring Multi-Threading in C++: Loading Textures](http://mikeadev.net/2019/11/exploring-multi-threading-in-c-loading-textures/)
-  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](http://mikeadev.net/2019/11/parallelizing-ray-tracing/) 
+  * [Part 1: Exploring Multi-Threading in C++]({{ '2019/10/exploring-multi-threading-in-c/' | relative_url }})
+  * **[Part 2: Exploring Multi-Threading in C++ Cont.]({{ '2019/10/exploring-multi-threading-in-c-part-2/' | relative_url }})**
+  * [Part 3: Exploring Multi-Threading in C++: Loading Textures]({{ '2019/11/exploring-multi-threading-in-c-loading-textures/' | relative_url }})
+  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing]({{ '2019/11/parallelizing-ray-tracing/' | relative_url }}) 
 
 ## Specific Worker Threads for Specific Jobs 
 
@@ -109,7 +109,7 @@ void RunThreadedPriority()
 
 Run time with 8 threads: 6059 ms. ( 4 High Job threads, 2 medium and 2 low threads. )
 
-<img class="img-fluid " src="http://mikeadev.net/content/img/threads_p.jpg" alt="" />
+<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/threads_p.jpg' | relative_url }}" alt="" />
 
 The profile image show the 4 threads handling only big jobs, 2 threads handling medium jobs and the other 2 threads handling smaller jobs. As we can see, this won't win us much time, since when some thread finish their work, they stand idle, not contributing to the bigger picture.
 
@@ -263,7 +263,7 @@ void RunThreadedPriorityWorkStealing()
 
 Run time with 8 threads: 2625 ms.
 
-<img class="img-fluid " src="http://mikeadev.net/content/img/threads_ws-1.jpg" alt="" />
+<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/threads_ws-1.jpg' | relative_url }}" alt="" />
 
 Now we can see that the high priority worker threads started to take on medium sized jobs as soon as the higher ones depleted, and then the small jobs followed. 
 
@@ -353,7 +353,7 @@ void RunSynchronizedThreads()
 
 Run time: 2674 ms
 
-<img class="img-fluid " src="http://mikeadev.net/content/img/threads_sync.jpg" alt="" />
+<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/threads_sync.jpg' | relative_url }}" alt="" />
 
 I've setup this one up so worker thread only start at the same frequency of the main thread. The goal here was to use condition variables to synchronize the threads, and hopefully confirm it with the profiler., which we can look at in the image above.
 
@@ -369,9 +369,9 @@ I've setup this one up so worker thread only start at the same frequency of the 
 
 ## Continue Reading
 
-  * [Part 1: Exploring Multi-Threading in C++](http://mikeadev.net/2019/10/exploring-multi-threading-in-c/)
-  * **[Part 2: Exploring Multi-Threading in C++ Cont.](http://mikeadev.net/2019/10/exploring-multi-threading-in-c-part-2/)**
-  * [Part 3: Exploring Multi-Threading in C++: Loading Textures](http://mikeadev.net/2019/11/exploring-multi-threading-in-c-loading-textures/)
-  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](http://mikeadev.net/2019/11/parallelizing-ray-tracing/) 
+  * [Part 1: Exploring Multi-Threading in C++]({{ '2019/10/exploring-multi-threading-in-c/' | relative_url }})
+  * **[Part 2: Exploring Multi-Threading in C++ Cont.]({{ '2019/10/exploring-multi-threading-in-c-part-2/' | relative_url }})**
+  * [Part 3: Exploring Multi-Threading in C++: Loading Textures]({{ '2019/11/exploring-multi-threading-in-c-loading-textures/' | relative_url }})
+  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing]({{ '2019/11/parallelizing-ray-tracing/' | relative_url }}) 
 
 <a href="https://www.codeproject.com/script/Articles/BlogArticleList.aspx?amid=7793424" rel="tag" style="display:none">codeproject</a>

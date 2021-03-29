@@ -22,6 +22,21 @@
   @include img-fluid;
 }
 
+.img-25 {
+  @include img-fluid;
+  max-width: 25%;
+}
+
+.img-40 {
+  @include img-fluid;
+  max-width: 40%;
+}
+
+.img-80 {
+  @include img-fluid;
+  max-width: 80%;
+}
+
 //
 // Figures
 //

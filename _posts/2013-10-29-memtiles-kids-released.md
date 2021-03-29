@@ -12,9 +12,7 @@ tags:
   - development
   - memtiles kids
 ---
-[  
-<img class="img-fluid " alt="memtiles kids logo" src="https://lh3.ggpht.com/Dpu3Gw390-i7gpgLKnLfLebk2Ln_mB1IjzQhZ9rJBB1rWfqONDVrGce87mGJoCK9Plw=w300-rw" />  
-](https://play.google.com/store/apps/details?id=com.MichaelAdaixo.MemTilesKids)  
+[<img class="img-fluid rounded-5 m-1" src="{{ '/content/img/img.png' | relative_url }}" alt='' />](https://play.google.com/store/apps/details?id=com.MichaelAdaixo.MemTilesKids)  
 Memtiles Kids has been released!
 
 We've finally packed the whole thing, polished the last details, and submitted the game to the Google Play Store. You can now [purchase and download Memtiles Kids for Android](https://play.google.com/store/apps/details?id=com.MichaelAdaixo.MemTilesKids).

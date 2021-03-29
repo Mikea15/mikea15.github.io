@@ -56,7 +56,7 @@ void Main()
 	var token = cts.Token;
 	
 	Task t = Task.Factory.StartNew( 
-		() =&gt; {
+		() => {
 		MainLoop(token);
 		}, 
 		token, 

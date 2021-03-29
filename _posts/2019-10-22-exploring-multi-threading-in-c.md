@@ -25,10 +25,10 @@ The pursuit of performance is something that interests me as a developer, so as 
 
 ## Index
 
-  * **[Part 1: Exploring Multi-Threading in C++](http://mikeadev.net/2019/10/exploring-multi-threading-in-c/)**
-  * [Part 2: Exploring Multi-Threading in C++ Cont.](http://mikeadev.net/2019/10/exploring-multi-threading-in-c-part-2/)
-  * [Part 3: Exploring Multi-Threading in C++: Loading Textures](http://mikeadev.net/2019/11/exploring-multi-threading-in-c-loading-textures/)
-  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](http://mikeadev.net/2019/11/parallelizing-ray-tracing/)
+  * **[Part 1: Exploring Multi-Threading in C++]({{ '2019/10/exploring-multi-threading-in-c/' | relative_url }})**
+  * [Part 2: Exploring Multi-Threading in C++ Cont.]({{ '2019/10/exploring-multi-threading-in-c-part-2/' | relative_url }})
+  * [Part 3: Exploring Multi-Threading in C++: Loading Textures]({{ '2019/11/exploring-multi-threading-in-c-loading-textures/' | relative_url }})
+  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing]({{ '2019/11/parallelizing-ray-tracing/' | relative_url }}) 
 
 ## Setup and Baseline Result
 
@@ -165,7 +165,7 @@ void RunSequential()
 I'm running all my tests on a i7 4770K, that has 4 cores and 8 threads. All timings where taken from a release build, and all profile images from debug builds ( for illustration of workload purposes ).
 
 Sequential run time: 20692 ms
-<img class="img-fluid " src="http://mikeadev.net/content/img/image-2.png" alt="" />
+<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/image-2.png' | relative_url }}" alt="" />
 
 ## First Worker Thread
 
@@ -250,7 +250,7 @@ void RunOneThread()
 
 One worker thread run time: 10396 ms 
 
-<img class="img-fluid " src="http://mikeadev.net/content/img/onethread.jpg" alt="" />
+<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/onethread.jpg' | relative_url }}" alt="" />
 
 The image above show the execution of the jobs, the larger ones first, then the medium sized ones and lastly the smaller ones. This was the order at which the tasks where added into the queue.
 
@@ -290,7 +290,7 @@ void RunThreaded()
 
 Run time with 8 threads: 2625 ms.
 
-<img class="img-fluid " src="http://mikeadev.net/content/img/threaded_7.jpg" alt="" />
+<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/threaded_7.jpg' | relative_url }}" alt="" />
 
 Now this is a nicer view. 7 worker threads working with the main thread to process all jobs. Again, first we see the bigger jobs, then medium, then smaller ones being processed. This is being processed in the order they were added.
 
@@ -326,7 +326,7 @@ void RunJobsOnAsync()
 ```
 
 Run time: 2220 ms
-<img class="img-fluid " src="http://mikeadev.net/content/img/async.jpg" alt="" />
+<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/async.jpg' | relative_url }}" alt="" />
 
 ## Overview
 
@@ -349,10 +349,10 @@ All screenshots are taken with the debug version of the program, so we could cle
 
 ## Continue Reading
 
-  * **[Part 1: Exploring Multi-Threading in C++](http://mikeadev.net/2019/10/exploring-multi-threading-in-c/)**
-  * [Part 2: Exploring Multi-Threading in C++ Cont.](http://mikeadev.net/2019/10/exploring-multi-threading-in-c-part-2/)
-  * [Part 3: Exploring Multi-Threading in C++: Loading Textures](http://mikeadev.net/2019/11/exploring-multi-threading-in-c-loading-textures/)
-  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](http://mikeadev.net/2019/11/parallelizing-ray-tracing/) 
+  * **[Part 1: Exploring Multi-Threading in C++]({{ '2019/10/exploring-multi-threading-in-c/' | relative_url }})**
+  * [Part 2: Exploring Multi-Threading in C++ Cont.]({{ '2019/10/exploring-multi-threading-in-c-part-2/' | relative_url }})
+  * [Part 3: Exploring Multi-Threading in C++: Loading Textures]({{ '2019/11/exploring-multi-threading-in-c-loading-textures/' | relative_url }})
+  * [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing]({{ '2019/11/parallelizing-ray-tracing/' | relative_url }}) 
 
 <a href="https://www.codeproject.com/script/Articles/BlogArticleList.aspx?amid=7793424" rel="tag" style="display:none">codeproject</a> 
 

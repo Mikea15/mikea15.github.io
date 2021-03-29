@@ -18,7 +18,7 @@ Jumpy Rope is an endless arcade jumper game for [iOS](http://bit.ly/sky_jrope_),
 
 Jumpy Rope was inspired from Final Fantasy IX mini jump rope game, which has Vivi play jump the rope. I thought it could be fun to have a small game that would bring back these memories. So from the beginning, this is what I wanted to game to play like.
 
-<img class="img-fluid " src="http://mikeadev.net/content/img/pmjr_3.png" alt="pmjr_3" />
+<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/pmjr_3.png' | relative_url }}" alt="pmjr_3" />
 
 As for visual style, Crossy Road, Monument Valley where all people talked about, and for good reason, they look very good, and they play very well. I decided to go for the same direction and aim for low poly flat shading. I was really fond of the idea to have a small, contained environment. After browsing for inspiration, I found a mix of floating islands like Captain Toad Treasure Tracker. By now, I had gameplay and art orientation, so I started to work on it.
 
@@ -42,7 +42,7 @@ When I saw this, I immediately knew this was the style and islands I was looking
 
 The game went from mediocre looking to awesome! I really love those tiny floating islands she made. This pushed the overall game quality, and I had no more programmer art anymore. All I needed now was characters. I met some people and then was references to others. I was lucky enough to get concept art and models from them.
 
-<img class="img-fluid " src="http://mikeadev.net/content/img/0-1024x558.jpg" alt="Characters Concept" />
+<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/0-1024x558.jpg' | relative_url }}" alt="Characters Concept" />
 
 <em>Concept art by Jenny Harder</em>
 

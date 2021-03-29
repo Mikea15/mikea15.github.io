@@ -16,7 +16,7 @@ tags:
   - programming
   - unity3d
 ---
-<img class="img-fluid " src="http://mikeadev.net/content/img/header.png" alt="header"  />
+<img class="img-fluid rounded-5 m-1 rounded-5 m-1 " src="{{ 'content/img/header.png' | relative_url }}" alt="header"  />
 
 So I'm making a casual memory game for mobile platforms. Its a simple educational puzzle, where you need to retrieve the tile pairs on the grid.
 

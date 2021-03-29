@@ -49,7 +49,8 @@ After calling the entry point to your recursive method **StartBattle**, inside, 
 
 Output should be.
 
-<pre class="wp-block-preformatted">MyCoroutine is now finished at depth 2
+```cpp
+MyCoroutine is now finished at depth 2
 MyCoroutine is now finished at depth 1
 MyCoroutine is now finished at depth 0
 ```

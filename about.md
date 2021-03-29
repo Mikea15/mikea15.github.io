@@ -13,7 +13,7 @@ I have experience in C++, C#, HLSL and swift languages. Most of my time is spent
 
 I believe anyone can become or do anything, given time, motivation and passion. This is why I never stop learning and am always trying to solve challenging problems.
 
-Check out my [projects here]({{ '../projects' | relative_path }}).
+Check out my [projects here]({{ 'projects' | relative_url }}).
 
 ## Books I like: 
 - Essential C# 6.0 – Mark Michaelis

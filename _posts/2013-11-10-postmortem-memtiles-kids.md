@@ -13,7 +13,7 @@ tags:
   - memtiles kids
   - puzzle
 ---
-[<img class="img-fluid " src="http://mikeadev.net/content/img/bScreen4.png" alt="bScreen4" />](http://mikeadev.net/content/img/bScreen4.png)  
+[<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/bScreen4.png' | relative_url }}" alt="bScreen4" />]({{ 'content/img/bScreen4.png' | relative_url }})  
 So I've released Memtiles Kids on Google Play and sales have been like... zero!.. Well, not zero but, 6, but only because friends and family bought the game. The thing is, advertising. Its not easy to NOT be featured in the front page, not even in launch day!.. Seriously.. wtf?
 
 Anyway, I'm "Waiting for Review" on the iTunes Store, and hopefully that route will give me more sales. Either way, I'll release a free version of Memtiles Kids with the first theme unlocked, on both stores and link back to the paid version when the demo completes. Hopefully I'll have more downloads on that one, leading to an increase in sales.

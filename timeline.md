@@ -50,5 +50,5 @@ permalink: /timeline/
 
 - Udemy Course: The Unreal Engine Developer Course ( C++ )
 
-- Astromike entry for Ludum Dare #38 ( 72h Game Competition ). Overal #88, with over 1900 entries. [Check the Projects page]({{ '../projects' | relative_path }})
+- Astromike entry for Ludum Dare #38 ( 72h Game Competition ). Overal #88, with over 1900 entries. [Check the Projects page]({{ 'projects' | relative_url }})
 <iframe width="560" height="315" src="https://www.youtube.com/embed/b30id6bcWQk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
