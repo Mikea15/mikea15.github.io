@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: mikeadev.net
+Token: 047c050225d1712d723185b6e2779461f5b738ecad0cd1705e816d8dabb530c3
