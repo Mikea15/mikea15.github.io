@@ -18,7 +18,8 @@ Made under 72h for [Ludum Dare 38](https://ldjam.com/events/ludum-dare/38/astrom
 
 {%- include youtube.html code="b30id6bcWQk" -%}
 
-\> *[Download on itch.io](https://mikea15.itch.io/astromike)*
+<iframe frameborder="0" src="https://itch.io/embed/136963?dark=true" width="552" height="167"><a href="https://mikea15.itch.io/astromike">Astromike by Mikea15</a></iframe>
+
 
 # SuperStems
 
