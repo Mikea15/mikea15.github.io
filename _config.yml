@@ -1,0 +1,76 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+author: Michael Adaixo
+title: Mikea Dev
+subtitle: Thoughts and random bits of code
+email: michael.adaixo@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Hi! Michael here! I'm a game programmer! I'm interested in many topics,
+  but I mostly write about game dev, programming and computer graphics!
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://mikeadev.net" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+# Build settings
+# theme: minima
+
+minima:
+  skin: dark
+  date_format: "%b %-d, %Y"
+
+sass:
+  sass_dir: _sass
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+# - jekyll-paginate-v2
+
+highlighter: rouge
+
+# remove this to include all pages.
+header_pages:
+  - about.md
+  - projects.md
+
+google_analytics: UA-693935-4
+show_excerpts: true
+
+twitter_username: michaeladaixo
+github_username:  mikea15
+linkedin_username: MichaelAdaixo
+
+rss: rss
+
+# Pagination Settings
+# pagination:
+#   enabled: true
+#   per_page: 7
+#   offset: 0
+#   permalink: '/page/:num/'
+#   title: ':title - Page: :num of :max'
+#   limit: 0
+#   sort_field: 'date'
+#   sort_reverse: true
+#   trail: 
+#     before: 3 # The number of links before the current page
+#     after:  3 # The number of links after the current page
