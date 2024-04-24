@@ -21,10 +21,11 @@ const projects = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
+		description: z.string().optional(),
 		// Transform string to Date object
-		pubDate: z.coerce.date(),
-		updatedDate: z.coerce.date().optional(),
+		releaseDate: z.coerce.date(),
 		heroImage: z.string().optional(),
+		platform: z.string().optional()
 	}),
 });
 
