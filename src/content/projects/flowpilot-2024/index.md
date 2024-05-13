@@ -1,10 +1,13 @@
 ---
 title: "Flow Pilot"
-description: "UE 5 plugin to create simple, module and extensible gameplay sequences"
+description: "Simple, modular and extensible gameplay system that allows fast data-driven gameplay flow creation."
 date: "February 2024"
 repoURL: https://github.com/Mikea15/UEFlowPilot
 ---
 
+## Description
+
+FlowPilot is a simple, modular and extensible gameplay system that allows fast data-driven gameplay flow creation.
 
 ## Features
 
