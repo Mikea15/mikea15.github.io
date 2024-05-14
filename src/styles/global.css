@@ -20,7 +20,7 @@ body {
   @apply font-sans antialiased;
   @apply flex flex-col;
   @apply bg-gray-100 dark:bg-gray-950;
-  @apply text-black/50 dark:text-white/75;
+  @apply text-black dark:text-white;
 }
 
 header {
@@ -57,7 +57,7 @@ article {
 
 .animate {
   @apply opacity-0 translate-y-3;
-  @apply transition-all duration-700 ease-out;
+  @apply transition-all duration-300 ease-out;
 }
 
 .animate.show {
