@@ -19,15 +19,20 @@ body {
 body {
   @apply font-sans antialiased;
   @apply flex flex-col;
-  @apply bg-gray-100 dark:bg-gray-950;
+  @apply bg-slate-200 dark:bg-slate-900;
   @apply text-black dark:text-white;
+  @apply text-lg;
 }
 
 header {
   @apply fixed top-0 left-0 right-0 z-50 py-5;
-  @apply bg-stone-100/75 dark:bg-stone-900/25;
+  @apply bg-indigo-500/75 dark:bg-orange-500/75;
   @apply backdrop-blur-sm saturate-200;
-  @apply text-lg;
+  @apply text-xl;
+
+  .links {
+    @apply decoration-black/50 dark:decoration-white/50 text-black dark:text-white;
+  }
 }
 
 main {
@@ -45,11 +50,15 @@ article {
   @apply text-base;
 }
 
+.snappy-transition {
+  @apply duration-100 ease-in-out;
+}
+
 @layer utilities {
   article a {
-    @apply font-sans text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
-    @apply transition-colors duration-300 ease-in-out;
+    @apply font-sans text-current underline underline-offset-2 text-blue-400 dark:text-orange-400;
+    @apply decoration-blue-400/15 dark:decoration-orange-400/30;
+    @apply transition-colors snappy-transition;
   }
   article a:hover {
     @apply text-black dark:text-white;
@@ -59,7 +68,7 @@ article {
 
 .animate {
   @apply opacity-0 translate-y-3;
-  @apply transition-all duration-300 ease-out;
+  @apply transition-all duration-100 ease-out;
 }
 
 .animate.show {
@@ -72,5 +81,30 @@ html #back-to-top {
 
 html.scrolled #back-to-top {
   @apply opacity-100 pointer-events-auto;
+}
+
+.links {
+  @apply decoration-blue-400/15 dark:decoration-orange-400/30 text-blue-400 dark:text-orange-400;
+}
+
+.arrowcard {
+  @apply rounded-lg border-2 border-blue-400/50 dark:border-orange-400/20;
+  @apply hover:bg-black/5 dark:hover:bg-white/5;
+  @apply hover:text-black dark:hover:text-white;
+  @apply transition-colors snappy-transition;
+}
+
+.back-arrowcard {
+  @apply rounded border-2 border-blue-400/75 dark:border-orange-400/75;
+  @apply hover:bg-black/10 dark:hover:bg-white/10;
+  @apply hover:text-black dark:hover:text-white;
+  @apply transition-colors snappy-transition;
+}
+
+.up-arrowcard {
+  @apply rounded border-2 border-blue-400/75 dark:border-orange-400/75;
+  @apply hover:bg-black/10 dark:hover:bg-white/10;
+  @apply hover:text-black dark:hover:text-white; 
+  @apply transition-colors snappy-transition;
 }
 
