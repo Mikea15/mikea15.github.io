@@ -233,7 +233,7 @@ void RunOneThread()
 
 One worker thread run time: 10396 ms 
 
-<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/onethread.jpg'" alt="" />
+![image](/img/onethread.jpg)
 
 The image above show the execution of the jobs, the larger ones first, then the medium sized ones and lastly the smaller ones. This was the order at which the tasks where added into the queue.
 
@@ -273,7 +273,7 @@ void RunThreaded()
 
 Run time with 8 threads: 2625 ms.
 
-<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/threaded_7.jpg'" alt="" />
+![image](/img/threaded_7.jpg)
 
 Now this is a nicer view. 7 worker threads working with the main thread to process all jobs. Again, first we see the bigger jobs, then medium, then smaller ones being processed. This is being processed in the order they were added.
 
@@ -309,7 +309,8 @@ void RunJobsOnAsync()
 ```
 
 Run time: 2220 ms
-<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/async.jpg'" alt="" />
+
+![image](/img/async.jpg)
 
 ## Overview
 
