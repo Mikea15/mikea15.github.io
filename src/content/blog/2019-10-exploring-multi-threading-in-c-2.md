@@ -336,7 +336,7 @@ void RunSynchronizedThreads()
 
 Run time: 2674 ms
 
-<img class="img-fluid rounded-5 m-1" src="{{ 'content/img/threads_sync.jpg'" alt="" />
+![image](/img/threads_sync.jpg)
 
 I've setup this one up so worker thread only start at the same frequency of the main thread. The goal here was to use condition variables to synchronize the threads, and hopefully confirm it with the profiler., which we can look at in the image above.
 
