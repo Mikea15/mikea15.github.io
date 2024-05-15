@@ -56,8 +56,8 @@ article {
 
 @layer utilities {
   article a {
-    @apply font-sans text-current underline underline-offset-2 text-blue-400 dark:text-orange-400;
-    @apply decoration-blue-400/15 dark:decoration-orange-400/30;
+    @apply font-sans text-current underline underline-offset-2 text-blue-500 dark:text-orange-500;
+    @apply decoration-blue-500/15 dark:decoration-orange-500/30;
     @apply transition-colors snappy-transition;
   }
   article a:hover {
@@ -84,25 +84,25 @@ html.scrolled #back-to-top {
 }
 
 .links {
-  @apply decoration-blue-400/15 dark:decoration-orange-400/30 text-blue-400 dark:text-orange-400;
+  @apply decoration-blue-500/15 dark:decoration-orange-500/30 text-blue-500 dark:text-orange-500;
 }
 
 .arrowcard {
-  @apply rounded-lg border-2 border-blue-400/50 dark:border-orange-400/20;
+  @apply rounded-lg border-2 border-blue-500/75 dark:border-orange-500/75;
   @apply hover:bg-black/5 dark:hover:bg-white/5;
   @apply hover:text-black dark:hover:text-white;
   @apply transition-colors snappy-transition;
 }
 
 .back-arrowcard {
-  @apply rounded border-2 border-blue-400/75 dark:border-orange-400/75;
+  @apply rounded border-2 border-blue-500/75 dark:border-orange-500/75;
   @apply hover:bg-black/10 dark:hover:bg-white/10;
   @apply hover:text-black dark:hover:text-white;
   @apply transition-colors snappy-transition;
 }
 
 .up-arrowcard {
-  @apply rounded border-2 border-blue-400/75 dark:border-orange-400/75;
+  @apply rounded border-2 border-blue-500/75 dark:border-orange-500/75;
   @apply hover:bg-black/10 dark:hover:bg-white/10;
   @apply hover:text-black dark:hover:text-white; 
   @apply transition-colors snappy-transition;
