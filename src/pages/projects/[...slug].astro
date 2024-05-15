@@ -49,12 +49,22 @@ const { Content } = await project.render();
               demo
             </Link>
           )}
-          {project.data.demoURL && project.data.repoURL && (
-            <span>/</span>
-          )}
           {project.data.repoURL && (
+            <span>/</span>
             <Link href={project.data.repoURL} external>
               repo
+            </Link>
+          )}
+          {project.data.discordURL && (
+            <span>/</span>
+            <Link href={project.data.discordURL} external>
+              discord support
+            </Link>
+          )}
+          {project.data.marketplaceURL && (
+            <span>/</span>
+            <Link href={project.data.marketplaceURL} external>
+              marketplace
             </Link>
           )}
         </nav>
