@@ -1,9 +1,6 @@
 ---
 title: 'New MikeaDev'
-description: 'A new take on my dev blog'
-pubDate: '2024 04 23'
-heroImage: '/blog-placeholder-2.jpg'
-published: true
+date: '2024 04 23'
 ---
 
 Hi!
@@ -14,6 +11,6 @@ So I'll be bringing back some content here, old to start, and new as time permit
 
 With that said, if you like posts about games, technology, programming, unreal engine, and other random bits and bobs that come to mind, stay tunned!
 
-PS: Apologies for the white background. I know. I'll change this eventually.
+PS: ~Apologies for the white background. I know. I'll change this eventually.~ Fixed it! Yay
 
 Cheers

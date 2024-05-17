@@ -1,16 +1,12 @@
 ---
 title: 2019 Retrospective
-pubDate: "2019-12-02"
-heroImage: '/blog-placeholder-3.jpg'
-published: true
-categories:
-  - general
+date: "2019-12-02"
 ---
  
 
 With 2019 coming to a close I though it'd be nice to have a look back and see what I've been up to.
 
-<img class="img-fluid rounded-5 m-1 rounded-5 m-1" src="{{ 'content/img/image-6.png' | relative_url }}" alt="" /> 
+![raytraced image](/img/image-6.png)
 
 The hot topic for this year was clearly **Ray Tracing**, which has been a goal of mine for quite some time. I've spent some time reading [Ray Tracing in One Weekend, The Next Weekend, and The Rest of Your Life](https://raytracing.github.io/) which are great resources and entry points to the subject. I created a few projects on the subject with an SDL2 base game where I added multi threading support and calculating ambient occlusion.
 
