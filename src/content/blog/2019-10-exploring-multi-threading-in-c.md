@@ -7,10 +7,10 @@ The pursuit of performance is something that interests me as a developer, so as 
 
 ## Index
 
-- **[Part 1: Exploring Multi-Threading in C++](2019-10-exploring-multi-threading-in-c/)**
-- [Part 2: Exploring Multi-Threading in C++ Cont.](2019-10-exploring-multi-threading-in-c-2/)
-- [Part 3: Exploring Multi-Threading in C++: Loading Textures](2019-11-exploring-multi-threading-in-c-3)
-- [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](2019-11-exploring-multi-threading-in-c-4)
+- **[Part 1: Exploring Multi-Threading in C++](/blog/2019-10-exploring-multi-threading-in-c/)**
+- [Part 2: Exploring Multi-Threading in C++ Cont.](/blog/2019-10-exploring-multi-threading-in-c-2/)
+- [Part 3: Exploring Multi-Threading in C++: Loading Textures](/blog/2019-11-exploring-multi-threading-in-c-3)
+- [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](/blog/2019-11-exploring-multi-threading-in-c-4)
 
 ## Setup and Baseline Result
 
@@ -333,10 +333,10 @@ All screenshots are taken with the debug version of the program, so we could cle
 
 ## Continue Reading
 
-- **[Part 1: Exploring Multi-Threading in C++](2019-10-exploring-multi-threading-in-c/)**
-- [Part 2: Exploring Multi-Threading in C++ Cont.](2019-10-exploring-multi-threading-in-c-2/)
-- [Part 3: Exploring Multi-Threading in C++: Loading Textures](2019-11-exploring-multi-threading-in-c-3)
-- [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](2019-11-exploring-multi-threading-in-c-4)
+- **[Part 1: Exploring Multi-Threading in C++](/blog/2019-10-exploring-multi-threading-in-c/)**
+- [Part 2: Exploring Multi-Threading in C++ Cont.](/blog/2019-10-exploring-multi-threading-in-c-2/)
+- [Part 3: Exploring Multi-Threading in C++: Loading Textures](/blog/2019-11-exploring-multi-threading-in-c-3)
+- [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](/blog/2019-11-exploring-multi-threading-in-c-4)
 
 ### Note
 
