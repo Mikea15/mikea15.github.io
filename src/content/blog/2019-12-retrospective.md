@@ -12,7 +12,7 @@ The hot topic for this year was clearly **Ray Tracing**, which has been a goal o
 
 I've started to use [vcpkg ( C++ Library Manager for Windows, Linux, and MacOS )](https://github.com/microsoft/vcpkg) which is a neat little tool that allows me to easily grab libraries and keep them updated. No more issues with making SDL apps, importing Assimp, etc.
 
-I started to familiarize myself with CMake. It's still a hassle to get things working correctly on my first try, but I now have a couple of projects that I can look up to. 
+I started to familiarize myself with CMake. It's still a hassle to get things working correctly on my first try, but I now have a couple of projects that I can look up to.
 
 I forked my OpenGL sanbox and created a creativelly named [Engine Sandbox](https://github.com/Mikea15/EngineSandbox) project with **CMake**, used **vcpkg** for SDL, Assimp, nlohmann, etc.. I've been mostly fixing it, and working on neat new things, like **Hot Reloading Shaders**, investigating on how to **Hot Reload Cpp** code ( will need a bit of re-structuring ). I'll probably make a new one next year, with a bit of planning to organize it better, but for now, It will do.
 

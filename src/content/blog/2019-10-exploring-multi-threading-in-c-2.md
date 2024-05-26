@@ -10,9 +10,9 @@ date: "2019-10-22"
 - [Part 3: Exploring Multi-Threading in C++: Loading Textures](/blog/2019-11-exploring-multi-threading-in-c-3)
 - [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](/blog/2019-11-exploring-multi-threading-in-c-4)
 
-## Specific Worker Threads for Specific Jobs 
+## Specific Worker Threads for Specific Jobs
 
-My next test case is to have different worker thread to run different kinds of tasks. The idea is to have a couple of threads for important jobs, others for less important jobs. I've split the tasks into different Job queues for simplicity. 
+My next test case is to have different worker thread to run different kinds of tasks. The idea is to have a couple of threads for important jobs, others for less important jobs. I've split the tasks into different Job queues for simplicity.
 
 ```cpp
 static std::mutex g_mutexLowJobQ;

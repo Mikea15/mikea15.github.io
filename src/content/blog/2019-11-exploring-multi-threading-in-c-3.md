@@ -10,7 +10,6 @@ date: "2019-11-13"
 - **[Part 3: Exploring Multi-Threading in C++: Loading Textures](/blog/2019-11-exploring-multi-threading-in-c-3)**
 - [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](/blog/2019-11-exploring-multi-threading-in-c-4)
 
-
 ## Problem Overview
 
 Let's say we have a game engine that uses OpenGL and we need to load textures asynchronously so that we don't block the main thread, and we can load the editor or game much faster.
@@ -76,5 +75,3 @@ In the next part, we'll parallelize a toy Ray Tracer. This a different problem o
 - [Part 2: Exploring Multi-Threading in C++ Cont.](/blog/2019-10-exploring-multi-threading-in-c-2/)
 - **[Part 3: Exploring Multi-Threading in C++: Loading Textures](/blog/2019-11-exploring-multi-threading-in-c-3)**
 - [Part 4: Exploring Multi-Threading in C++: Parallelizing Ray Tracing](/blog/2019-11-exploring-multi-threading-in-c-4)
-
-<a href="https://www.codeproject.com/script/Articles/BlogArticleList.aspx?amid=7793424" rel="tag" style="display:none">codeproject</a>
