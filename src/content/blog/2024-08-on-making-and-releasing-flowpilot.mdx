@@ -5,11 +5,11 @@ date: '2024 08 17'
 
 Making games take time. 
 
-Remaking them in another game engine takes more time! New tools to learn, new workflows to adapt to, etc. So when I wanted to remake [AstroMike](/projetcts/astromike-2017/) in Unreal Engine I wanted to do something new while possibly avoiding to use too much Blueprints.
+Remaking them in another game engine takes more time! New tools to learn, new workflows to adapt to, etc. So when I wanted to remake [AstroMike](/projects/astromike-2017/) in Unreal Engine I wanted to do something new while possibly avoiding to use too much Blueprints.
 
 With this in mind, I wanted to re-create the game flow, which comprises of loading a level, starting the game with a black screen "loading" in the title, spawning all AI, traps, puzzle pieces, exit condition and the player and finally fading out and starting the game loop.
 
-![AstroMike Level Overview](/img/astromike/screen_2.png)
+![AstroMike Level Overview](/astromike/screen_2.png)
 
 All of this is a repeating pattern in all its levels. Its boilerplate that I wanted to get rid of. Setup once and re-use.
 
@@ -25,11 +25,15 @@ But is it a waste of time?
 
 I did learn how to prototype, implement and release a fully functional plugin to Epic Marketplace. I learnt how data serialization and versioning works internally in UE. I learnt how to architecture an Editor plugin to work with my data. Class and property customization, create custom slate widgets, using the class picker to swap class types and create a class palette, creating a fully fledged editor with undo/redo capabilities, and much, much more.
 
+![FlowPilotEditor](/flowpilot/fp_editor_view.png)
+
 Sure, I didn't _make a game_ during this time. But making games isn't just about the actual gameplay. There's is a lot of systems you need to create as a game programmer to allow other people, or yourself, to make the gameplay elements of a game. Working in a multi-disciplinary team means that sometimes you need to make the tools for designers to create the gameplay.
 
 Circling back to "did I waste time"? I believe I didn't. The journey into making FlowPilot was and still is well worth the effort put in. 
 
 I could now have a designer be totally independent in creating gameplay elements, sequence of events and interactions using FlowPilot. 
+
+![FlowPilotWorkflow](/flowpilot/fp_cpp_bp_workflow.png)
 
 I can start implementing all the gameplay logic, all the traps, all the level setup sequences for [AstroMike](/projects/astromike-2017/). I can do that by making re-usable cpp FlowPilotTasks or even in Blueprint if I want to iterate fast.
 
