@@ -1,0 +1,44 @@
+---
+title: 'On Making and Releasing FlowPilot'
+date: '2024 08 17'
+---
+
+Making games take time. 
+
+Remaking them in another game engine takes more time! New tools to learn, new workflows to adapt to, etc. So when I wanted to remake [AstroMike](/projetcts/astromike-2017/) in Unreal Engine I wanted to do something new while possibly avoiding to use too much Blueprints.
+
+With this in mind, I wanted to re-create the game flow, which comprises of loading a level, starting the game with a black screen "loading" in the title, spawning all AI, traps, puzzle pieces, exit condition and the player and finally fading out and starting the game loop.
+
+![AstroMike Level Overview](/img/astromike/screen_2.png)
+
+All of this is a repeating pattern in all its levels. Its boilerplate that I wanted to get rid of. Setup once and re-use.
+
+What does an engineer do in such circumstances? Spend 8 months working on a generic plugin to allow such a workflow, what else.
+
+This is how I arrived at FlowPilot. FlowPilot is such a tool. It allows me to create a flow of 'tasks' that run one after the other. A Sequence if you will. I can now setup a flow, for all of my levels, with one data file. 
+
+FlowPilot is generic enough that it can be used as a smart object tool as well. I'm still scratching the surface at what it can and can't do. Defining its purpose and properly conveying its potential.
+
+Now you may think, "what a waste of time. He could have used this time to remake the game 7 times!". Well, given the fact that [AstroMike](/projetcts/astromike-2017/) was made in 42h in Unity, I'd say yes, I could and you'd be right to think so.
+
+But is it a waste of time?
+
+I did learn how to prototype, implement and release a fully functional plugin to Epic Marketplace. I learnt how data serialization and versioning works internally in UE. I learnt how to architecture an Editor plugin to work with my data. Class and property customization, create custom slate widgets, using the class picker to swap class types and create a class palette, creating a fully fledged editor with undo/redo capabilities, and much, much more.
+
+Sure, I didn't _make a game_ during this time. But making games isn't just about the actual gameplay. There's is a lot of systems you need to create as a game programmer to allow other people, or yourself, to make the gameplay elements of a game. Working in a multi-disciplinary team means that sometimes you need to make the tools for designers to create the gameplay.
+
+Circling back to "did I waste time"? I believe I didn't. The journey into making FlowPilot was and still is well worth the effort put in. 
+
+I could now have a designer be totally independent in creating gameplay elements, sequence of events and interactions using FlowPilot. 
+
+I can start implementing all the gameplay logic, all the traps, all the level setup sequences for [AstroMike](/projetcts/astromike-2017/). I can do that by making re-usable cpp FlowPilotTasks or even in Blueprint if I want to iterate fast.
+
+https://www.youtube.com/watch?v=PX9QTlr54O4
+
+I can also share it with the world and attach another piece of software to my name.
+
+If this is something that may be of interest to you, you can check out [FlowPilot on Epic's Marketplace](https://www.unrealengine.com/marketplace/en-US/product/88621a7957c0435991e5d0ce327e9f68). If you are an indie dev, DM me personally and I'll send you a copy of FlowPilot. If you're small team, I think the pricing is fair for you. Having FlowPilot really does save you a lot of time.
+
+Thats it for me today. If you've made it this far, thanks very much for reading. 
+
+Cheers.
