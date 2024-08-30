@@ -1,0 +1,32 @@
+---
+title: 'Where is my FlowPilot running from'
+date: '2024-08-31'
+draft: true
+---
+
+FlowPilot is not visible in the editor currently. There's no visual cue, only by running the game, you'll know there's FlowPilot assets running. So lets fix that.
+
+One way to show things on screen is have `UFlowPilotComponent` inherit from `FComponentVisualizer`, so lets implement it.
+
+```cpp
+class FLOWPILOT_API UFlowPilotComponent 
+    : public UActorComponent
+    , public FComponentVisualizer
+```
+
+Adding `FComponentVisualizer` prompts me to include `UnrealEd` into my public project dependencies, which I accept and move on to discover what this class has to offer in terms of overridable interfaces.
+
+```c#
+PublicDependencyModuleNames.AddRange(
+    new string[]
+    {
+        "Core", 
+        "UnrealEd"
+    }
+);
+```
+This method looks promissing. I'll want to have a simple display when the component is attached to an actor on the scene, so this should allow me to draw even if the actor isn't selected.
+```cpp
+/** Draw visualization for the supplied component */
+virtual void DrawVisualization(const UActorComponent* Component, const FSceneView* View, FPrimitiveDrawInterface* PDI) {}
+```
