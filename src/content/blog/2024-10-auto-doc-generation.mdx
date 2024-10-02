@@ -1,0 +1,51 @@
+---
+title: 'Automatic Documentation Generation'
+date: '2024 10 02'
+draft: false
+---
+
+![header](/img/programming-header.jpg)
+
+### Programmers are Lazy
+Hey! That's me! I'm lazy! If I can avoid (read: automate) doing something I will. So I did. 
+
+Making [FlowPilot](/projects/flowpilot-2024) and releasing it means I needed to create documentation for it.
+Good thing there's [Doxygen](https://www.doxygen.nl/), [Sphinx](https://www.sphinx-doc.org/en/master/), and other tools for that right? 
+
+Well, none of those solutions where what I wanted so I created my own.
+
+### My Doc-site Requirements
+My doc website is hosted on Github and is a static website made with [Astro.build](https://astro.build/).
+- I need pages to be in Markdown
+- I need pages to have a section I can manually edit in between the auto-generated content
+- I need something that reads from a provided folder all C++ header files and parse it.
+- I need it to be easy enough that I can include it in the build project process.
+
+## New Project means new opportunity to learn
+I was reading and practising [Zig](https://ziglang.org/) for a while so I started with it to read and parse the files. Everything worked up to a point where I would get frustrated at the language (skill issue). 
+
+I was taking too long to make progress and getting used to the language. 
+
+I had to have something working faster than the learning rate my mind was willing to, to learn Zig, so I jumped ship and decided to learn [Go](https://go.dev/) instead.
+
+Yes, I usually start more -way more- projects than I finish. Its not Zig's fault tho, its clearly mine. To be fair, this probably isn't the type of project to be choosing Zig for.
+
+I'm sure I'll find another project for Zig, but for this auto-doc one, I just wanteed to progress faster and more importantly, not be frustrated about making little to no progress.
+
+On the other side of the spectrum, working with Go -even as a first timer- is super friendly. I'm completly hooked! Converting the project took me a couple of hours.
+
+After a few days, I had the parsing and formatting in a decent place that I could start to use it confidently.
+Working with go is super simple and it completely fullfilled my needs.
+
+### FlowPilot.Dev is live!
+Each time I program [FlowPilot](https://www.flowpilot.dev), I can add comments -even markdown- and when I compile the code, I have a step in the pipeline to run a batch script to automatically read, update, and push the documentation pages to FlowPilot's Github!
+
+*insert feels good meme*
+
+### What's next
+Now that I've done that and its out of the way -mostly automated- I can focus on other stuff like tutorials, guides, videos etc. 
+I've had a brief experience with Zig, then Go, and most importantly had fun.
+
+You can check [Go-Cpp-Mk](https://github.com/Mikea15/go-cpp-mk) on GitHub if you want and let me know where I'm doing things wrong.
+
+This is it for now. Thanks for reading!
