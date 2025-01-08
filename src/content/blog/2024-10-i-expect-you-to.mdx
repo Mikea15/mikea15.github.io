@@ -1,0 +1,52 @@
+---
+title: 'I expect you to know..'
+date: '2024 10 29'
+draft: true
+---
+
+## Welcome to the Team
+
+So I heard you're interviewing for a game programming position and you want to know what to expect. The following is a non-exhaustive list of things I expect my team mates to know when they join the team.
+
+### Basics
+
+Lets start with the basic stuff, and I'll make a few assumptions here, such as that you'll join a Cpp focused game development team. The firsts things I look in a CV is education background. If you're young or junior it helps me understand if you've had basic algorithms and data structure classes. If you know C (which I assume is still taught in school as first language), basics of operating systems and how memory works. 
+
+On a tech interview or test, its quite common to ask if a person knows:
+
+- what a vector/array is
+- what happens when we insert an element past the last available space
+- what's a map, and why/when should we use it
+- what's a linked list, and how it differs from a vector/array
+- what is a set, stack, queue, the list goes on
+
+There's many variations of this, but it all boils down to knowing which data structure you will use to solve specific problems. There's no best structure, each one has particular strenghts in solving different problems.
+
+A tipical question for Cpp folk, is "what are the downsides of inheritance". Most people will try to stear the conversation to inheritance versus composition. Another topic might be the diamond shape inheritance problem.
+
+### Intermediate
+
+If you've had a few years of programming in you, I will expect you to know a few more things:
+
+- Memory Management and Allocators
+- Algorithm Complexity, aka, Big O notation
+- Knowing Hidden Allocations
+- Knowing about Copy Ellision and Return Value Optimization
+
+## Cpp Data Structure Cheet Sheet
+
+| Data Structure     | Access (Avg) | Access (Worst) | Insertion (Avg) | Insertion (Worst) | Deletion (Avg) | Deletion (Worst) | Search (Avg) | Search (Worst) |
+|--------------------|--------------|----------------|-----------------|-------------------|----------------|------------------|--------------|----------------|
+| **std::vector**    | O(1)         | O(1)           | O(1)*           | O(n)              | O(n)           | O(n)             | O(n)         | O(n)           |
+| **std::deque**     | O(1)         | O(1)           | O(1)            | O(n)              | O(1)           | O(n)             | O(n)         | O(n)           |
+| **std::list**      | O(n)         | O(n)           | O(1)            | O(1)              | O(1)           | O(1)             | O(n)         | O(n)           |
+| **std::forward_list** | O(n)      | O(n)           | O(1)            | O(1)              | O(1)           | O(1)             | O(n)         | O(n)           |
+| **std::set**       | O(log n)     | O(log n)       | O(log n)        | O(log n)          | O(log n)       | O(log n)         | O(log n)     | O(log n)       |
+| **std::unordered_set** | O(1)     | O(n)           | O(1)            | O(n)              | O(1)           | O(n)             | O(1)         | O(n)           |
+| **std::map**       | O(log n)     | O(log n)       | O(log n)        | O(log n)          | O(log n)       | O(log n)         | O(log n)     | O(log n)       |
+| **std::unordered_map** | O(1)     | O(n)           | O(1)            | O(n)              | O(1)           | O(n)             | O(1)         | O(n)           |
+| **std::stack**     | O(n)         | O(n)           | O(1)            | O(1)              | O(1)           | O(1)             | O(n)         | O(n)           |
+| **std::queue**     | O(n)         | O(n)           | O(1)            | O(1)              | O(1)           | O(1)             | O(n)         | O(n)           |
+| **std::priority_queue** | O(n)    | O(n)           | O(log n)        | O(log n)          | O(log n)       | O(log n)         | O(1)         | O(n)           |
+
+*Note: For `std::vector`, insertion at the end is O(1) on average but O(n) in the worst case due to resizing.*
